@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html lang="PT-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nossoSuperSite</title>
 
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nossoSuperSite</title>
 
-    <!-- Css -->
-    <link rel="stylesheet" href="/src/assets/css/style.css" />
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header>
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg fixed-top d-flex bg-light" id="navbar">
-        <div class="container px-lg-3 py-3 d-flex justify-content-between">
+  <!-- Css -->
+  <link rel="stylesheet" href="/src/assets/css/style.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <!-- NAVBAR -->
+    <div class="bg-light m-0 container-fluid fixed-top">
+      <nav class="navbar navbar-expand-lg d-flex px-5 container-lg" id="navbar">
+
+        <div class="container flex-row py-3 d-flex justify-content-between">
           <h1>
-            <a href="" class="navbar-brand">
-              <img
-                src="/src/assets/icons/asterisk.svg"
-                alt="logoDoNossoSuperSite"
-              />
-              <span>NossaMarca</span>
+            <a href="#" class="navbar-brand align-items-center">
+              <img src="/src/assets/icons/asterisk.svg" alt="logoDoNossoSuperSite" />
+              <span class="mx-2">NossaMarca</span>
             </a>
           </h1>
         </div>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-items"
-          aria-controls="navbar-items"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
+          aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
           <!--
         <span class="navbar-toggler-icon"></span>
         -->
@@ -57,38 +45,17 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbar-items">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!--Sobre-->
-            <li class="nav-item">
-              <a
-                class="nav-link .primary-color"
-                aria-content="page"
-                href="/sobre.html"
-                >Sobre</a
-              >
-            </li>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center fw-bold">
 
             <!--Combos-->
-            <li class="nav-item">
-              <a
-                class="nav-link .primary-color"
-                aria-content="page"
-                href="/combos.html"
-                >Combos</a
-              >
+            <li class="nav-item px-2">
+              <a class="nav-link .primary-color" aria-content="page" href="/combos.html">Combos</a>
             </li>
 
             <!--Produtos-->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link .primary-color dropdown-toggle"
-                aria-content="page"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <li class="nav-item dropdown px-2">
+              <a class="nav-link .primary-color dropdown-toggle" aria-content="page" href="#" id="navbarDropdown"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Produtos
               </a>
 
@@ -100,90 +67,296 @@
                   <a class="dropdown-item .primary-color" href="#">Queijos</a>
                 </li>
                 <li>
-                  <a class="dropdown-item .primary-color" href="#"
-                    >Pães artesanais</a
-                  >
+                  <a class="dropdown-item .primary-color" href="#">Pães artesanais</a>
                 </li>
               </ul>
             </li>
 
             <!--DESKTOP-->
             <!--Search icon-->
-            <li class="nav-item px-2">
-              <img src="/src/assets/icons/search.svg" alt="icone pesquisa" />
-            </li>
+            <div class="d-flex pb-1">
+              <li class="nav-item px-2">
+                <img src="/src/assets/icons/search.svg" alt="icone pesquisa" />
+              </li>
 
-            <!--User icon-->
-            <li class="nav-item px-2">
-              <img src="/src/assets/icons/person.svg" alt="Ícone usuário" />
-            </li>
+              <!--User icon-->
+              <li class="nav-item px-2">
+                <img src="/src/assets/icons/person.svg" alt="Ícone usuário" />
+              </li>
 
-            <!--Shop Cart icon-->
-            <li class="nav-item px-2">
-              <img
-                src="/src/assets/icons/bag.svg"
-                alt="Ícone sacola de compras"
-              />
-            </li>
+              <!--Shop Cart icon-->
+              <li class="nav-item px-2">
+                <img src="/src/assets/icons/bag.svg" alt="Ícone sacola de compras" />
+              </li>
+            </div>
           </ul>
         </div>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- <div class="container-lg d-inline">
+  <main class="main-dark mt-5 container-lg">
+    <div class="container-lg p-5">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <div class="row w-75">
+            <p class="text-start text-break fs-2 fw-bolder">
+              Nossos artesanais na sua casa
+            </p>
+            <p class="text-start text-break fs-6">
+              Todos os produtos são produzimos em nossa fazenda de forma artesal
+              e com mão de obra justa e familiar. Da nossa casa para sua mesa.
+            </p>
+          </div>
+          <button type="button" class="btn btn-warning btn-lg border-0 text-light"
+            style="background-color:#AC7C39">Conheça</button>
+        </div>
+        <div class="col-4">
+          <img class="mw-100" src="/src/assets/imgs/hero.jpg" alt="Hero" />
+        </div>
+      </div>
+    </div>
 
-        <nav class="navbar navbar-expand-lg bg-light">
-          
-            <h1>
-                <a class="navbar-brand" href="/index.html">NossaMarca</a>
-            </h1>
-
-                <ul>
-                    <li>
-                       <a href="/combos.html">combos</a>
-                     </li>
-                     <li>
-                        <a href="/produtos.html">produtos</a>
-                    </li>
-                    <li>
-                        <a href="/produtos.html">produtos</a>
-                    </li>
-                    <li>
-                        <a href="/produtos.html">produtos</a>
-                    </li>
-                    <li>
-                        <a href="/produtos.html">produtos</a>
-                    </li>
-                </ul> 
-            </nav>
-        </div> -->
-
-    <main class="main-dark">
-      <div class="hero grid vh-80">
-        <div class="g-col-8"></div>
-        <div class="g-col-4"></div>
-        
+    <!-- COMBOS -->
+    <div class="destaque p-5">
+      <h2>Combos</h2>
+      <div class="d-flex justify-content-between mt-5 h-50">
+        <div>
+          <div class="card" style="width: 18rem;">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="width: 18rem;">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="width: 18rem;">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="destaque">
+    </div>
 
+    <div class="categorias mt-5 p-5">
+      <h2>Vinhos</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-5 mt-2">
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="categorias">
+    </div>
 
+    <div class="categorias mt-5 p-5">
+      <h2>Queijos</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-5 mt-2">
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="/src/assets/imgs/hero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <h5 class="card-title">R$ 300,00</h5>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="contato">
+    </div>
 
-      </div>
-    </main>
+  </main>
 
-    <footer></footer>
+  <footer class="mt-5 p-5" style="background-color:#a8907e; color:white">
+    <div class="container-lg">
+      <p>Desenvolvido</p>
+    </div>
+  </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
