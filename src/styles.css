@@ -14,16 +14,15 @@ ul {
 
 /*** Color Rules ***/
 root {
-  --text-color-dark: var(#332c2a);
+  --text-color-dark: var(#332C2a);
   --text-color: var(#767676);
 
-  --header-color: var(#f9f9f9);
-  --body-color: var(#f9f9f9);
-  --footer-color: var(#ccb1a1);
+  --header-color: var(#F9F9F9);
+  --body-color: var(#F9F9F9);
+  --footer-color: var(#CCB1A1);
 
   --button-bg: var(#9B6C51);
-  --button-color: var(#f9f9f9);
-
+  --button-color: var(#F9F9F9);
 }
 
 
