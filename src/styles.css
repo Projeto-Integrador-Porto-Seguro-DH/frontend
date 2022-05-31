@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*** Reset ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans, sans-serif";
+}
+
+ul {
+  list-style: none;
+}
+
+/*** Color Rules ***/
+root {
+  --text-color-dark: var(#332C2a);
+  --text-color: var(#767676);
+
+  --header-color: var(#F9F9F9);
+  --body-color: var(#F9F9F9);
+  --footer-color: var(#CCB1A1);
+
+  --button-bg: var(#9B6C51);
+  --button-color: var(#F9F9F9);
+}
+
+
+
