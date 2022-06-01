@@ -28,7 +28,7 @@ ul {
   font-weight: 700;
 }
 
-.title-font {
+.title-custom {
   font-family: var(--title-font-primary), var(--title-font-secondary);
   font-weight: bold;
   color: var(--text-color-dark);
