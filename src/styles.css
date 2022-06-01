@@ -5,25 +5,60 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "DM Sans, sans-serif";
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+}
+/*** HTML Elements ***/
+header,
+body {
+  background-color: var(--bg-custom-color);
+}
+
+footer {
+  background-color: var(--footer-color);
 }
 
 ul {
   list-style: none;
 }
 
-/*** Color Rules ***/
-root {
-  --text-color-dark: var(#332C2a);
-  --text-color: var(#767676);
+/*** Custom Classes ***/
 
-  --header-color: var(#F9F9F9);
-  --body-color: var(#F9F9F9);
-  --footer-color: var(#CCB1A1);
-
-  --button-bg: var(#9B6C51);
-  --button-color: var(#F9F9F9);
+.logo-style {
+  font-family: "Poppins";
+  font-weight: 700;
 }
 
+.title-font {
+  font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-weight: bold;
+  color: var(--text-color-dark);
+}
 
+.text-custom {
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+  color: var(--text-color);
+}
 
+.button-custom,
+.button-custom:hover {
+  background-color: var(--button-bg);
+  color: var(--button-txt-color);
+  border: 0;
+}
+
+/*** Color Rules ***/
+:root {
+  --title-font-primary: "Lato";
+  --title-font-secondary: "Roboto";
+  --text-font-primary: "DM Sans";
+  --text-font-secondary: "sans-serif";
+
+  --bg-custom-color: #f9f9f9;
+  --footer-color: #ccb1a1;
+
+  --text-color-dark: #332c2a;
+  --text-color: #767676;
+
+  --button-bg: #9b6c51;
+  --button-txt-color: #f9f9f9;
+}
