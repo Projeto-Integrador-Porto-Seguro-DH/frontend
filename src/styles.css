@@ -13,17 +13,14 @@ ul {
 }
 
 /*** Color Rules ***/
-root {
-  --text-color-dark: var(#332C2a);
-  --text-color: var(#767676);
+:root {
+  --text-color-dark: #332c2a;
+  --text-color: #767676;
 
-  --header-color: var(#F9F9F9);
-  --body-color: var(#F9F9F9);
-  --footer-color: var(#CCB1A1);
+  --header-color: #f9f9f9;
+  --body-color: #f9f9f9;
+  --footer-color: #ccb1a1;
 
-  --button-bg: var(#9B6C51);
-  --button-color: var(#F9F9F9);
+  --button-bg: #9b6c51;
+  --button-color: #f9f9f9;
 }
-
-
-
