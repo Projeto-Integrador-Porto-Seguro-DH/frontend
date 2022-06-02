@@ -46,6 +46,11 @@ ul {
   border: 0;
 }
 
+.card-custom {
+  background-color: var(--bg-custom-color);
+  border: 0;
+}
+
 /*** Color Rules ***/
 :root {
   --title-font-primary: "Lato";
