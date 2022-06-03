@@ -18,7 +18,7 @@ ul {
   --text-font-primary: "DM Sans", sans-serif;
 
   --text-color-dark: #332c2a;
-  --text-color: #767676;
+  --text-color-light: #767676;
 
   --body-bg-color: #f9f9f9;
   --footer-bg-color: #ccb1a1;
@@ -36,6 +36,21 @@ body {
 
 .h2Style {
   font: 700 1.5rem var(--title-font-primary), var(--title-font-secondary);
+  color: var(--text-color-dark);
+}
+
+.h3Style {
+  font: 500 1rem;
+  color: var(--text-color-light);
+}
+
+.pStyleLight {
+  font: 400 1rem;
+  color: var(--text-color-light);
+}
+
+.pStyleDark {
+  font: 400 1rem;
   color: var(--text-color-dark);
 }
 
