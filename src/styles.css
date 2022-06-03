@@ -1,56 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-/*** Reset ***/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--text-font-primary), var(--text-font-secondary);
-}
-/*** HTML Elements ***/
-header,
-body {
-  background-color: var(--bg-custom-color);
-}
-
-footer {
-  background-color: var(--footer-color);
-}
-
-ul {
-  list-style: none;
-}
-
-/*** Custom Classes ***/
-
-.logo-style {
-  font-family: "Poppins";
-  font-weight: 700;
-}
-
-.title-custom {
-  font-family: var(--title-font-primary), var(--title-font-secondary);
-  font-weight: bold;
-  color: var(--text-color-dark);
-}
-
-.text-custom {
-  font-family: var(--text-font-primary), var(--text-font-secondary);
-  color: var(--text-color);
-}
-
-.button-custom,
-.button-custom:hover {
-  background-color: var(--button-bg);
-  color: var(--button-txt-color);
-  border: 0;
-}
-
-.card-custom {
-  background-color: var(--bg-custom-color);
-  border: 0;
-}
-
 /*** Color Rules ***/
 :root {
   --title-font-primary: "Lato";
@@ -66,4 +15,56 @@ ul {
 
   --button-bg: #9b6c51;
   --button-txt-color: #f9f9f9;
+}
+
+/*** Reset ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+}
+
+/*** HTML Elements ***/
+header,
+body {
+  background-color: var(--bg-custom-color);
+}
+
+footer {
+  background-color: var(--footer-color);
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-weight: bold;
+  color: var(--text-color-dark);
+}
+
+h3 {
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+  color: var(--text-color-dark);
+}
+
+/*** Custom Classes ***/
+
+.text-custom {
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+  color: var(--text-color);
+}
+
+.button-custom {
+  background-color: var(--button-bg);
+  color: var(--button-txt-color);
+  border: 0;
+}
+
+.card-custom {
+  width: 18rem;
+  background-color: var(--bg-custom-color);
+  border: 0;
 }

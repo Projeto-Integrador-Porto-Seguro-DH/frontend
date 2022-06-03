@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { HomeComponent } from './components/pages/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
