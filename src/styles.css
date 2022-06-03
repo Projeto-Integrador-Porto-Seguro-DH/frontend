@@ -1,14 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 
 /*** Reset ***/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 ul {
   list-style: none;
+}
+
+/*** Custom Classes ***/
+
+.logo-style {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
+.title-custom {
+  font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-weight: bold;
+  color: var(--text-color-dark);
+}
+
+.text-custom {
+  font-family: var(--text-font-primary), var(--text-font-secondary);
+  color: var(--text-color);
+}
+
+.button-custom,
+.button-custom:hover {
+  background-color: var(--button-bg);
+  color: var(--button-txt-color);
+  border: 0;
 }
 
 /*** Color Rules ***/
