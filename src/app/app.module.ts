@@ -7,6 +7,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductGroupComponent } from './components/product-group/product-group.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HomeComponent } from './pages/home/home.component';
     HeroComponent,
     ProductCardComponent,
     HomeComponent,
+    ProductGroupComponent,
+    UserProfileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
