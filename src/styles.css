@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "DM Sans, sans-serif";
 }
 
 ul {
@@ -14,13 +13,43 @@ ul {
 
 /*** Color Rules ***/
 :root {
+  --title-font-primary: "Lato";
+  --title-font-secondary: "Roboto";
+  --text-font-primary: "DM Sans", sans-serif;
+
   --text-color-dark: #332c2a;
   --text-color: #767676;
 
-  --header-color: #f9f9f9;
-  --body-color: #f9f9f9;
-  --footer-color: #ccb1a1;
+  --body-bg-color: #f9f9f9;
+  --footer-bg-color: #ccb1a1;
 
-  --button-bg: #9b6c51;
-  --button-color: #f9f9f9;
+  --button-bg-color: #9b6c51;
+  --button-bg-color-hover: #946144;
+  --button-txt-color: #f9f9f9;
+}
+
+/*** Custom Styles ***/
+body {
+  background-color: var(--body-bg-color);
+  font-family: var(--text-font-primary);
+}
+
+.h2Style {
+  font: 700 1.5rem var(--title-font-primary), var(--title-font-secondary);
+  color: var(--text-color-dark);
+}
+
+.buttonStyle {
+  background-color: var(--button-bg-color);
+  color: var(--button-txt-color);
+  margin-top: 2rem;
+}
+
+.buttonStyle:hover {
+  background-color: var(--button-bg-color-hover);
+}
+
+.inputStyle {
+  border: 2px solid var(--button-bg-color);
+  padding-left: 2rem;
 }
