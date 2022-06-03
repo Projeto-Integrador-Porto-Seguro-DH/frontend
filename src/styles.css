@@ -1,70 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
 
-/*** Color Rules ***/
-:root {
-  --title-font-primary: "Lato";
-  --title-font-secondary: "Roboto";
-  --text-font-primary: "DM Sans";
-  --text-font-secondary: "sans-serif";
-
-  --bg-custom-color: #f9f9f9;
-  --footer-color: #ccb1a1;
-
-  --text-color-dark: #332c2a;
-  --text-color: #767676;
-
-  --button-bg: #9b6c51;
-  --button-txt-color: #f9f9f9;
-}
-
 /*** Reset ***/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--text-font-primary), var(--text-font-secondary);
-}
-
-/*** HTML Elements ***/
-header,
-body {
-  background-color: var(--bg-custom-color);
-}
-
-footer {
-  background-color: var(--footer-color);
-}
 
 ul {
   list-style: none;
 }
 
-h2 {
+/*** Custom Classes ***/
+
+.logo-style {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
+.title-custom {
   font-family: var(--title-font-primary), var(--title-font-secondary);
   font-weight: bold;
   color: var(--text-color-dark);
 }
-
-h3 {
-  font-family: var(--text-font-primary), var(--text-font-secondary);
-  color: var(--text-color-dark);
-}
-
-/*** Custom Classes ***/
 
 .text-custom {
   font-family: var(--text-font-primary), var(--text-font-secondary);
   color: var(--text-color);
 }
 
-.button-custom {
+.button-custom,
+.button-custom:hover {
   background-color: var(--button-bg);
   color: var(--button-txt-color);
   border: 0;
 }
 
-.card-custom {
-  width: 18rem;
-  background-color: var(--bg-custom-color);
-  border: 0;
+/*** Color Rules ***/
+:root {
+  --title-font-primary: "Lato";
+  --title-font-secondary: "Roboto";
+  --text-font-primary: "DM Sans", sans-serif;
+
+  --text-color-dark: #332c2a;
+  --text-color-light: #767676;
+
+  --body-bg-color: #f9f9f9;
+  --footer-bg-color: #ccb1a1;
+
+  --button-bg-color: #9b6c51;
+  --button-bg-color-hover: #946144;
+  --button-txt-color: #f9f9f9;
+}
+
+/*** Custom Styles ***/
+body {
+  background-color: var(--body-bg-color);
+  font-family: var(--text-font-primary);
+}
+
+.h2Style {
+  font: 700 1.5rem var(--title-font-primary), var(--title-font-secondary);
+  color: var(--text-color-dark);
+}
+
+.h3Style {
+  font: 500 1rem;
+  color: var(--text-color-light);
+}
+
+.pStyleLight {
+  font: 400 1rem;
+  color: var(--text-color-light);
+}
+
+.pStyleDark {
+  font: 400 1rem;
+  color: var(--text-color-dark);
+}
+
+.buttonStyle {
+  background-color: var(--button-bg-color);
+  color: var(--button-txt-color);
+  margin-top: 2rem;
+}
+
+.buttonStyle:hover {
+  background-color: var(--button-bg-color-hover);
+}
+
+.inputStyle {
+  border: 2px solid var(--button-bg-color);
+  padding-left: 2rem;
 }

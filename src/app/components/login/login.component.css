@@ -1,0 +1,10 @@
+.h2Style {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: var(--text-color-dark);
+}
+
+.buttonStyle {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+}
