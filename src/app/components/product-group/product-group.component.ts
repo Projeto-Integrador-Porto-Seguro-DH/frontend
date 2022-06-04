@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-group.component.css'],
 })
 export class ProductGroupComponent implements OnInit {
+  public categoria: string = 'Queijos';
+
   constructor() {}
 
   ngOnInit(): void {}
