@@ -3,3 +3,32 @@
   background-color: var(--body-bg-color);
   border: 0;
 }
+
+.pricePosition {
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .cardStyle {
+    width: 8rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .cardStyle {
+    width: 10rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cardStyle {
+    width: 14rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cardStyle {
+    width: 16rem;
+  }
+}
