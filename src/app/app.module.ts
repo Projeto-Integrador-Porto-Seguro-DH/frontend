@@ -10,8 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductGroupComponent } from './components/product-group/product-group.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LoginComponent } from './components/login/login.component';
-import { ModalSearchComponent } from './components/modal-search/modal-search.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { NossaHistoriaComponent } from './components/nossa-historia/nossa-historia.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { MenuComponent } from './components/menu/menu.component';
     ProductGroupComponent,
     UserProfileComponent,
     LoginComponent,
-    ModalSearchComponent,
-    MenuComponent,
+    NossaHistoriaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
