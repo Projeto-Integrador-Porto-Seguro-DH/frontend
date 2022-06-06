@@ -14,28 +14,28 @@
     <div class="collapse navbar-collapse " id="navbar-items">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
         <li class="nav-item">
-          <a class="nav-link primary-color title-custom active" aria-current="page" RouterLink="">Início</a>
+          <a class="nav-link title-custom active" aria-current="page" [routerLink]="['']">Início</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link primary-color title-custom" RouterLink="">Vinhos</a>
+          <a class="nav-link title-custom" [routerLink]="['']">Vinhos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link primary-color title-custom" RouterLink="">Queijos</a>
+          <a class="nav-link title-custom" [routerLink]="['']">Queijos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link primary-color title-custom" RouterLink="">Geléias</a>
+          <a class="nav-link title-custom" [routerLink]="['']">Geléias</a>
         </li>
       </ul>
     </div>
 
     <!-- Ícones search e bag -->
     <div class="d-flex">
-      <ul class="navbar-nav mr-auto d-flex align-items-center  gap-3">
-        <li class="nav-item">
-          <a RouterLink="">
-            <img src="../../../assets/icon/search-icon.svg" alt="Ícone de lupa">
-            <!-- Modal de pesquisa -->
-          </a>
+      <ul class="navbar-nav mr-auto d-flex align-items-center gap-3">
+        <li class="nav-item" style="cursor: pointer;">
+          <!-- <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="../../../assets/icon/search-icon.svg" alt="Ícone de lupa"> -->
+          <app-modal-search></app-modal-search>
+          <!-- </a> -->
         </li>
         <li class="nav-item">
           <a RouterLink="">
@@ -52,4 +52,3 @@
 
   </div>
 </nav>
-
