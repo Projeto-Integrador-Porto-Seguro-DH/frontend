@@ -1,3 +1,5 @@
+import { ModalSearchComponent } from './components/modal-search/modal-search.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -23,6 +25,8 @@ import { NossaHistoriaComponent } from './components/nossa-historia/nossa-histor
     UserProfileComponent,
     LoginComponent,
     NossaHistoriaComponent,
+    MenuComponent,
+    ModalSearchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
