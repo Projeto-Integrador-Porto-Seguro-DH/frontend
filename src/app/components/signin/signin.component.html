@@ -1,4 +1,4 @@
-<div class="container w-25 bgStyle">
+<div class="container w-25">
   <div class="row">
     <form>
       <div class="col-xs-6 mt-5">
@@ -78,10 +78,11 @@
       <div
         class="container mt-5 px-0 d-flex justify-content-between align-items-end mb-5"
       >
-        <button class="btn buttonStyle" type="submit">Criar conta</button>
+        <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
 
-        <a class="linkStyle" routerLink="">Já tenho uma conta</a>
+        <a class="linkStyle" [routerLink]="["/login"]">Já tenho uma conta</a>
       </div>
+
     </form>
   </div>
 </div>
