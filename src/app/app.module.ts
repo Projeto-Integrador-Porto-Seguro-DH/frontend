@@ -1,3 +1,5 @@
+import { ModalSearchComponent } from './components/modal-search/modal-search.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductGroupComponent } from './components/product-group/product-group.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LoginComponent } from './components/login/login.component';
-// import { UserLoginSigninFormComponent } from './pages/user-login-signin-form/user-login-signin-form.component';
+import { NossaHistoriaComponent } from './components/nossa-historia/nossa-historia.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     ProductGroupComponent,
     UserProfileComponent,
-    LoginComponent
-    // UserLoginSigninFormComponent,
+    LoginComponent,
+    NossaHistoriaComponent,
+    MenuComponent,
+    ModalSearchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
