@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-sm w-25 bgStyle">
     <div class="row">
-        <form action="">
+        <form>
             <div class="col-xs-6 mt-5">
                 <h2 class="h2Style">Fazer login</h2>
             </div>
@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label for="emailUsuario"></label>
                 <input
-                class="form-control" 
+                class="form-control inputStyle" 
                 type="email" 
                 name="emailUsuario" 
                 id="emailUsuario" 
@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label for="senhaUsuario"></label>
                 <input
-                class="form-control" 
+                class="form-control inputStyle" 
                 type="password" 
                 name="emailUsuario" 
                 id="senhaUsuario" 
@@ -35,12 +35,13 @@
                 />
             </div>
 
-            <div class="container d-flex justify-content-between align-items-end">
-                <div class="btn buttonStyle align-items-end" type="submit" >Fazer login</div>
+            <div class="container mt-5 px-0 d-flex justify-content-between align-items-end mb-5">
+                <button class="btn buttonStyle align-items-end" 
+                type="submit"> Fazer login  
+                </button>
 
-                <div class="linkStyle">
-                    <a [routerLink]="['/signin']">Criar uma conta</a>
-                </div>
+                <a class="linkStyle" [routerLink]="['/signin']">Criar uma conta</a>
+
             </div>
 
         </form>
