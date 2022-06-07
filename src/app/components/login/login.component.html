@@ -1,6 +1,6 @@
-<div class="container bgStyle">
+<div class="container-sm w-25 bgStyle">
     <div class="row">
-        <form action="">
+        <form>
             <div class="col-xs-6 mt-5">
                 <h2 class="h2Style">Fazer login</h2>
             </div>
@@ -36,16 +36,12 @@
             </div>
 
             <div class="container mt-5 px-0 d-flex justify-content-between align-items-end mb-5">
-                <button class="btn buttonStyle align-items-end" type="submit"> Fazer login  
+                <button class="btn buttonStyle align-items-end" 
+                type="submit"> Fazer login  
                 </button>
 
-<<<<<<< HEAD
-                <a class="linkStyle" routerLink="">Criar uma conta</a>
-=======
-                <div class="linkStyle">
-                    <a [routerLink]="['/signin']">Criar uma conta</a>
-                </div>
->>>>>>> cd44d6f64dc022b161f846d386a59c4b6b187a7d
+                <a class="linkStyle" [routerLink]="['/signin']">Criar uma conta</a>
+
             </div>
 
         </form>
