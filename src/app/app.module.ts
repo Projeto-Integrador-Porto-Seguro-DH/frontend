@@ -1,5 +1,3 @@
-import { ModalSearchComponent } from './components/modal-search/modal-search.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +11,9 @@ import { ProductGroupComponent } from './components/product-group/product-group.
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { NossaHistoriaComponent } from './components/nossa-historia/nossa-historia.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ModalSearchComponent } from './components/modal-search/modal-search.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NossaHistoriaComponent } from './components/nossa-historia/nossa-histor
     NossaHistoriaComponent,
     MenuComponent,
     ModalSearchComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

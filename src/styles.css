@@ -66,8 +66,8 @@ body {
 }
 
 .buttonStyle:focus {
-	box-shadow: 0px 0px 10px 10px rgba(204,177,161,0.82);
-  }
+  box-shadow: 0px 0px 10px 10px rgba(204, 177, 161, 0.82);
+}
 
 .inputStyle {
   border: 1.5px solid var(--button-bg-color);
@@ -77,7 +77,7 @@ body {
 }
 
 .inputStyle:focus {
-	border-color: var(--button-bg-color);
-	background-color: var(--body-bg-color);
-	box-shadow: 0px 0px 10px 3px rgba(204,177,161,0.82);
+  border-color: var(--button-bg-color);
+  background-color: var(--body-bg-color);
+  box-shadow: 0px 0px 10px 3px rgba(204, 177, 161, 0.82);
 }
