@@ -20,8 +20,4 @@ export class ProductGroupComponent implements OnInit {
     this.categoria = this.card.categoria;
     this.cdRef.detectChanges();
   }
-
-  metodoAleatorio(name: string) {
-    return name;
-  }
 }
