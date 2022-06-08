@@ -40,6 +40,10 @@ main {
   margin-top: 5.63rem;
 } */
 
+.bgColorStyle {
+	background-color: var(--body-bg-color);
+}
+
 .h2Style {
   font: 700 1.5rem var(--title-font-primary), var(--title-font-secondary);
   color: var(--text-color-dark);
