@@ -1,4 +1,3 @@
-import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLoginFormComponent } from './pages/user-login-form/user-login-form.component';
