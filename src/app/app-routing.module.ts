@@ -1,19 +1,17 @@
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { UserLoginFormComponent } from './pages/user-login-form/user-login-form.component';
 
 import { HomeComponent } from './pages/home/home.component';
-// import { UserLoginSigninFormComponent } from './pages/user-login-signin-form/user-login-signin-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signin', component: SigninComponent }];
+  { path: 'entrar', component: UserLoginFormComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
