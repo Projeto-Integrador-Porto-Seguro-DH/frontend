@@ -1,88 +1,95 @@
-<div class="container">
-  <div class="row">
-    <form>
-      <div class="col-xs-6 mt-5">
-        <h2 class="h2Style">Criar conta</h2>
-      </div>
+<div class="container-xl">
+  <div class="row px-0 d-flex justify-content-center align-items-center">
+    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
+      <form>
+        <div class="mt-5">
+          <h2 class="h2Style">Criar conta</h2>
+        </div>
 
-      <div class="form-group">
-        <label for="nomeUsuario"></label>
-        <input
-          type="text"
-          class="form-control inputStyle"
-          id="nomeUsuario"
-          name="nomeUsuario"
-          placeholder="Nome"
-          aria-placeholder="Nome"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="nomeUsuario"></label>
+          <input
+            type="text"
+            class="form-control inputStyle"
+            id="nomeUsuario"
+            name="nomeUsuario"
+            placeholder="Nome"
+            aria-placeholder="Nome"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0">
-        <label for="sobrenomeUsuario"></label>
-        <input
-          type="text"
-          class="form-control inputStyle"
-          id="sobrenomeUsuario"
-          name="sobrenomeUsuario"
-          placeholder="Sobrenome"
-          aria-placeholder="Sobrenome"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0">
+          <label for="sobrenomeUsuario"></label>
+          <input
+            type="text"
+            class="form-control inputStyle"
+            id="sobrenomeUsuario"
+            name="sobrenomeUsuario"
+            placeholder="Sobrenome"
+            aria-placeholder="Sobrenome"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0">
-        <label for="emailUsuario"></label>
-        <input
-          type="email"
-          class="form-control inputStyle"
-          id="emailUsuario"
-          name="emailUsuario"
-          placeholder="Email"
-          aria-placeholder="Email"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0">
+          <label for="emailUsuario"></label>
+          <input
+            type="email"
+            class="form-control inputStyle"
+            id="emailUsuario"
+            name="emailUsuario"
+            placeholder="Email"
+            aria-placeholder="Email"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group">
-        <label for="senhaUsuario"></label>
-        <input
-          type="password"
-          class="form-control inputStyle"
-          id="senhaUsuario"
-          name="senhaUsuario"
-          placeholder="Senha"
-          aria-placeholder="Senha"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Senha"
+            aria-placeholder="Senha"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0 mt-0">
-        <label for="senhaUsuario"></label>
-        <input
-          type="password"
-          class="form-control inputStyle"
-          id="senhaUsuario"
-          name="senhaUsuario"
-          placeholder="Confirmação da senha"
-          aria-placeholder="Confirmação da senha"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0 mt-0">
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Confirmação da senha"
+            aria-placeholder="Confirmação da senha"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div
-        class="container my-5 px-0 d-flex justify-content-between align-items-end"
-      >
-        <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
+        <div
+          class="container my-5 px-0 d-flex justify-content-between align-items-end"
+        >
+          <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
 
-        <a class="linkStyle" [routerLink]="['/entrar']">Já tenho uma conta</a>
-      </div>
+          <a class="linkStyle" [routerLink]="['/entrar']">Já tenho uma conta</a>
 
-    </form>
+          <!--
+            Rotas: routerLink são apenas para páginas.
+            Como teremos 1 página, com conteúdo/componente dinãmico, colocamos uma ancora a href="#nomeId"com o id="nomeId" criar id no h2 e chamar aqui no a class
+          -->
+        </div>
+
+      </form>
+    </div>
   </div>
 </div>
