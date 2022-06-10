@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -11,7 +10,11 @@ import { ProductGroupComponent } from './components/product-group/product-group.
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { NossaHistoriaComponent } from './components/nossa-historia/nossa-historia.component';
+import { UserLoginFormComponent } from './pages/user-login-form/user-login-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
 
@@ -28,7 +31,11 @@ import { MenuComponent } from './components/menu/menu.component';
     NossaHistoriaComponent,
     MenuComponent,
     ModalSearchComponent,
+    UserLoginFormComponent,
     HeaderComponent,
+    FooterComponent,
+    LoginFormComponent,
+    SigninFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
