@@ -1,13 +1,15 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-md fixed-top bgColorStyle" id="navbar">
+<nav class="navbar navbar-expand-md bgColorStyle" id="navbar">
   <div class="container py-3">
     <!-- Logotipo -->
-    <h1 [routerLink]="" class="navbar-brand">
-      <img
-        src="../../../assets/icon/logoDaFazenda.svg"
-        class="logo-style"
-        alt="Logo daFazenda"
-      />
+    <h1 class="navbar-brand">
+      <a [routerLink]="['/']">
+        <img
+          src="../../../assets/icon/logoDaFazenda.svg"
+          class="logo-style"
+          alt="Logo daFazenda"
+        />
+      </a>
     </h1>
     <!-- Menu hamburguer no mobile -->
     <button
@@ -40,17 +42,18 @@
       <!-- Ícones -->
       <ul class="navbar-nav gap-4">
         <li class="nav-item" style="cursor: pointer">
-
           <!-- <a data-bs-toggle="modal" data-bs-target="#exampleModal">
             <img src="../../../assets/icon/search-icon.svg" alt="Ícone de lupa"> -->
-            
+
           <app-modal-search></app-modal-search>
           <!-- </a> -->
         </li>
         <li class="nav-item">
           <a [routerLink]="['/carrinho']" style="cursor: pointer">
-            <img src="../../../assets/icon/bag-icon.svg"
-              alt="Ícone de sacola"/>
+            <img
+              src="../../../assets/icon/bag-icon.svg"
+              alt="Ícone de sacola"
+            />
           </a>
         </li>
 
@@ -63,7 +66,6 @@
           </a>
         </li>
       </ul>
-
     </div>
   </div>
 </nav>

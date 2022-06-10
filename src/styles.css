@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-ul {
-  list-style: none;
-}
-
 /*** Color Rules ***/
 :root {
   --title-font-primary: "Lato";
@@ -25,29 +21,26 @@ ul {
   --button-txt-color: #f9f9f9;
 }
 
-/*** Custom Styles ***/
+/*** HTML Elements ***/
 body {
   background-color: var(--body-bg-color);
   font-family: var(--text-font-primary);
   height: 100vh;
-  /* width: 100vw;  */
+  width: 100vw;
 }
 
 main {
   padding-top: 5.6rem;
-  
-  width: 100vw; 
-  margin: 0 auto;
-  height: auto;
-
-  /*
-  cor só para testes:
-  background-color: #ccb1a1; 
-  */
 }
 
+ul {
+  list-style: none;
+}
+
+/*** Custom Styles ***/
+
 .bgColorStyle {
-	background-color: var(--body-bg-color);
+  background-color: var(--body-bg-color);
 }
 
 .h2Style {

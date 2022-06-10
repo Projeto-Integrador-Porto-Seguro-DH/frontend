@@ -10,7 +10,6 @@ import { ProductGroupComponent } from './components/product-group/product-group.
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { NossaHistoriaComponent } from './components/nossa-historia/nossa-historia.component';
-import { UserLoginFormComponent } from './pages/user-login-form/user-login-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -31,7 +30,6 @@ import { MenuComponent } from './components/menu/menu.component';
     NossaHistoriaComponent,
     MenuComponent,
     ModalSearchComponent,
-    UserLoginFormComponent,
     HeaderComponent,
     FooterComponent,
     LoginFormComponent,
