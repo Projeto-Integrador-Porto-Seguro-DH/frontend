@@ -1,90 +1,95 @@
-<div class="container bgStyle">
-  <div class="row">
-    <form>
-        <div class="col-xs-6 mt-5">
-            <h2 class="h2Style">Criar conta</h2>
+<div class="container-xl">
+  <div class="row px-0 d-flex justify-content-center align-items-center">
+    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
+      <form>
+        <div class="mt-5">
+          <h2 class="h2Style">Criar conta</h2>
         </div>
 
         <div class="form-group">
-            <label for="nomeUsuario"></label>
-            <input
+          <label for="nomeUsuario"></label>
+          <input
             type="text"
-            class="form-control"
+            class="form-control inputStyle"
             id="nomeUsuario"
             name="nomeUsuario"
             placeholder="Nome"
             aria-placeholder="Nome"
             aria-hidden="true"
             required
-            />
+          />
         </div>
 
         <div class="form-group mb-0">
-            <label for="sobrenomeUsuario"></label>
-            <input
+          <label for="sobrenomeUsuario"></label>
+          <input
             type="text"
-            class="form-control"
-              id="sobrenomeUsuario"
-              name="sobrenomeUsuario"
-              placeholder="Sobrenome"
-              aria-placeholder="Sobrenome"
-              aria-hidden="true"
-              required
-            />
-        </div>
-
-        <div class="form-group mb-0">
-            <label for="emailUsuario"></label>
-            <input
-             type="email"
-             class="form-control"
-             id="emailUsuario"
-             name="emailUsuario"
-             placeholder="Email"
-             aria-placeholder="Email"
+            class="form-control inputStyle"
+            id="sobrenomeUsuario"
+            name="sobrenomeUsuario"
+            placeholder="Sobrenome"
+            aria-placeholder="Sobrenome"
             aria-hidden="true"
             required
-             />
+          />
+        </div>
+
+        <div class="form-group mb-0">
+          <label for="emailUsuario"></label>
+          <input
+            type="email"
+            class="form-control inputStyle"
+            id="emailUsuario"
+            name="emailUsuario"
+            placeholder="Email"
+            aria-placeholder="Email"
+            aria-hidden="true"
+            required
+          />
         </div>
 
         <div class="form-group">
-            <label for="senhaUsuario"></label>
-            <input
-              type="password"
-              class="form-control"
-              id="senhaUsuario"
-              name="senhaUsuario"
-              placeholder="Senha"
-              aria-placeholder="Senha"
-              aria-hidden="true"
-              required
-            />
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Senha"
+            aria-placeholder="Senha"
+            aria-hidden="true"
+            required
+          />
         </div>
 
         <div class="form-group mb-0 mt-0">
-            <label for="senhaUsuario"></label>
-            <input
-              type="password"
-              class="form-control"
-              id="senhaUsuario"
-              name="senhaUsuario"
-              placeholder="Confirmação da senha"
-              aria-placeholder="Confirmação da senha"
-              aria-hidden="true"
-              required
-            />
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Confirmação da senha"
+            aria-placeholder="Confirmação da senha"
+            aria-hidden="true"
+            required
+          />
         </div>
 
-        <div class="container my-0 d-flex justify-content-between align-items-bottom mb-5">
-            <div class="btn buttonStyle">
-                <button type="submit">Fazer login</button>
-            </div>
-
-            <div class="link">
-                <a href="http://" target="_blank" rel="noopener noreferrer">Criar uma conta</a>
-            </div>
+        <div class="form-check d-flex justify-content-start mt-4">
+          <input class="form-check-input me-2 checkboxStyle" type="checkbox" value="" id="subscribeCheckbox" checked />
+          <label class="form-check-label pStyleDark" for="subscribeCheckbox">
+            Gostaria de receber a newsletter daFazenda por email
+          </label>
         </div>
 
-    </form>
+        <div class="container my-5 px-0 d-flex justify-content-between align-items-end">
+          <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
+
+          <a class="linkStyle" [routerLink]="['/entrar']">Já tenho uma conta</a>
+        </div>
+
+      </form>
+    </div>
   </div>
 </div>

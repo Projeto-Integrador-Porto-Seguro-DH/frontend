@@ -1,34 +1,7 @@
 <div class="mt-5 mx-5 mw-100">
   <h2 class="h2Style">
-    Combos
+    {{ categoria }}
     <img src="../../../assets/icon/arrow-icon.svg" alt="Arrow Icon" />
   </h2>
-  <div
-    class="d-none d-md-flex flex-column flex-sm-row flex-md-row justify-content-between "
-  >
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-    <app-product-card></app-product-card>
-  </div>
-  <div id="carouselExampleControls" class="d-md-none d-flex carousel slide d-flex flex-column flex-sm-row flex-md-row justify-content-between" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <app-product-card></app-product-card>
-      </div>
-      <div class="carousel-item">
-        <app-product-card></app-product-card>
-      </div>
-      <div class="carousel-item">
-        <app-product-card></app-product-card>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  <app-product-card></app-product-card>
 </div>

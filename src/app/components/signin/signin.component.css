@@ -1,0 +1,23 @@
+a.linkStyle {
+  font-size: 0.85rem;
+  color: var(--text-color-light);  
+}
+
+a.linkStyle:hover {
+color: var(--text-color-dark); 
+}
+
+a.linkStyle:focus {
+font-weight: 500;
+}
+
+.checkboxStyle {
+  background-color:var(--button-bg-color) ;
+  color: var(--button-txt-color);
+  border: 1.5px solid var(--button-bg-color);
+}
+
+.checkboxStyle:not(:checked) {
+  background-color:var(--body-bg-color) ;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}

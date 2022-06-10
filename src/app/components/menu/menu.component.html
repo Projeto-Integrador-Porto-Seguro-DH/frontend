@@ -1,0 +1,71 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md bgColorStyle" id="navbar">
+  <div class="container py-3">
+    <!-- Logotipo -->
+    <h1 class="navbar-brand">
+      <a [routerLink]="['/']">
+        <img
+          src="../../../assets/icon/logoDaFazenda.svg"
+          class="logo-style"
+          alt="Logo daFazenda"
+        />
+      </a>
+    </h1>
+    <!-- Menu hamburguer no mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <img src="../../../assets/icon/menu-icon.svg" alt="" />
+    </button>
+    <!-- Itens do menu -->
+    <div
+      class="collapse navbar-collapse justify-content-end gap-4"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item">
+          <a class="nav-link title-custom pStyleDark link-active">Queijos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link title-custom pStyleDark link-active">Geléias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link title-custom pStyleDark link-active">Vinhos</a>
+        </li>
+      </ul>
+      <!-- Ícones -->
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item" style="cursor: pointer">
+          <!-- <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="../../../assets/icon/search-icon.svg" alt="Ícone de lupa"> -->
+
+          <app-modal-search></app-modal-search>
+          <!-- </a> -->
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/carrinho']" style="cursor: pointer">
+            <img
+              src="../../../assets/icon/bag-icon.svg"
+              alt="Ícone de sacola"
+            />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/entrar']" style="cursor: pointer">
+            <img
+              src="../../../assets/icon/profile-icon.svg"
+              alt="Ícone de pessoa"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
