@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
-  public queijos: any;
+  produtos: any[];
+
+  categoria: string;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.queijos = [
+    this.produtos = [
       {
         nome: 'Queijo 1',
         descricao: 'Queijo muito bom!',
@@ -41,5 +43,7 @@ export class ProductCardComponent implements OnInit {
         foto: '../../../assets/img/products/queijo/queijo4.jpg',
       },
     ];
+
+    this.categoria = this.produtos[0].categoria;
   }
 }
