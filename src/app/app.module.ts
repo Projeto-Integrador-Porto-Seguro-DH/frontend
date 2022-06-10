@@ -1,3 +1,4 @@
+import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +35,7 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     LoginFormComponent,
     SigninFormComponent,
+    ComponentCategoriasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
