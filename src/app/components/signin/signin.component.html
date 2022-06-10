@@ -76,17 +76,17 @@
           />
         </div>
 
-        <div
-          class="container my-5 px-0 d-flex justify-content-between align-items-end"
-        >
+        <div class="form-check d-flex justify-content-start mt-4">
+          <input class="form-check-input me-2 checkboxStyle" type="checkbox" value="" id="subscribeCheckbox" checked />
+          <label class="form-check-label pStyleDark" for="subscribeCheckbox">
+            Gostaria de receber a newsletter daFazenda por email
+          </label>
+        </div>
+
+        <div class="container my-5 px-0 d-flex justify-content-between align-items-end">
           <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
 
           <a class="linkStyle" [routerLink]="['/entrar']">Já tenho uma conta</a>
-
-          <!--
-            Rotas: routerLink são apenas para páginas.
-            Como teremos 1 página, com conteúdo/componente dinãmico, colocamos uma ancora a href="#nomeId"com o id="nomeId" criar id no h2 e chamar aqui no a class
-          -->
         </div>
 
       </form>

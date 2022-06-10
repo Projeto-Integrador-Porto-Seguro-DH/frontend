@@ -15,6 +15,8 @@ import { NossaHistoriaComponent } from './components/nossa-historia/nossa-histor
 import { UserLoginFormComponent } from './pages/user-login-form/user-login-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginFormComponent } from './pages/login-form/login-form.component';
+import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     UserLoginFormComponent,
     HeaderComponent,
     FooterComponent,
+    LoginFormComponent,
+    SigninFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

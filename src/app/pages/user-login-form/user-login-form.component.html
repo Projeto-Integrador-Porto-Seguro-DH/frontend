@@ -1,4 +1,17 @@
-<app-login></app-login>
+<main>
+    <div class="container">
 
-<app-signin></app-signin>
+        <div *ngIf="showLoginChild; else showSignin">
+            <app-login></app-login>
+        </div>
+
+        <ng-template #showSignin>
+            <app-signin></app-signin>
+        </ng-template>
+
+    </div>
+</main>
+
+
+
 
