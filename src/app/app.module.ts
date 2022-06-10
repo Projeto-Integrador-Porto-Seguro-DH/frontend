@@ -1,3 +1,4 @@
+import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +37,7 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
     LoginFormComponent,
     SigninFormComponent,
     UserPersonalInfoComponent,
+    ComponentCategoriasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
