@@ -1,49 +1,51 @@
-<div class="container-sm w-25 bgStyle">
-    <div class="row">
-        <form>
-            <div class="col-xs-6 mt-5">
-                <h2 class="h2Style">Fazer login</h2>
-            </div>
+<div class="container-xl">
+    <div class="row px-0 d-flex justify-content-center align-items-center">
+        <div class=" col-xl-4 col-lg-5 col-md-6 col-sm-10 col-xs-12">
+            <form>
+                <div class="mt-5">
+                    <h2 class="h2Style">Fazer login</h2>
+                </div>
 
-            <div class="form-group">
-                <label for="emailUsuario"></label>
-                <input
-                class="form-control inputStyle" 
-                type="email" 
-                name="emailUsuario" 
-                id="emailUsuario" 
-                name="emailUsuario"
-                placeholder="Email"
-                aria-placeholder="Email"
-                aria-hidden="true"
-                required
-                />
-            </div>
+                <div class="form-group">
+                    <label for="emailUsuario"></label>
+                    <input
+                    class="form-control inputStyle" 
+                    type="email" 
+                    name="emailUsuario" 
+                    id="emailUsuario" 
+                    name="emailUsuario"
+                    placeholder="Email"
+                    aria-placeholder="Email"
+                    aria-hidden="true"
+                    required
+                    />
+                </div>
 
-            <div class="form-group">
-                <label for="senhaUsuario"></label>
-                <input
-                class="form-control inputStyle" 
-                type="password" 
-                name="emailUsuario" 
-                id="senhaUsuario" 
-                name="senhaUsuario"
-                placeholder="Senha"
-                aria-placeholder="Senha"
-                aria-hidden="true"
-                required
-                />
-            </div>
+                <div class="form-group">
+                    <label for="senhaUsuario"></label>
+                    <input
+                    class="form-control inputStyle" 
+                    type="password" 
+                    name="emailUsuario" 
+                    id="senhaUsuario" 
+                    name="senhaUsuario"
+                    placeholder="Senha"
+                    aria-placeholder="Senha"
+                    aria-hidden="true"
+                    required
+                    />
+                </div>
 
-            <div class="container mt-5 px-0 d-flex justify-content-between align-items-end mb-5">
-                <button class="btn buttonStyle align-items-end" 
-                type="submit"> Fazer login  
-                </button>
+                <div class="container my-5 px-0 d-flex justify-content-between align-items-end">
+                    <button class="btn buttonStyle align-items-end" 
+                    type="submit"> Fazer login  
+                    </button>
 
-                <a class="linkStyle" [routerLink]="['/signin']">Criar uma conta</a>
+                    <a class="linkStyle" [routerLink]="['/cadastrar']">Criar uma conta</a>
 
-            </div>
+                </div>
 
-        </form>
+            </form>
+        </div>
     </div>
 </div>

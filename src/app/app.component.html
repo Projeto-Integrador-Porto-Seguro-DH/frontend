@@ -1,9 +1,13 @@
 <!-- <app-header></app-header> -->
 
-<main class="mt-5 container-lg">
-  <!-- O ROUTER QUE IRÁ DEFINIR QUAL PÁGINA SERÁ EXIBIDA DEPENDENDO DO LINK (ENDPOINT)
-    É DEFINIDO NO app-routing.modules.ts -->
-  <router-outlet></router-outlet>
+<main>
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+            <!-- 
+                O ROUTER QUE IRÁ DEFINIR QUAL PÁGINA SERÁ EXIBIDA DEPENDENDO DO LINK (ENDPOINT)
+                É DEFINIDO NO app-routing.modules.ts 
+            -->
+    </div>
 </main>
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

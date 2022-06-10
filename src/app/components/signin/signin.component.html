@@ -1,87 +1,95 @@
-<div class="container w-25 bgStyle">
-  <div class="row">
-    <form>
-      <div class="col-xs-6 mt-5">
-        <h2 class="h2Style">Criar conta</h2>
-      </div>
+<div class="container-xl">
+  <div class="row px-0 d-flex justify-content-center align-items-center">
+    <div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
+      <form>
+        <div class="mt-5">
+          <h2 class="h2Style">Criar conta</h2>
+        </div>
 
-      <div class="form-group">
-        <label for="nomeUsuario"></label>
-        <input
-          type="text"
-          class="form-control inputStyle"
-          id="nomeUsuario"
-          name="nomeUsuario"
-          placeholder="Nome"
-          aria-placeholder="Nome"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="nomeUsuario"></label>
+          <input
+            type="text"
+            class="form-control inputStyle"
+            id="nomeUsuario"
+            name="nomeUsuario"
+            placeholder="Nome"
+            aria-placeholder="Nome"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0">
-        <label for="sobrenomeUsuario"></label>
-        <input
-          type="text"
-          class="form-control inputStyle"
-          id="sobrenomeUsuario"
-          name="sobrenomeUsuario"
-          placeholder="Sobrenome"
-          aria-placeholder="Sobrenome"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0">
+          <label for="sobrenomeUsuario"></label>
+          <input
+            type="text"
+            class="form-control inputStyle"
+            id="sobrenomeUsuario"
+            name="sobrenomeUsuario"
+            placeholder="Sobrenome"
+            aria-placeholder="Sobrenome"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0">
-        <label for="emailUsuario"></label>
-        <input
-          type="email"
-          class="form-control inputStyle"
-          id="emailUsuario"
-          name="emailUsuario"
-          placeholder="Email"
-          aria-placeholder="Email"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0">
+          <label for="emailUsuario"></label>
+          <input
+            type="email"
+            class="form-control inputStyle"
+            id="emailUsuario"
+            name="emailUsuario"
+            placeholder="Email"
+            aria-placeholder="Email"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group">
-        <label for="senhaUsuario"></label>
-        <input
-          type="password"
-          class="form-control inputStyle"
-          id="senhaUsuario"
-          name="senhaUsuario"
-          placeholder="Senha"
-          aria-placeholder="Senha"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group">
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Senha"
+            aria-placeholder="Senha"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div class="form-group mb-0 mt-0">
-        <label for="senhaUsuario"></label>
-        <input
-          type="password"
-          class="form-control inputStyle"
-          id="senhaUsuario"
-          name="senhaUsuario"
-          placeholder="Confirmação da senha"
-          aria-placeholder="Confirmação da senha"
-          aria-hidden="true"
-          required
-        />
-      </div>
+        <div class="form-group mb-0 mt-0">
+          <label for="senhaUsuario"></label>
+          <input
+            type="password"
+            class="form-control inputStyle"
+            id="senhaUsuario"
+            name="senhaUsuario"
+            placeholder="Confirmação da senha"
+            aria-placeholder="Confirmação da senha"
+            aria-hidden="true"
+            required
+          />
+        </div>
 
-      <div
-        class="container mt-5 px-0 d-flex justify-content-between align-items-end mb-5"
-      >
-        <button class="btn buttonStyle" type="submit">Criar conta</button>
+        <div class="form-check d-flex justify-content-start mt-4">
+          <input class="form-check-input me-2 checkboxStyle" type="checkbox" value="" id="subscribeCheckbox" checked />
+          <label class="form-check-label pStyleDark" for="subscribeCheckbox">
+            Gostaria de receber a newsletter daFazenda por email
+          </label>
+        </div>
 
-        <a class="linkStyle" routerLink="">Já tenho uma conta</a>
-      </div>
-    </form>
+        <div class="container my-5 px-0 d-flex justify-content-between align-items-end">
+          <button class="btn buttonStyle align-items-end" type="submit">Criar conta</button>
+
+          <a class="linkStyle" [routerLink]="['/entrar']">Já tenho uma conta</a>
+        </div>
+
+      </form>
+    </div>
   </div>
 </div>
