@@ -1,0 +1,42 @@
+input[type="number"] {
+  -webkit-appearance: textfield !important;
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.quantity-wrapper {
+  border: 1.5px solid var(--button-bg-color);
+  background-color: var(--body-bg-color);
+  min-width: 130px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.plusminus {
+  height: 100%;
+  width: 30%;
+  background: white;
+  border: none;
+  color: var(--button-bg-color);
+  background-color: var(--body-bg-color);
+  font-size: 1.4em;
+  padding: auto 2em;
+}
+
+.numeroInputStyle {
+  text-align: center;
+  height: 100%;
+  width: 2em;
+  border: none;
+  font-size: 1.2em;
+  background-color: var(--body-bg-color);
+  color: var(--text-color-dark);
+}
