@@ -58,12 +58,22 @@
         </li>
 
         <li class="nav-item">
-          <a [routerLink]="['/entrar']" style="cursor: pointer">
-            <img
-              src="../../../assets/icon/profile-icon.svg"
-              alt="Ícone de pessoa"
-            />
-          </a>
+          <span *ngIf="!isAuthenticated(); else showPerfil">
+            <a [routerLink]="['/entrar']" style="cursor: pointer">
+              <img
+                src="../../../assets/icon/profile-icon.svg"
+                alt="Ícone de pessoa"
+              />
+            </a>
+          </span>
+          <ng-template #showPerfil>
+            <a [routerLink]="['/perfil']" style="cursor: pointer">
+              <img
+                src="../../../assets/icon/profile-icon.svg"
+                alt="Ícone de pessoa"
+              />
+            </a>
+          </ng-template>
         </li>
       </ul>
     </div>
