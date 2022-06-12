@@ -18,6 +18,8 @@ import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CreatComponent } from './components/creat/creat.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
     SigninFormComponent,
     UserPersonalInfoComponent,
     ComponentCategoriasComponent,
+    ProfileComponent,
+    CreatComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
