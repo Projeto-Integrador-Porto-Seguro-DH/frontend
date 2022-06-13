@@ -44,29 +44,34 @@ ul {
 }
 
 .h2Style {
-  font: 700 1.5em var(--title-font-primary), var(--title-font-secondary);
+  font: 700 24px var(--title-font-primary), var(--title-font-secondary);
   color: var(--text-color-dark);
 }
 
 .h3Style {
-  font: 500 1em;
+  font: 500 16px;
+  color: var(--text-color-dark);
+}
+
+.h4Style {
+  font: 500 16px;
   color: var(--text-color-dark);
 }
 
 .pStyleLight {
-  font: 400 1em;
+  font: 400 16px;
   color: var(--text-color-light);
 }
 
 .pStyleDark {
-  font: 400 1em;
+  font: 400 16px;
   color: var(--text-color-dark);
 }
 
 .buttonStyle {
   background-color: var(--button-bg-color);
   color: var(--button-txt-color);
-  font-weight: 400;
+  font: 400 16px;
   padding: 1rem 2rem;
   min-width: 140px;
 }

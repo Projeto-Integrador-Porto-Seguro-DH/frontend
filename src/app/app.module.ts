@@ -16,6 +16,8 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { QuantityInputComponent } from './components/quantity-input/quantity-input.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     LoginFormComponent,
     SigninFormComponent,
+    CartItemComponent,
+    QuantityInputComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
