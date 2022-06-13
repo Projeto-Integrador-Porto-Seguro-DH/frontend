@@ -18,6 +18,7 @@ import { ModalSearchComponent } from './components/modal-search/modal-search.com
 import { MenuComponent } from './components/menu/menu.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { QuantityInputComponent } from './components/quantity-input/quantity-input.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { QuantityInputComponent } from './components/quantity-input/quantity-inp
     SigninFormComponent,
     CartItemComponent,
     QuantityInputComponent,
+    ShoppingCartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
