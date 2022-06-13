@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreatComponent } from './components/creat/creat.component';
+import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 
 @NgModule({
   declarations: [
@@ -42,8 +44,9 @@ import { CreatComponent } from './components/creat/creat.component';
     ComponentCategoriasComponent,
     ProfileComponent,
     CreatComponent,
+    PhonePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

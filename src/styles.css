@@ -48,22 +48,23 @@ footer {
 }
 
 .h2Style {
-  font: 700 1.5em var(--title-font-primary), var(--title-font-secondary);
+  font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-weight: 700;
   color: var(--text-color-dark);
 }
 
 .h3Style {
-  font: 500 1em;
+  font-weight: 500;
   color: var(--text-color-dark);
 }
 
 .pStyleLight {
-  font: 400 1em;
+  font-weight: 400;
   color: var(--text-color-light);
 }
 
 .pStyleDark {
-  font: 400 1em;
+  font-weight: 400;
   color: var(--text-color-dark);
 }
 
@@ -83,7 +84,6 @@ footer {
 .inputStyle {
   border: 1.5px solid var(--button-bg-color);
   background-color: var(--body-bg-color);
-  padding-left: 2rem;
   padding: 1rem 2rem;
 }
 
