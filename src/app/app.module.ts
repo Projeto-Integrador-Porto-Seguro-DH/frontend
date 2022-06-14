@@ -1,3 +1,4 @@
+import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { QuantityInputComponent } from './components/quantity-input/quantity-input.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CreatComponent } from './components/creat/creat.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
     CartItemComponent,
     QuantityInputComponent,
     ShoppingCartComponent,
+    ComponentCategoriasComponent,
+    ProfileComponent,
+    CreatComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
