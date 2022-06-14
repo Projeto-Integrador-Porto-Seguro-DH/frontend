@@ -29,12 +29,16 @@ body {
   width: 100vw;
 }
 
-main {
-  padding-top: 5.6rem;
-}
+/* main {
+  padding-top: 5.6em;
+} */
 
 ul {
   list-style: none;
+}
+
+footer {
+  margin-top: 5.6rem;
 }
 
 /*** Custom Styles ***/
@@ -44,34 +48,30 @@ ul {
 }
 
 .h2Style {
-  font: 700 24px var(--title-font-primary), var(--title-font-secondary);
+  font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-weight: 700;
   color: var(--text-color-dark);
 }
 
 .h3Style {
-  font: 500 16px;
-  color: var(--text-color-dark);
-}
-
-.h4Style {
-  font: 500 16px;
+  font-weight: 500;
   color: var(--text-color-dark);
 }
 
 .pStyleLight {
-  font: 400 16px;
+  font-weight: 400;
   color: var(--text-color-light);
 }
 
 .pStyleDark {
-  font: 400 16px;
+  font-weight: 400;
   color: var(--text-color-dark);
 }
 
 .buttonStyle {
   background-color: var(--button-bg-color);
   color: var(--button-txt-color);
-  font: 400 16px;
+  font-weight: 400;
   padding: 1rem 2rem;
   min-width: 140px;
 }
@@ -84,7 +84,6 @@ ul {
 .inputStyle {
   border: 1.5px solid var(--button-bg-color);
   background-color: var(--body-bg-color);
-  padding-left: 2rem;
   padding: 1rem 2rem;
 }
 

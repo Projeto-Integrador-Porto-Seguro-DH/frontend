@@ -12,9 +12,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .quantity-wrapper {
   border: 1.5px solid var(--button-bg-color);
   background-color: var(--body-bg-color);
-  min-width: 120px;
-  max-width: 150px;
-  height: 50px;
+  min-width:100px;
+  max-width: 140px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border: none;
   color: var(--button-bg-color);
   background-color: var(--body-bg-color);
-  font-size: 1.4em;
+  font-size: 24px;
   padding: auto 2em;
 }
 
@@ -37,7 +37,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 100%;
   width: 2em;
   border: none;
-  font-size: 1.2em;
+  font-size: 16px;
   background-color: var(--body-bg-color);
   color: var(--text-color-dark);
 }
