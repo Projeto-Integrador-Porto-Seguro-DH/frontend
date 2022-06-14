@@ -22,6 +22,7 @@ import { QuantityInputComponent } from './components/quantity-input/quantity-inp
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreatComponent } from './components/creat/creat.component';
+import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CreatComponent } from './components/creat/creat.component';
     ComponentCategoriasComponent,
     ProfileComponent,
     CreatComponent,
+    ShoppingCartSummaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
