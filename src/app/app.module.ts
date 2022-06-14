@@ -19,7 +19,6 @@ import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { CreatComponent } from './components/creat/creat.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 
@@ -42,7 +41,6 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
     SigninFormComponent,
     UserPersonalInfoComponent,
     ComponentCategoriasComponent,
-    ProfileComponent,
     CreatComponent,
     PhonePipe,
   ],

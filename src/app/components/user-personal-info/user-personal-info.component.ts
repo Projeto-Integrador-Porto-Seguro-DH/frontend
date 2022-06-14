@@ -1,4 +1,5 @@
-import { Usuario } from './../../model/Usuario';
+import { EstadosEnum } from '../../enums/EstadosEnum';
+import { Usuario } from '../../model/Usuario';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -8,6 +9,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class UserPersonalInfoComponent implements OnInit {
   public usuario: Usuario;
+  public estados = EstadosEnum;
 
   @ViewChild('passwordForm') passForm: any;
 

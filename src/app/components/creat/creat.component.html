@@ -33,9 +33,11 @@
         <div class="form-group">
           <label for="precoUnitarioProduto"></label>
           <input
+            [ngModel]="preco | currency: 'BRL'"
+            (ngModelChange)="preco = $event"
             class="form-control"
             min="0"
-            type="number"
+            type="text"
             name="preco"
             id="precoUnitarioProduto"
             placeholder="Preço unitário"
