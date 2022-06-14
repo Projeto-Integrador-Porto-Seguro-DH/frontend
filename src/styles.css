@@ -48,7 +48,7 @@ footer {
 }
 
 .h2Style {
-  font-family: (--title-font-primary), var(--title-font-secondary);
+  font-family: var(--title-font-primary), var(--title-font-secondary);
   font-weight: 700;
   color: var(--text-color-dark);
 }
