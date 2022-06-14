@@ -51,4 +51,10 @@ export class UserPersonalInfoComponent implements OnInit {
       'Aqui será implementado o método PUT para atualizar o cadastro do usuário'
     );
   }
+
+  deleteAccount(): void {
+    console.log(
+      'Aqui será implementado o método DELETE para deletar o cadastro do usuário'
+    );
+  }
 }

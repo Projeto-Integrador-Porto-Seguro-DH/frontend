@@ -10,9 +10,21 @@
   width: 10rem;
 }
 
+.inputStyle.smallInput-12 {
+  width: 12rem;
+}
+
 .inputStyle.numInput {
   width: 6rem;
   padding: 1rem 1rem;
+}
+
+.buttonStyle {
+  min-width: 180px;
+}
+
+.buttonStyle.deleteButton {
+  background-color: #973131;
 }
 
 section {
