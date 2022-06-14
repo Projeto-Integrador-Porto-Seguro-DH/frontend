@@ -23,6 +23,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreatComponent } from './components/creat/creat.component';
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary
     ProfileComponent,
     CreatComponent,
     ShoppingCartSummaryComponent,
+    ShoppingCartDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
