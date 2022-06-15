@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent},
-  { path: 'carrinho', component: ShoppingCartComponent}
+  { path: 'carrinho', component: ShoppingCartComponent }
 ];
 
 @NgModule({

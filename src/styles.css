@@ -49,21 +49,25 @@ footer {
 
 .h2Style {
   font-family: var(--title-font-primary), var(--title-font-secondary);
+  font-size: 1.5em;
   font-weight: 700;
   color: var(--text-color-dark);
 }
 
 .h3Style {
+  font-size: 1em;
   font-weight: 500;
   color: var(--text-color-dark);
 }
 
 .pStyleLight {
+  font-size: 1em;
   font-weight: 400;
   color: var(--text-color-light);
 }
 
 .pStyleDark {
+  font-size: 1em;
   font-weight: 400;
   color: var(--text-color-dark);
 }
@@ -71,6 +75,7 @@ footer {
 .buttonStyle {
   background-color: var(--button-bg-color);
   color: var(--button-txt-color);
+  font-size: 1em;
   font-weight: 400;
   padding: 1rem 2rem;
   min-width: 140px;
