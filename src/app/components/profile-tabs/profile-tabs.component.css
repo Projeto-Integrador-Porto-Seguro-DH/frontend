@@ -1,0 +1,15 @@
+@media (max-width: 575.98px) {
+  .nav.justifyContentMobile {
+    justify-content: space-between;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0rem;
+  }
+}
+
+a {
+  width: fit-content;
+  height: fit-content;
+  text-decoration: none;
+}
