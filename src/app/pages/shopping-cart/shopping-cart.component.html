@@ -1,17 +1,35 @@
 <div class="container h-100">
-    
-    <div class="row d-flex justify-content-center align-items-center h-100">
-       
-            <!-- Componente Detalhes da Compra -->
-            <div class="col-xs-12 col-md-8 col-lg-8">
-                <app-shopping-cart-details></app-shopping-cart-details>
+
+    <div class="col-xs-12 col-md-8 col-lg-8 col-xl-8">
+        <div class="row">
+            
+            <div class="col-9">
+                <h2 class="h2Style">
+                    Minha Sacola
+                </h2>
+            </div>
+        
+            <div class="col-3 text-end">
+                <a class="linkStyle" [routerLink]="['produtos']">
+                    Voltar à loja
+                </a>
             </div>
 
-            <!-- Componente Resumo da Compra -->
-            <div class="col-xs-12 col-md-4 col-lg-4 ">
-                <app-shopping-cart-summary></app-shopping-cart-summary>
-            </div>
-
-
+        </div>
     </div>
+
+    <div class="row d-flex justify-content-center align-items-start">
+        <!-- Componente Detalhes da Compra -->
+        <div class="col-xs-12 col-md-8 col-lg-8">
+            <app-shopping-cart-details></app-shopping-cart-details>
+        </div>
+   
+        <!-- Componente Resumo da Compra -->
+        <div class="col-xs-12 col-md-4 col-lg-4 ">
+            <app-shopping-cart-summary></app-shopping-cart-summary>
+        </div>
+
+    </div> 
+          
+
 </div>
