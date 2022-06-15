@@ -1,0 +1,26 @@
+.scrollLink {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+}
+
+div.fixedDiv {
+  position: relative;
+  bottom: 0;
+}
+
+.scrollButton {
+  position: sticky;
+  bottom: 30px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.showScrollButton {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+/* .fixScrollButton {
+  bottom: 247px;
+} */

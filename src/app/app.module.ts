@@ -21,6 +21,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { CreatComponent } from './components/creat/creat.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
+import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
     ComponentCategoriasComponent,
     CreatComponent,
     PhonePipe,
+    ProfileTabsComponent,
+    BackToTopComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

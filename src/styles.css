@@ -22,6 +22,10 @@
 }
 
 /*** HTML Elements ***/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--body-bg-color);
   font-family: var(--text-font-primary);
@@ -39,6 +43,8 @@ ul {
 
 footer {
   margin-top: 5.6rem;
+  position: sticky;
+  top: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

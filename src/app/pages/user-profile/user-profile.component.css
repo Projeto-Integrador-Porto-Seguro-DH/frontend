@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+  .stickyTop {
+    padding-top: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
