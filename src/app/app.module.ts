@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,8 +18,11 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { CreatComponent } from './components/creat/creat.component';
+import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
+import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +41,14 @@ import { CreatComponent } from './components/creat/creat.component';
     FooterComponent,
     LoginFormComponent,
     SigninFormComponent,
+    UserPersonalInfoComponent,
     ComponentCategoriasComponent,
-    ProfileComponent,
     CreatComponent,
+    PhonePipe,
+    ProfileTabsComponent,
+    BackToTopComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

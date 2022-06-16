@@ -1,0 +1,50 @@
+.inputStyle.smallInput-auto {
+  width: auto;
+}
+
+.inputStyle.smallInput-6 {
+  width: 6rem;
+}
+
+.inputStyle.smallInput-10 {
+  width: 10rem;
+}
+
+.inputStyle.smallInput-12 {
+  width: 12rem;
+}
+
+.inputStyle.numInput {
+  width: 6rem;
+  padding: 1rem 1rem;
+}
+
+.buttonStyle {
+  min-width: 180px;
+}
+
+.buttonStyle.deleteButton {
+  background-color: #973131;
+}
+
+section {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .noLeftPad {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  section {
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+}
