@@ -2,7 +2,7 @@
   <ul class="nav justifyContentMobile flex-md-column">
     <li class="nav-item px-1 py-3 px-md-2 py-md-3">
       <a
-        class="nav-link pStyleDark p-0"
+        class="nav-link linkContent pStyleDark p-0"
         aria-current="page"
         href="perfil#dadosPessoais"
       >
@@ -11,7 +11,7 @@
     </li>
     <li class="nav-item px-1 py-3 px-md-2 py-md-3">
       <a
-        class="nav-link pStyleDark p-0"
+        class="nav-link linkContent pStyleDark p-0"
         aria-current="senha"
         href="perfil#senha"
       >
@@ -20,7 +20,7 @@
     </li>
     <li class="nav-item px-1 py-3 px-md-2 py-md-3">
       <a
-        class="nav-link pStyleDark p-0"
+        class="nav-link linkContent pStyleDark p-0"
         aria-current="endereco"
         href="perfil#endereco"
       >
@@ -29,11 +29,23 @@
     </li>
     <li class="nav-item px-1 py-3 px-md-2 py-md-3">
       <a
-        class="nav-link pStyleDark p-0"
+        class="nav-link linkContent pStyleDark p-0"
         aria-current="apagar"
         href="perfil#apagar"
       >
         <span class="link-active py-1 px-2">Apagar Conta</span>
+      </a>
+    </li>
+    <li
+      class="nav-item px-1 py-3 px-md-2 py-md-3 borderStyle"
+      *ngIf="isAdmin()"
+    >
+      <a
+        class="nav-link linkContent pStyleDark p-0"
+        aria-current="painelAdmin"
+        href=""
+      >
+        <span class="link-active py-1 px-2">Painel do Administrador</span>
       </a>
     </li>
   </ul>
