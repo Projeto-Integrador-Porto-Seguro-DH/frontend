@@ -8,8 +8,13 @@
   }
 }
 
-a {
+a.linkContent {
   width: fit-content;
   height: fit-content;
   text-decoration: none;
+}
+
+.borderStyle {
+  border: 1px solid var(--button-bg-color);
+  border-radius: 0.25rem;
 }
