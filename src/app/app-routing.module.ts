@@ -9,6 +9,9 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 
+import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
+import { OrdersComponent } from './components/orders/orders.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
@@ -27,7 +30,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      anchorScrolling: 'enabled',
+      useHash: true,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
