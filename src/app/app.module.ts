@@ -28,6 +28,7 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top.compone
 import { OrdersComponent } from './components/orders/orders.component';
 
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
+import { OrderCardComponent } from './components/order-card/order-card.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
     ProfileTabsComponent,
     BackToTopComponent,
     OrdersComponent,
+    OrderCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
