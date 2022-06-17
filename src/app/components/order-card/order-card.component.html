@@ -1,0 +1,56 @@
+<div class="card borderStyle mb-3">
+  <a
+    data-bs-toggle="collapse"
+    href="#collapseExample"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    <div class="card-header">
+      <h5 class="card-title h3Style my-2">Pedido nº #{{ pedido.idPedido }}</h5>
+      <h6 class="card-subtitle pStyleLight">
+        Clique aqui para ver mais detalhes
+      </h6>
+    </div>
+  </a>
+
+  <div class="row g-0">
+    <div class="col-md-12">
+      <div class="card-body">
+        <div class="row d-flex w-100">
+          <div class="col-12 col-sm-5">
+            <div class="row">
+              <h6 class="h3Style">Status do Pedido:</h6>
+              <p class="pStyleDark">
+                {{ pedido.statusPedido }}
+              </p>
+            </div>
+            <div class="row">
+              <h6 class="h3Style">Data do Pedido:</h6>
+              <p class="pStyleDark">
+                {{ pedido.dataPedido | date: "dd/mm/yyyy - HH:mm:ss":"UTC" }}
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-7">
+            <h6 class="h3Style">Resumo da Compra</h6>
+            <p class="pStyleLight text-wrap">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+              dolor officia totam repellat. Explicabo corporis magni illo
+              quaerat facilis dolor numquam pariatur odit soluta. Vitae porro
+              excepturi ipsum sunt doloremque.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is
+        hidden by default but revealed when the user activates the relevant
+        trigger.
+      </div>
+    </div>
+  </div>
+</div>
