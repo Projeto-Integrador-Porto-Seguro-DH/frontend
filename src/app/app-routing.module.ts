@@ -1,3 +1,5 @@
+import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,11 +12,19 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
-  { path: 'perfil', component: UserProfileComponent },
+  {
+    path: 'perfil',
+    component: UserProfileComponent,
+    children: [
+      { path: '', redirectTo: 'dados', pathMatch: 'full' },
+      { path: 'dados', component: UserPersonalInfoComponent },
+      { path: 'pedidos', component: OrdersComponent },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

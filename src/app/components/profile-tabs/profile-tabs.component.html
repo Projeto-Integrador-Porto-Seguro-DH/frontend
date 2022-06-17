@@ -4,7 +4,8 @@
       <a
         class="nav-link linkContent pStyleDark p-0"
         aria-current="page"
-        href="perfil#dadosPessoais"
+        [routerLink]="['./dados']"
+        fragment="dadosPessoais"
       >
         <span class="link-active py-1 px-2"> Dados Pessoais </span>
       </a>
@@ -13,7 +14,8 @@
       <a
         class="nav-link linkContent pStyleDark p-0"
         aria-current="senha"
-        href="perfil#senha"
+        [routerLink]="['./dados']"
+        fragment="senha"
       >
         <span class="link-active py-1 px-2">Alterar Senha</span>
       </a>
@@ -22,7 +24,8 @@
       <a
         class="nav-link linkContent pStyleDark p-0"
         aria-current="endereco"
-        href="perfil#endereco"
+        [routerLink]="['./dados']"
+        fragment="endereco"
       >
         <span class="link-active py-1 px-2">Endereço</span>
       </a>
@@ -31,9 +34,19 @@
       <a
         class="nav-link linkContent pStyleDark p-0"
         aria-current="apagar"
-        href="perfil#apagar"
+        [routerLink]="['./dados']"
+        fragment="apagar"
       >
         <span class="link-active py-1 px-2">Apagar Conta</span>
+      </a>
+    </li>
+    <li class="nav-item px-1 py-3 px-md-2 py-md-3">
+      <a
+        class="nav-link linkContent pStyleDark p-0"
+        aria-current="pedidos"
+        [routerLink]="['./pedidos']"
+      >
+        <span class="link-active py-1 px-2">Meus Pedidos</span>
       </a>
     </li>
     <li
