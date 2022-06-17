@@ -11,7 +11,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {}
 
   isAuthenticated(): boolean {
-    return true;
+    return false;
   }
 
   isAdmin(): boolean {

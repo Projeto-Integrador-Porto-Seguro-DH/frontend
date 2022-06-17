@@ -28,6 +28,7 @@ import { CreatComponent } from './components/creat/creat.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top.compone
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,
+    OrdersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
