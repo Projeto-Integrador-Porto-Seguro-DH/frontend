@@ -13,4 +13,11 @@ export class MenuComponent implements OnInit {
   isAuthenticated(): boolean {
     return true;
   }
+
+  isAdmin(): boolean {
+    if (this.isAuthenticated()) {
+      return true;
+    }
+    return false;
+  }
 }
