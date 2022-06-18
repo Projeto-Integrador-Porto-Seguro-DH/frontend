@@ -1,0 +1,108 @@
+section {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 575.98px) {
+  section {
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+.formWidth {
+  width: 80%;
+}
+
+@media (max-width: 575.98px) {
+  .formWidth {
+    width: 95%;
+  }
+}
+
+.inputStyle.smallInput-auto {
+  width: auto;
+}
+
+.inputStyle.smallInput-6 {
+  width: 6rem;
+}
+
+.inputStyle.smallInput-10 {
+  width: 10rem;
+}
+
+.inputStyle.smallInput-12 {
+  width: 12rem;
+}
+
+.inputStyle.numInput {
+  width: 6rem;
+  padding: 1rem 1rem;
+}
+
+.buttonStyle {
+  min-width: 180px;
+}
+
+.buttonStyle.deleteButton {
+  background-color: #973131;
+}
+
+@media (min-width: 576px) {
+  .noLeftPad {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .checkText {
+    white-space: nowrap;
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--body-bg-color);
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--body-bg-color);
+  margin: 0;
+  font: inherit;
+  color: var(--button-bg-color);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--button-bg-color);
+  border-radius: 0.25em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--button-bg-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(1px, 0.1em) solid currentColor;
+  outline-offset: max(1px, 0.1em);
+}

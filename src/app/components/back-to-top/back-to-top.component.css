@@ -1,0 +1,38 @@
+.scrollLink {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+}
+
+.scrollButton {
+  position: sticky;
+  bottom: 30px;
+  z-index: 1020;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  max-width: 6vh;
+  max-height: auto;
+}
+
+.showScrollButton {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrowIcon {
+  max-width: 6vh;
+  color: var(--text-color-dark);
+}
+
+@media (max-width: 565.98px) {
+  .scrollButton {
+    background-color: rgb(249, 249, 249, 1);
+
+    margin-top: 2rem;
+  }
+}
+
+/* .fixScrollButton {
+  bottom: 247px;
+} */

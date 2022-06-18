@@ -58,12 +58,65 @@
         </li>
 
         <li class="nav-item">
-          <a [routerLink]="['/entrar']" style="cursor: pointer">
-            <img
-              src="../../../assets/icon/profile-icon.svg"
-              alt="Ícone de pessoa"
-            />
-          </a>
+          <div class="dropdown">
+            <a
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="../../../assets/icon/profile-icon.svg"
+                alt="Ícone de pessoa"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end py-1"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <div *ngIf="!isAuthenticated()">
+                <li>
+                  <a class="dropdown-item pStyleDark" routerLink="/entrar"
+                    >Entrar / Cadastrar</a
+                  >
+                </li>
+              </div>
+
+              <li>
+                <a class="dropdown-item pStyleDark" routerLink="/perfil"
+                  >Meu Perfil</a
+                >
+              </li>
+
+              <li>
+                <a class="dropdown-item pStyleDark" routerLink="/pedidos"
+                  >Meus Pedidos</a
+                >
+              </li>
+
+              <div *ngIf="isAdmin()">
+                <li><hr class="dropdown-divider my-1" /></li>
+                <li>
+                  <h6 class="dropdown-header pStyleLight">Painel do Admin</h6>
+                </li>
+                <li>
+                  <a class="dropdown-item pStyleDark" href="#"
+                    >Gerenciar Produtos</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item pStyleDark" href="#"
+                    >Gerenciar Categorias</a
+                  >
+                </li>
+              </div>
+              <div *ngIf="isAuthenticated()">
+                <li><hr class="dropdown-divider my-1" /></li>
+                <li><a class="dropdown-item pStyleDark" href="#">Sair</a></li>
+              </div>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>

@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,10 +21,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { QuantityInputComponent } from './components/quantity-input/quantity-input.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { CreatComponent } from './components/creat/creat.component';
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
+import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
+import { CreatComponent } from './components/creat/creat.component';
+import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
+import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +49,16 @@ import { ShoppingCartDetailsComponent } from './components/shopping-cart-details
     CartItemComponent,
     QuantityInputComponent,
     ShoppingCartComponent,
+    UserPersonalInfoComponent,
     ComponentCategoriasComponent,
-    ProfileComponent,
     CreatComponent,
     ShoppingCartSummaryComponent,
     ShoppingCartDetailsComponent,
+    PhonePipe,
+    ProfileTabsComponent,
+    BackToTopComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
