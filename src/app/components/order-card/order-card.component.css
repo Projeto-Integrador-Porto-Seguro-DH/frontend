@@ -6,6 +6,25 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.07);
 }
 
+hr {
+  opacity: 0.2;
+}
+
+p.endereco {
+  padding: 0 calc(var(--bs-gutter-x) * 0.5);
+  margin: 0;
+}
+
 .card.borderStyle {
-  border-color: rgba(155, 108, 81, 0.8);
+  border-color: rgba(155, 108, 81, 0.6);
+}
+
+@media (max-width: 575.98px) {
+  img.imgDisplay {
+    display: none;
+  }
+
+  .card.widthStyle {
+    width: 100%;
+  }
 }
