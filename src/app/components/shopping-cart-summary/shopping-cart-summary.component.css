@@ -1,3 +1,21 @@
 .bgColor {
     background-color: var(--footer-bg-color);
 }
+
+.input-groupStyle {
+    height: 42px;
+}
+
+.inputStyle {
+    padding: 1rem;
+  }
+
+.inputStyle:focus {  
+    box-shadow: none;
+  }
+
+.input-groupStyle button.buttonStyle {
+    font-size: 0.85rem;
+    min-width: 110px;
+    padding:0;
+}
