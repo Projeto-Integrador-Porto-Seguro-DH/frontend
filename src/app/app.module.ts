@@ -21,6 +21,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { QuantityInputComponent } from './components/quantity-input/quantity-input.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
@@ -48,9 +53,14 @@ import { PurchaseHistoryComponent } from './components/purchase-history/purchase
     FooterComponent,
     LoginFormComponent,
     SigninFormComponent,
+    CartItemComponent,
+    QuantityInputComponent,
+    ShoppingCartComponent,
     UserPersonalInfoComponent,
     ComponentCategoriasComponent,
     CreatComponent,
+    ShoppingCartSummaryComponent,
+    ShoppingCartDetailsComponent,
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,

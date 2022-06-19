@@ -1,0 +1,13 @@
+a.linkStyle {
+    font-size: 0.85em;
+    color: var(--text-color-light);
+  }
+    
+  a.linkStyle:hover {
+    color: var(--text-color-dark);
+  }
+    
+  a.linkStyle:focus {
+    font-weight: 500;
+  }
+    
