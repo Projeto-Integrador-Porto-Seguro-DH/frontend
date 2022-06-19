@@ -80,62 +80,73 @@
 
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
-        <div class="row mb-3">
-          <h6 class="h3Style">Endereço</h6>
-          <p class="pStyleDark endereco">
-            CEP:
-            <span class="pStyleLight">{{ pedido.usuario.cepEndereco }}</span>
-          </p>
-          <p class="pStyleDark endereco">
-            Logradouro:
-            <span class="pStyleLight">{{
-              pedido.usuario.logradouroEndereco
-            }}</span>
-          </p>
-          <div class="row p-0">
-            <div class="col-3">
-              <p class="pStyleDark endereco">
-                Nº
-                <span class="pStyleLight">{{
-                  pedido.usuario.numeroEndereco
-                }}</span>
-              </p>
+        <div class="row mb-3 justify-content-between">
+          <div class="col-12 col-sm-12 col-md-6 mb-3 mb-md-0">
+            <h6 class="h3Style ps-0">Endereço</h6>
+            <p class="pStyleDark endereco">
+              CEP:
+              <span class="pStyleLight">{{ pedido.usuario.cepEndereco }}</span>
+            </p>
+            <p class="pStyleDark endereco">
+              Logradouro:
+              <span class="pStyleLight">{{
+                pedido.usuario.logradouroEndereco
+              }}</span>
+            </p>
+            <div class="row p-0">
+              <div class="col-3">
+                <p class="pStyleDark endereco">
+                  Nº
+                  <span class="pStyleLight">{{
+                    pedido.usuario.numeroEndereco
+                  }}</span>
+                </p>
+              </div>
+              <div class="col-8">
+                <p class="pStyleDark endereco">
+                  Complemento:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.complementoEndereco
+                  }}</span>
+                </p>
+              </div>
             </div>
-            <div class="col-8">
-              <p class="pStyleDark endereco">
-                Complemento:
-                <span class="pStyleLight">{{
-                  pedido.usuario.complementoEndereco
-                }}</span>
-              </p>
+
+            <p class="pStyleDark endereco">
+              Bairro:
+              <span class="pStyleLight">{{
+                pedido.usuario.bairroEndereco
+              }}</span>
+            </p>
+            <div class="row p-0">
+              <div class="col-6">
+                <p class="pStyleDark endereco">
+                  Cidade:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.cidadeEndereco
+                  }}</span>
+                </p>
+              </div>
+              <div class="col-6">
+                <p class="pStyleDark endereco">
+                  Estado:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.estadoEndereco
+                  }}</span>
+                </p>
+              </div>
             </div>
           </div>
 
-          <p class="pStyleDark endereco">
-            Bairro:
-            <span class="pStyleLight">{{ pedido.usuario.bairroEndereco }}</span>
-          </p>
-          <div class="row p-0">
-            <div class="col-3">
-              <p class="pStyleDark endereco">
-                Cidade:
-                <span class="pStyleLight">{{
-                  pedido.usuario.cidadeEndereco
-                }}</span>
-              </p>
-            </div>
-            <div class="col-3">
-              <p class="pStyleDark endereco">
-                Estado:
-                <span class="pStyleLight">{{
-                  pedido.usuario.estadoEndereco
-                }}</span>
-              </p>
-            </div>
+          <div class="col-12 col-sm-12 col-md-5 mb-3 mb-md-0">
+            <h6 class="h3Style">Forma de Pagamento</h6>
+            <p class="pStyleDark mb-1">{{ pedido.formaDePagamento }}</p>
+            <p class="pStyleLight mb-0">**** **** **** 1234</p>
+            <p class="pStyleLight mb-0">JOAO SILVA</p>
           </div>
         </div>
 
-        <div class="row" *ngFor="let detalhe of pedido.detalhePedido">
+        <div class="row px-sm-2" *ngFor="let detalhe of pedido.detalhePedido">
           <div class="card mb-3 ps-0 widthStyle">
             <div class="row g-0">
               <div

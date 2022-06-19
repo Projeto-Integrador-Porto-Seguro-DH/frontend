@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormaDePagamento } from 'src/app/enums/PagamentoEnum';
 import { StatusPedido } from 'src/app/enums/StatusPedidoEnum';
 import { DetalhePedido } from 'src/app/model/DetalhePedido';
 import { Pedido } from 'src/app/model/Pedido';
@@ -83,6 +84,7 @@ export class OrderCardComponent implements OnInit {
       valorTotalPedido: 351.8,
       detalhePedido: [this.detalhe1!, this.detalhe2!, this.detalhe3!],
       usuario: this.usuario,
+      formaDePagamento: FormaDePagamento.CARTAO,
     };
   }
 }

@@ -11,7 +11,7 @@ hr {
 }
 
 p.endereco {
-  padding: 0 calc(var(--bs-gutter-x) * 0.5);
+  /* padding: 0 0.5rem; */
   margin: 0;
 }
 

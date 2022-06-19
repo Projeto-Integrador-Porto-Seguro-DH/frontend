@@ -29,6 +29,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { OrderCardComponent } from './components/order-card/order-card.component';
+import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { OrderCardComponent } from './components/order-card/order-card.component
     BackToTopComponent,
     OrdersComponent,
     OrderCardComponent,
+    PurchaseHistoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
