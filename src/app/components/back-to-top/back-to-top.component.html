@@ -4,7 +4,11 @@
     showScrollButton: windowScrolled
   }"
 >
-  <a href="perfil#" class="pStyleDark scrollLink p-0" (click)="scrollToTop()">
+  <a
+    [routerLink]="['././']"
+    class="pStyleDark scrollLink p-0"
+    (click)="scrollToTop()"
+  >
     <img
       class="img-fluid arrowIcon"
       src="../../../assets/icon/arrow-up-icon.svg"

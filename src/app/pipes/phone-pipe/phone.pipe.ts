@@ -38,6 +38,6 @@ export class PhonePipe implements PipeTransform {
       }
       return foneFormatado;
     }
-    return;
+    return null;
   }
 }
