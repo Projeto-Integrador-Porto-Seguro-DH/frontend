@@ -1,11 +1,84 @@
-<div class="container-xl">
-    <div class="row">
-        <section id="category">
-            <h3 class="h3Style">Cadastrar Categoria</h3>
+<div class="row d-flex justify-content-center">
+
+    <section id="categoryCreate">
+        <h3 class="h3Style">Criar Categoria</h3>
+
+        <div class="col-sx-12  col-sm-11 col-lg-9 col-xl-8">
+            
+            <form>
+                <div class="form-group formWidth my-4">
+                    <label for="nomeCategoria mb-2">Nome</label>
+                    <!-- 
+                        input [(ngModel)]="categoria.nomeCategoria" 
+                    -->
+                    <input 
+                    type="text" 
+                    class="form-control inputStyle"
+                    id="nomeCategoria" 
+                    name="nomeCategoria"
+                    placeholder="Nome da Categoria"
+                    required >
+                </div>
+
+                <div class="form-group formWidth my-4">
+                    <label for="descricaoCategoria">Descrição</label>
+                     <!-- 
+                        input [(ngModel)]="categoria.descricaoCategoria" 
+                    -->
+                    <input 
+                    type="text" 
+                    class="form-control inputStyle"
+                    id="descricaoCategoria" 
+                    name="descricaoCategoria"
+                    placeholder="Descrição da Categoria"
+                    required >
+                </div>
+
+                <button class="btn buttonStyle">Criar</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="dropdown-divider mb-0"></div>
+
+    <section id="categoryUpdate">
+        <h3 class="h3Style">Alterar Categoria</h3>
+
+        <div class="col-sx-12  col-sm-11 col-lg-9 col-xl-8">
+            
+            <form>
+                <div class="form-group formWidth my-4">
+                    <label for="nomeCategoria mb-2">Nome</label>
+                    <!-- 
+                        input [(ngModel)]="categoria.nomeCategoria" 
+                    -->
+                    <input 
+                    type="text" 
+                    class="form-control inputStyle"
+                    id="nomeCategoria" 
+                    name="nomeCategoria"
+                    placeholder="Nome da Categoria"
+                    required >
+                </div>
+
+                <div class="form-group formWidth my-4">
+                    <label for="descricaoCategoria">Descrição</label>
+                     <!-- 
+                        input [(ngModel)]="categoria.descricaoCategoria" 
+                    -->
+                    <input 
+                    type="text" 
+                    class="form-control inputStyle"
+                    id="descricaoCategoria" 
+                    name="descricaoCategoria"
+                    placeholder="Descrição da Categoria"
+                    required >
+                </div>
+
+                <button class="btn buttonStyle">Alterar</button>
+            </form>
+        </div>
+    </section>
     
-        </section>
-    
-        
-    </div>   
 </div>
 

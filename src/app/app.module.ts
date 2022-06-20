@@ -37,6 +37,7 @@ import { OrderCardComponent } from './components/order-card/order-card.component
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
 import { ProductCategoriesComponent } from './pages/product-categories/product-categories.component';
+import { CategorySidebarComponent } from './components/category-sidebar/category-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ProductCategoriesComponent } from './pages/product-categories/product-c
     PurchaseHistoryComponent,
     CategoryCrudComponent,
     ProductCategoriesComponent,
+    CategorySidebarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
