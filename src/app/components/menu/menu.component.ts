@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from './../../services/auth.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
+  user: Usuario;
+
+  constructor(private authService: AuthService) {
+    this.authService.user.subscribe((userAuth) => (this.user = userAuth));
+  }
 
   ngOnInit(): void {}
 
+  logout(): void {
+    this.authService.logout();
+  }
+
   isAuthenticated(): boolean {
-    return true;
+    return this.user ? true : false;
   }
 
   isAdmin(): boolean {
