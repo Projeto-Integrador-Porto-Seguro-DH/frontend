@@ -35,6 +35,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
+import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { PurchaseHistoryComponent } from './components/purchase-history/purchase
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
+    CategoryCrudComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
