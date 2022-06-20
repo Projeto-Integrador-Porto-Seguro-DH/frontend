@@ -8,5 +8,5 @@ export class Produto {
     public estoqueProduto: number
     public produtoDisponivel: boolean
     public detalhePedido: DetalhePedido[]
-    public categoria: Categoria
+    public categoria?: Categoria
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
+
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -11,6 +13,7 @@ const routes: Routes = [
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
   { path: 'perfil', component: UserProfileComponent },
+  { path: 'admPerfil', component: AdmProfileComponent},
 ];
 
 @NgModule({

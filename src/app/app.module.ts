@@ -23,6 +23,11 @@ import { CreatComponent } from './components/creat/creat.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
+import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
+import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +52,10 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top.compone
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,
+    ProfileAdmTabsComponent,
+    ProductCrudComponent,
+    AdmProfileComponent,
+    CategoryCrudComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
