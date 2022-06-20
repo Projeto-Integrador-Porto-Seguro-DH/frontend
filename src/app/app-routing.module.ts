@@ -9,11 +9,11 @@ import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ProductCategoriesComponent } from './pages/product-categories/product-categories.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
-  { path: 'cadastrar', component: SigninFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
   { path: 'carrinho', component: ShoppingCartComponent },
   {
@@ -24,8 +24,10 @@ const routes: Routes = [
       { path: 'dados', component: UserPersonalInfoComponent },
       { path: 'pedidos', component: OrdersComponent },
       { path: 'pedidos/historico', component: PurchaseHistoryComponent },
+
     ],
   },
+  { path: 'categorias', component: ProductCategoriesComponent },
 ];
 
 @NgModule({
