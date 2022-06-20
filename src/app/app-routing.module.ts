@@ -1,4 +1,4 @@
-import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
+import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -7,18 +7,20 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
-  { path: 'cadastrar', component: SigninFormComponent },
   { path: 'carrinho', component: ShoppingCartComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dados', pathMatch: 'full' },
       { path: 'dados', component: UserPersonalInfoComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
       { path: 'pedidos/historico', component: PurchaseHistoryComponent },
     ],
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
