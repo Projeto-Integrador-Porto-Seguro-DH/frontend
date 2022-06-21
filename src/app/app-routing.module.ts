@@ -1,4 +1,4 @@
-import { AuthGuard } from './guards/auth.guard';
+// import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: UserProfileComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dados', pathMatch: 'full' },
       { path: 'dados', component: UserPersonalInfoComponent },
