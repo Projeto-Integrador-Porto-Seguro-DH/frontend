@@ -1,0 +1,199 @@
+<div class="card borderStyle mb-3">
+  <a
+    data-bs-toggle="collapse"
+    href="#collapseExample"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    <div class="card-header">
+      <h5 class="card-title h3Style my-2">Pedido nº #{{ pedido.idPedido }}</h5>
+      <h6 class="card-subtitle pStyleLight">
+        Clique aqui para ver mais detalhes
+      </h6>
+    </div>
+  </a>
+
+  <div class="row g-0">
+    <div class="col-md-12">
+      <div class="card-body">
+        <div class="row d-flex w-100">
+          <div class="col-12 col-sm-5">
+            <div class="row">
+              <h6 class="h3Style mb-1">Pedido realizado em</h6>
+              <p class="pStyleLight">
+                {{ pedido.dataPedido | date: "dd/mm/yyyy - HH:mm:ss":"UTC" }}
+              </p>
+            </div>
+
+            <div class="row">
+              <h6 class="h3Style mb-1">Status do pedido</h6>
+              <p class="pStyleLight">
+                {{ pedido.statusPedido }}
+              </p>
+            </div>
+
+            <div class="row">
+              <h6 class="h3Style mb-1">Frete</h6>
+              <p class="pStyleLight">
+                {{ pedido.valorEnvio | currency: "BRL" }}
+              </p>
+            </div>
+
+            <div class="row">
+              <h6 class="h3Style mb-1">Total da compra</h6>
+              <p class="pStyleLight">
+                {{ pedido.valorTotalPedido | currency: "BRL" }}
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-7">
+            <h6 class="h3Style mb-1">Resumo da Compra</h6>
+            <div
+              class="row justify-content-between"
+              *ngFor="let detalhe of pedido.detalhePedido"
+            >
+              <div class="col-12 col-sm-2 pe-0">
+                <p class="pStyleLight text-wrap m-0">
+                  {{ detalhe.quantidadeProduto }}x
+                </p>
+              </div>
+              <div class="col-12 col-sm-4">
+                <p class="pStyleLight text-wrap m-0">
+                  {{ detalhe.produto.nomeProduto }}
+                </p>
+              </div>
+              <div class="col-12 col-sm-5">
+                <p
+                  class="pStyleLight text-wrap text-start text-sm-end m-0 pt-1 pt-sm-0"
+                >
+                  {{ detalhe.subtotal | currency: "BRL" }}
+                </p>
+              </div>
+              <hr class="mt-1 mb-2 mx-0" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <div class="row mb-3 justify-content-between">
+          <div class="col-12 col-sm-12 col-md-6 mb-3 mb-md-0">
+            <h6 class="h3Style ps-0">Endereço</h6>
+            <p class="pStyleDark endereco">
+              CEP:
+              <span class="pStyleLight">{{ pedido.usuario.cepEndereco }}</span>
+            </p>
+            <p class="pStyleDark endereco">
+              Logradouro:
+              <span class="pStyleLight">{{
+                pedido.usuario.logradouroEndereco
+              }}</span>
+            </p>
+            <div class="row p-0">
+              <div class="col-3">
+                <p class="pStyleDark endereco">
+                  Nº
+                  <span class="pStyleLight">{{
+                    pedido.usuario.numeroEndereco
+                  }}</span>
+                </p>
+              </div>
+              <div class="col-8">
+                <p class="pStyleDark endereco">
+                  Complemento:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.complementoEndereco
+                  }}</span>
+                </p>
+              </div>
+            </div>
+
+            <p class="pStyleDark endereco">
+              Bairro:
+              <span class="pStyleLight">{{
+                pedido.usuario.bairroEndereco
+              }}</span>
+            </p>
+            <div class="row p-0">
+              <div class="col-6">
+                <p class="pStyleDark endereco">
+                  Cidade:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.cidadeEndereco
+                  }}</span>
+                </p>
+              </div>
+              <div class="col-6">
+                <p class="pStyleDark endereco">
+                  Estado:
+                  <span class="pStyleLight">{{
+                    pedido.usuario.estadoEndereco
+                  }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-5 mb-3 mb-md-0">
+            <h6 class="h3Style">Forma de Pagamento</h6>
+            <p class="pStyleDark mb-1">{{ pedido.formaDePagamento }}</p>
+            <p class="pStyleLight mb-0">**** **** **** 1234</p>
+            <p class="pStyleLight mb-0">JOAO SILVA</p>
+          </div>
+        </div>
+
+        <div class="row px-sm-2" *ngFor="let detalhe of pedido.detalhePedido">
+          <div class="card mb-3 ps-0 widthStyle">
+            <div class="row g-0">
+              <div
+                class="col-12 col-sm-3 col-md-3 col-lg-2 col-xl-1 my-sm-2 me-2 me-lg-0"
+              >
+                <img
+                  src="../../../assets/img/products/queijo/queijo1.jpg"
+                  class="img-fluid rounded-start imgDisplay"
+                  alt="Imagem do produto"
+                />
+              </div>
+
+              <div
+                class="col-12 col-sm-8 col-md-8 col-lg-10 col-xl-11 py-0 py-md-1 px-2 px-sm-0"
+              >
+                <div class="row justify-content-between">
+                  <div class="col-12 col-sm-12 col-xl-4 m-2">
+                    <div class="card-body py-1 py-sm-0 px-0">
+                      <h6 class="h3Style">
+                        {{ detalhe.produto.nomeProduto }}
+                      </h6>
+                      <p class="card-text pStyleDark mb-1">
+                        Quantidade:
+                        <span class="pStyleLight">{{
+                          detalhe.quantidadeProduto
+                        }}</span>
+                      </p>
+                      <p class="card-text pStyleDark">
+                        Sub-total:
+                        <span class="pStyleLight">{{
+                          detalhe.subtotal | currency: "BRL"
+                        }}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-xl-7 m-2 mb-0 mb-sm-2">
+                    <h6 class="h3Style">Descrição</h6>
+                    <p class="pStyleLight m-0">
+                      Descrição do produto contendo algumas informações básicas
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
