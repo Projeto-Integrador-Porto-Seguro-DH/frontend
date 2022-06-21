@@ -19,5 +19,5 @@ font-weight: 500;
 
 .checkboxStyle:not(:checked) {
   background-color:var(--body-bg-color) ;
-  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px var(--body-bg-color) inset;
 }
