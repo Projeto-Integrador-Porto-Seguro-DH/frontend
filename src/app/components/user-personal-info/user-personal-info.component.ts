@@ -10,7 +10,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./user-personal-info.component.css'],
 })
 export class UserPersonalInfoComponent implements OnInit {
-  public usuario: Usuario;
+  public usuario: Usuario = new Usuario();
   public usuarioNoBD: Usuario;
   public estados = EstadosEnum;
 
@@ -25,7 +25,7 @@ export class UserPersonalInfoComponent implements OnInit {
     this.authService.user.subscribe((userAuth) => (this.usuario = userAuth));
 
     this.userService
-      .getById(this.usuario.idUsuario)
+      .getById(this.usuario.idUsuario!)
       .subscribe((userBD) => (this.usuarioNoBD = userBD));
   }
 
