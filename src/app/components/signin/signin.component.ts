@@ -47,4 +47,8 @@ export class SigninComponent implements OnInit {
         },
       });
   }
+
+  showPasswordRequirement() {
+    
+  }
 }
