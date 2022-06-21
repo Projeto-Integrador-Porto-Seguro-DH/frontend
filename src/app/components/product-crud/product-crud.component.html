@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="container px-0">
   <section id="cadastrar">
     <h3 class="h3Style">Cadastrar</h3>
 <!-- CREATE -->
     <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
-      <form #cadastrar>
+      <form #cadastrar (ngSubmit)="onSubmit()">
         <div class="my-4">
           <div class="form-group formWidth">
             <label for="nomeProduto" class="form-label">Nome</label>
@@ -41,9 +41,7 @@
             <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
             <input
               [(ngModel)]="produto.precoUnitarioProduto"
-              [ngModel]="preco | currency: 'BRL'"
-              (ngModelChange)="preco = $event"
-              type="email"
+              type="number"
               class="form-control inputStyle smallInput-12"
               id="precoUnitarioProduto"
               name="precoUnitarioProduto"
@@ -73,6 +71,7 @@
             <label for="form-radio-label ps-2">Produto disponível?</label>
             <br>
             <input
+              [(ngModel)]="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
@@ -91,6 +90,7 @@
         <div class="row d-flex justify-content-between align-items-center pt-2">
           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
             <button
+              (click)="refresh()"
               class="btn buttonStyle"
               type="submit"
             >
@@ -111,357 +111,58 @@
 
   <section id="consultar">
     <h3 class="h3Style">Consultar</h3>
-    <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
-      <form #consultar>
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="idProduto" class="form-label">Id do Produto</label>
-            <input
-              type="number"
-              class="form-control inputStyle smallInput-10"
-              id="idProduto"
-              name="idProduto"
-              placeholder="0"
-              required
-            />
-          </div>
-        </div>
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="nomeProduto" class="form-label">Nome</label>
-            <input
-              [(ngModel)]="produto.nomeProduto"
-              type="text"
-              class="form-control inputStyle"
-              id="nomeProduto"
-              name="nomeProduto"
-              placeholder="Nome"
-              required
-            />
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="descricaoProduto" class="form-label">Descrição</label>
-            <textarea
-              [(ngModel)]="produto.descricaoProduto"
-              style="height: 160px"
-              maxlength="255"
-              type="text"
-              class="form-control inputStyle"
-              id="descricaoProduto"
-              name="descricaoProduto"
-              placeholder="Descrição"
-              disabled
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
-            <input
-              [(ngModel)]="produto.precoUnitarioProduto"
-              [ngModel]="preco | currency: 'BRL'"
-              (ngModelChange)="preco = $event"
-              type="email"
-              class="form-control inputStyle smallInput-12"
-              id="precoUnitarioProduto"
-              name="precoUnitarioProduto"
-              placeholder="R$0.00"
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group">
-            <label for="estoqueProduto" class="form-label">Quantidade de estoque</label>
-            <input
-              [(ngModel)]="produto.estoqueProduto"
-              type="text"
-              class="form-control inputStyle smallInput-12"
-              id="estoqueProduto"
-              name="estoqueProduto"
-              placeholder="0"
-              disabled
-            />
-          </div>
-        </div>
-<!-- Precisar vir preenchido e sem opção de alterar -->
-        <div class="my-4 ">
-          <div class="form-group ">
-            <label for="form-radio-label ps-2">Produto disponível?</label>
-            <br>
-            <input
-              type="radio"
-              name="produtoDisponivel"
-              id="produtoDisponivel"
-              class="form-check-input"
-            /> Sim
-            <br>
-            <input
-              type="radio"
-              name="produtoDisponivel"
-              id="produtoDisponivel"
-              class="form-check-input"
-            /> Não
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-between align-items-center pt-2">
-          <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-            <button
-              class="btn buttonStyle"
-              type="submit"
-            >
-              Consultar
-            </button>
-          </div>
-          <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
-            <button class="btn pStyleDark" type="reset" (click)="clearFormConsultar()">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </form>
+    <div class="table-responsive">
+    <table class="table table-hover ;" style="color: #9b6c51;">
+      <thead>
+        <tr>
+          <th colspan="2" class="h3Style" scope="col">Id</th>
+          <th colspan="2" class="h3Style" scope="col">Nome</th>
+          <th colspan="2" class="h3Style" scope="col">Descrição</th>
+          <th colspan="2" class="h3Style" scope="col">Preço</th>
+          <th colspan="2" class="h3Style" scope="col">Estoque</th>
+          <th colspan="1" rowspan="2" class="h3Style" scope="col">Disponível</th>
+          <th colspan="2" class="h3Style" scope="col">Gerenciar</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let produto of produtos">
+        <tr>
+          <td colspan="2" class="pStyleDark" scope="row">{{produto.idProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{produto.nomeProduto}}</td>
+          <td colspan="2" rowspan="5" class="pStyleDark" scope="row">{{produto.descricaoProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{produto.precoUnitarioProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{produto.estoqueProduto}}</td>
+          <td colspan="1" class="pStyleDark" scope="row">{{produto.produtoDisponivel}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">
+            <a class="mx-1" href="">
+              <img src="../../../assets/icon/edit-icon.svg" alt="ícone Atualizar">
+            </a>
+            <a class="mx-2" href="" data-bs-toggle="modal" data-bs-target="#deletarProduto">
+              <img src="../../../assets/icon/trash-icon.svg" alt="ícone Deletar">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     </div>
   </section>
+</div>
 
-  <section id="atulizar">
-    <h3 class="h3Style">Atualizar</h3>
-    <div class="col-xs-12 col-sm-8 col-lg-7 col-xl-6">
-      <form #atualizar>
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="idProduto" class="form-label">Id do Produto</label>
-            <input
-              type="number"
-              class="form-control inputStyle smallInput-10"
-              id="idProduto"
-              name="idProduto"
-              placeholder="0"
-            />
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="nomeProduto" class="form-label">Nome</label>
-            <input
-              [(ngModel)]="produto.nomeProduto"
-              type="text"
-              class="form-control inputStyle"
-              id="nomeProduto"
-              name="nomeProduto"
-              placeholder="Nome"
-            />
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="descricaoProduto" class="form-label">Descrição</label>
-            <textarea
-              [(ngModel)]="produto.descricaoProduto"
-              style="height: 160px"
-              maxlength="255"
-              type="text"
-              class="form-control inputStyle"
-              id="descricaoProduto"
-              name="descricaoProduto"
-              placeholder="Descrição"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group formWidth">
-            <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
-            <input
-              [(ngModel)]="produto.precoUnitarioProduto"
-              [ngModel]="preco | currency: 'BRL'"
-              (ngModelChange)="preco = $event"
-              type="email"
-              class="form-control inputStyle smallInput-12"
-              id="precoUnitarioProduto"
-              name="precoUnitarioProduto"
-              placeholder="R$0.00"
-            />
-          </div>
-        </div>
-
-        <div class="my-4">
-          <div class="form-group">
-            <label for="estoqueProduto" class="form-label">Quantidade de estoque</label>
-            <input
-              [(ngModel)]="produto.estoqueProduto"
-              type="text"
-              class="form-control inputStyle smallInput-12"
-              id="estoqueProduto"
-              name="estoqueProduto"
-              placeholder="0"
-            />
-          </div>
-        </div>
-
-        <div class="my-4 ">
-          <div class="form-group ">
-            <label for="form-radio-label ps-2">Produto disponível?</label>
-            <br>
-            <input
-              type="radio"
-              name="produtoDisponivel"
-              id="produtoDisponivel"
-              class="form-check-input"
-            /> Sim
-            <br>
-            <input
-              type="radio"
-              name="produtoDisponivel"
-              id="produtoDisponivel"
-              class="form-check-input"
-            /> Não
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-between align-items-center pt-2">
-          <div class="col-xs-12 col-sm-8 mb-4 mb-sm-0">
-            <button
-              class="btn buttonStyle"
-              type="submit"
-            >
-              Atualizar
-            </button>
-          </div>
-          <div class="col-xs-12 col-sm-3 mb-2 mb-sm-0">
-            <button class="btn pStyleDark" type="reset" (click)="clearFormAtualizar()">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <section id="deletar">
-    <h3 class="h3Style">Deletar</h3>
-    <form #deletar>
-    <div class="my-4">
-      <div class="form-group formWidth">
-        <label for="idProduto" class="form-label">Id do Produto</label>
-        <input
-          type="number"
-          class="form-control inputStyle smallInput-10"
-          id="idProduto"
-          name="idProduto"
-          placeholder="0"
-        />
+<!-- Modal -->
+<div class="modal fade" id="deletarProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deletar Produto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja deletar este produto?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="reset" class="btn pStyleDark " data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn buttonStyle deleteButton">Deletar</button>
+        <!-- cria o click para deletar o produto -->
       </div>
     </div>
-
-    <div class="my-4">
-      <div class="form-group formWidth">
-        <label for="nomeProduto" class="form-label">Nome</label>
-        <input
-          [(ngModel)]="produto.nomeProduto"
-          type="text"
-          class="form-control inputStyle"
-          id="nomeProduto"
-          name="nomeProduto"
-          placeholder="Nome"
-          disabled
-        />
-      </div>
-    </div>
-
-    <div class="my-4">
-      <div class="form-group formWidth">
-        <label for="descricaoProduto" class="form-label">Descrição</label>
-        <textarea
-          [(ngModel)]="produto.descricaoProduto"
-          style="height: 160px"
-          maxlength="255"
-          type="text"
-          class="form-control inputStyle"
-          id="descricaoProduto"
-          name="descricaoProduto"
-          placeholder="Descrição"
-          disabled
-        ></textarea>
-      </div>
-    </div>
-
-    <div class="my-4">
-      <div class="form-group formWidth">
-        <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
-        <input
-          [(ngModel)]="produto.precoUnitarioProduto"
-          [ngModel]="preco | currency: 'BRL'"
-          (ngModelChange)="preco = $event"
-          type="email"
-          class="form-control inputStyle smallInput-12"
-          id="precoUnitarioProduto"
-          name="precoUnitarioProduto"
-          placeholder="R$0.00"
-          disabled
-        />
-      </div>
-    </div>
-
-    <div class="my-4">
-      <div class="form-group">
-        <label for="estoqueProduto" class="form-label">Quantidade de estoque</label>
-        <input
-          [(ngModel)]="produto.estoqueProduto"
-          type="text"
-          class="form-control inputStyle smallInput-12"
-          id="estoqueProduto"
-          name="estoqueProduto"
-          placeholder="0"
-          disabled
-        />
-      </div>
-    </div>
-
-
-    <div class="my-4 ">
-      <div class="form-group ">
-        <label for="form-radio-label ps-2">Produto disponível?</label>
-        <br>
-        <!-- checked disabled de Exemplo -->
-        <input checked disabled
-          type="radio"
-          name="produtoDisponivel"
-          id="produtoDisponivel"
-          class="form-check-input"
-        /> Sim
-        <br>
-        <input disabled
-          type="radio"
-          name="produtoDisponivel"
-          id="produtoDisponivel"
-          class="form-check-input"
-        /> Não
-      </div>
-    </div>
-
-    <div class="row d-flex justify-content-between align-items-center pt-2">
-      <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-        <button
-          class="btn buttonStyle deleteButton"
-          type="submit"
-        >
-          Deletar
-        </button>
-      </div>
-      <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
-        <button class="btn pStyleDark" type="reset"(click)="clearFormDeletar()">
-          Cancelar
-        </button>
-      </div>
-    </div>
-    </form>
-  </section>
+  </div>
 </div>

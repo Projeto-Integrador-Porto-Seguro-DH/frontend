@@ -22,7 +22,8 @@ export class MenuComponent implements OnInit {
   }
 
   isAuthenticated(): boolean {
-    return this.user ? true : false;
+    // return this.user ? true : false;
+    return true;
   }
 
   isAdmin(): boolean {

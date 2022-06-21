@@ -1,3 +1,5 @@
+import { first } from 'rxjs/operators';
+import { ProductService } from './../../services/product.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto } from '../../model/Produto'
 
@@ -7,34 +9,39 @@ import { Produto } from '../../model/Produto'
   styleUrls: ['./product-crud.component.css','../user-personal-info/user-personal-info.component.css']
 })
 export class ProductCrudComponent implements OnInit {
-  public produto: Produto;
+  public produtos: Produto[];
   preco: number = 0;
+  produto = new Produto();
+  produtoSalvo = new Produto();
+
 
   @ViewChild('cadastrar') cadastrar: any;
   @ViewChild('consultar') consultar: any;
   @ViewChild('atualizar') atualizar: any;
   @ViewChild('deletar') deletar: any;
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {
-    this.produto = {
-      idProduto: 0,
-      nomeProduto: '',
-      descricaoProduto: '',
-      precoUnitarioProduto: 0,
-      estoqueProduto: 0,
-      produtoDisponivel: true,
-      detalhePedido: [],
-    }
+  refresh(): void{
+    window.location.reload();
   }
 
-// implementar o crud
+  ngOnInit(): void {
+    this.productService.getProduct().subscribe((resp: Produto[])=>{
+      this.produtos=resp;
+    })
+  }
 
-// transfInfo(limpar: any){
-//   this.formulario = limpar;
-//   this.clearForm();
-// }
+  onSubmit(): void {
+  this.productService.postProduct(this.produto).subscribe((resp: Produto)=>{
+    this.produtoSalvo=resp;
+    alert('Produto cadastrado com sucesso!')
+  })}
+
+  delete(): void{
+    
+  }
+
 
 clearFormCadastrar(): void {
   this.cadastrar.nativeElement.value = '';
@@ -51,7 +58,6 @@ clearFormAtualizar(): void {
 clearFormDeletar(): void {
   this.deletar.nativeElement.value = '';
 }
-
 
 }
 
