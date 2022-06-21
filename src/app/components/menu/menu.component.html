@@ -115,7 +115,11 @@
               </div>
               <div *ngIf="isAuthenticated()">
                 <li><hr class="dropdown-divider my-1" /></li>
-                <li><a class="dropdown-item pStyleDark" href="#">Sair</a></li>
+                <li>
+                  <a class="dropdown-item pStyleDark" (click)="logout()"
+                    >Sair</a
+                  >
+                </li>
               </div>
             </ul>
           </div>

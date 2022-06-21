@@ -1,3 +1,5 @@
+import { AuthService } from './../../services/auth.service';
+import { UserService } from './../../services/user.service';
 import { EstadosEnum } from '../../enums/EstadosEnum';
 import { Usuario } from '../../model/Usuario';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -9,33 +11,22 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class UserPersonalInfoComponent implements OnInit {
   public usuario: Usuario;
+  public usuarioNoBD: Usuario;
   public estados = EstadosEnum;
 
   @ViewChild('passwordForm') passForm: any;
 
-  constructor() {}
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.usuario = {
-      idUsuario: 1,
-      nomeUsuario: 'João',
-      sobrenomeUsuario: 'Silva',
-      emailUsuario: 'joao.silva@gmail.com',
-      senhaUsuario: 'Senhateste123',
-      dataDeNascimento: '2000-04-25',
-      cpfUsuario: '123.456.789-00',
-      telefoneUsuario: 11981053464,
-      compartilharDadosUsuario: true,
-      logradouroEndereco: 'Rua Teste',
-      cepEndereco: 12345678,
-      numeroEndereco: 123,
-      bairroEndereco: 'Bairro dos Testes',
-      complementoEndereco: 'Casa',
-      cidadeEndereco: 'São Paulo',
-      estadoEndereco: 'SP',
-      formasDePagamento: 'Cartão de Crédito',
-      pedido: [],
-    };
+    this.authService.user.subscribe((userAuth) => (this.usuario = userAuth));
+
+    this.userService
+      .getById(this.usuario.idUsuario)
+      .subscribe((userBD) => (this.usuarioNoBD = userBD));
   }
 
   refresh(): void {

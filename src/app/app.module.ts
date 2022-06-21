@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -31,13 +32,15 @@ import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { OrdersComponent } from './components/orders/orders.component';
-
-import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
 import { ProductCategoriesComponent } from './pages/product-categories/product-categories.component';
 import { CategorySidebarComponent } from './components/category-sidebar/category-sidebar.component';
+
+import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
+import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -74,8 +77,12 @@ import { CategorySidebarComponent } from './components/category-sidebar/category
     ProductCategoriesComponent,
     CategorySidebarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
