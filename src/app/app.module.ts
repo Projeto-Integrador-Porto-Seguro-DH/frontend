@@ -39,7 +39,6 @@ import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
-import { ProductCategoriesComponent } from './pages/product-categories/product-categories.component';
 import { CategorySidebarComponent } from './components/category/category-sidebar/category-sidebar.component';
 
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
@@ -47,6 +46,7 @@ import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 
 @NgModule({
   declarations: [
@@ -84,10 +84,10 @@ import { ProductUpdateComponent } from './components/product-update/product-upda
     OrderCardComponent,
     PurchaseHistoryComponent,
     CategoryCrudComponent,
-    ProductCategoriesComponent,
     CategorySidebarComponent,
     SigninPasswordRulesComponent,
     ProductUpdateComponent,
+    CategoryUpdateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 

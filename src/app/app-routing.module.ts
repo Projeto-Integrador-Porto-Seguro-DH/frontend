@@ -15,8 +15,8 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
 import { OrdersComponent } from './components/orders/orders.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { ProductCrudComponent } from './components/product-crud/product-crud.component';
-
-import { ProductCategoriesComponent } from './pages/product-categories/product-categories.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
+import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,9 +40,10 @@ const routes: Routes = [
     children: [
       { path: 'atualizar/:id', component: ProductUpdateComponent },
       { path: '', component: ProductCrudComponent },
+      { path: 'categorias', component: CategoryCrudComponent },
+      { path: 'categorias/atualizar/:id', component: CategoryUpdateComponent },
     ],
   },
-  { path: 'categorias', component: ProductCategoriesComponent },
   { path: '**', redirectTo: '' },
 ];
 
