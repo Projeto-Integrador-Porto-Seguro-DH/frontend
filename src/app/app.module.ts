@@ -31,6 +31,11 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
 import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
+import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
+import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
+
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
@@ -42,6 +47,7 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +77,10 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,
+    ProfileAdmTabsComponent,
+    ProductCrudComponent,
+    AdmProfileComponent,
+    CategoryCrudComponent,
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
@@ -78,6 +88,7 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
     ProductCategoriesComponent,
     CategorySidebarComponent,
     SigninPasswordRulesComponent,
+    ProductUpdateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

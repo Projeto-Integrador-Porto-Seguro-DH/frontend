@@ -82,8 +82,7 @@
           <div class="form-group">
             <label for="telefoneUsuario" class="form-label">Telefone</label>
             <input
-              [ngModel]="usuario.telefoneUsuario | phone"
-              (ngModelChange)="usuario.telefoneUsuario = $event"
+              [(ngModel)]="usuario.telefoneUsuario"
               type="text"
               class="form-control inputStyle smallInput-12"
               id="telefoneUsuario"

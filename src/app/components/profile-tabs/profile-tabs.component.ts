@@ -13,6 +13,6 @@ export class ProfileTabsComponent implements OnInit {
   ngOnInit(): void {}
 
   isAdmin(): boolean {
-    return false;
+    return true;
   }
 }

@@ -1,0 +1,167 @@
+<div class="container px-0">
+  <section id="cadastrar">
+    <h3 class="h3Style">Cadastrar</h3>
+<!-- CREATE -->
+    <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
+      <form #cadastrar (ngSubmit)="onSubmit()">
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="nomeProduto" class="form-label">Nome</label>
+            <input
+              [(ngModel)]="produto.nomeProduto"
+              type="text"
+              class="form-control inputStyle"
+              id="nomeProduto"
+              name="nomeProduto"
+              placeholder="Nome"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="descricaoProduto" class="form-label">Descrição</label>
+            <textarea
+              [(ngModel)]="produto.descricaoProduto"
+              style="height: 160px"
+              maxlength="255"
+              type="text"
+              class="form-control inputStyle"
+              id="descricaoProduto"
+              name="descricaoProduto"
+              placeholder="Descrição"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
+            <input
+              [(ngModel)]="produto.precoUnitarioProduto"
+              type="number"
+              class="form-control inputStyle smallInput-12"
+              id="precoUnitarioProduto"
+              name="precoUnitarioProduto"
+              placeholder="R$0.00"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group">
+            <label for="estoqueProduto" class="form-label">Quantidade de estoque</label>
+            <input
+              [(ngModel)]="produto.estoqueProduto"
+              type="text"
+              class="form-control inputStyle smallInput-12"
+              id="estoqueProduto"
+              name="estoqueProduto"
+              placeholder="0"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="my-4 ">
+          <div class="form-group ">
+            <label for="form-radio-label ps-2">Produto disponível?</label>
+            <br>
+            <input
+              [(ngModel)]="produto.produtoDisponivel"
+              type="radio"
+              name="produtoDisponivel"
+              id="produtoDisponivel"
+              class="form-check-input"
+            /> Sim
+            <br>
+            <input
+              type="radio"
+              name="produtoDisponivel"
+              id="produtoDisponivel"
+              class="form-check-input"
+            /> Não
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-between align-items-center pt-2">
+          <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
+            <button
+              (click)="refresh()"
+              class="btn buttonStyle"
+              type="submit"
+            >
+              Cadastrar
+            </button>
+          </div>
+          <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
+            <button class="btn pStyleDark" type="reset" (click)="clearFormCadastrar()">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+<!-- READ -->
+
+  <section id="consultar">
+    <h3 class="h3Style">Consultar</h3>
+    <div class="table-responsive">
+    <table class="table table-hover ;" style="color: #9b6c51;">
+      <thead>
+        <tr>
+          <th colspan="2" class="h3Style" scope="col">Id</th>
+          <th colspan="2" class="h3Style" scope="col">Nome</th>
+          <th colspan="2" class="h3Style" scope="col">Descrição</th>
+          <th colspan="2" class="h3Style" scope="col">Preço</th>
+          <th colspan="2" class="h3Style" scope="col">Estoque</th>
+          <th colspan="1" rowspan="2" class="h3Style" scope="col">Disponível</th>
+          <th colspan="2" class="h3Style" scope="col">Gerenciar</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of produtos;let i = index">
+        <tr>
+          <td colspan="2" class="pStyleDark" scope="row">{{product.idProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.nomeProduto}}</td>
+          <td colspan="2" rowspan="5" class="pStyleDark" scope="row">{{product.descricaoProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.precoUnitarioProduto}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.estoqueProduto}}</td>
+          <td colspan="1" class="pStyleDark" scope="row">{{product.produtoDisponivel}}</td>
+          <td colspan="2" rowspan="2" class="pStyleDark" scope="row">
+            <a routerLink="./atualizar/{{product.idProduto}}" class="mx-1" href="">
+              <img src="../../../assets/icon/edit-icon.svg" alt="ícone Atualizar">
+            </a>
+            <a (click)="pegarId(product.idProduto)" class="mx-2" href="" data-bs-toggle="modal" data-bs-target="#deletarProduto">
+              <img src="../../../assets/icon/trash-icon.svg" alt="ícone Deletar">
+            </a>
+            <div class="modal fade" id="deletarProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deletar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Tem certeza que deseja deletar este produto?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="reset" class="btn pStyleDark " data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn buttonStyle deleteButton" (click)="delete()">Deletar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+</div>
+
+
