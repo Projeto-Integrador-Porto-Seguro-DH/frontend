@@ -19,6 +19,8 @@ export class SigninComponent implements OnInit {
 
   error = '';
 
+  activePassword: boolean = true;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -46,5 +48,9 @@ export class SigninComponent implements OnInit {
           console.log(this.error);
         },
       });
+  }
+
+  showPasswordRequirement() {
+    this.activePassword = false;
   }
 }
