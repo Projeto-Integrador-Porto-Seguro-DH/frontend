@@ -20,7 +20,6 @@ export class SigninComponent implements OnInit {
   error = '';
 
   activePassword: boolean = true;
-  activeConfirm: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -53,9 +52,5 @@ export class SigninComponent implements OnInit {
 
   showPasswordRequirement() {
     this.activePassword = false;
-  }
-
-  showConfirmRequirement() {
-    this.activeConfirm = false;
   }
 }
