@@ -13,6 +13,8 @@ export class ProductCrudComponent implements OnInit {
   preco: number = 0;
   produto = new Produto();
   produtoSalvo = new Produto();
+  erro = '';
+  index: number;
 
 
   @ViewChild('cadastrar') cadastrar: any;
@@ -39,7 +41,18 @@ export class ProductCrudComponent implements OnInit {
   })}
 
   delete(): void{
-    
+    this.productService.deleteProduct(this.index).pipe(first()).subscribe({next:()=>{
+      alert('Produto deletado com sucesso!')
+    },
+      error:(error)=>{
+        this.erro = error;
+        console.log(this.erro)
+      }
+    })
+  }
+
+  pegarId(id: number){
+    this.index = id;
   }
 
 

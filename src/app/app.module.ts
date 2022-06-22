@@ -44,6 +44,7 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
     OrderCardComponent,
     PurchaseHistoryComponent,
     SigninPasswordRulesComponent,
+    ProductUpdateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
