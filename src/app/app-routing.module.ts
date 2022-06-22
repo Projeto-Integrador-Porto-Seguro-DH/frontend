@@ -42,7 +42,7 @@ const routes: Routes = [
       { path: '', component: ProductCrudComponent },
     ],
   },
-  { path: 'category', component: ProductCategoriesComponent },
+  { path: 'categorias', component: ProductCategoriesComponent },
   { path: '**', redirectTo: '' },
 ];
 

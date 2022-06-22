@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Categoria } from '../../../model/Categoria';
+import { CategoryService } from '../../../services/category.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-crud',
@@ -9,15 +11,26 @@ import { Categoria } from '../../../model/Categoria';
 export class CategoryCrudComponent implements OnInit {
   public categoriaLista: Categoria[];
   categoria: Categoria = new Categoria();
+  error= '';
 
   @ViewChild('cadastrar') cadastrar: any;
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    this.categoryService.postCategory(this.categoria).pipe(first()).subscribe({
+      next:(resp: Categoria) => {
+        alert('Categoria Cadatrada com sucesso!');
+        this.categoria = resp;
+      },
+      error:(e: any) => {
+        this.error = e;
+        alert(this.error);
+      }
+    });
   }
 
   clearFormCadastrar() {
