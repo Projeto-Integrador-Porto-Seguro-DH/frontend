@@ -1,65 +1,66 @@
 <div class="container px-0">
-    <section id="cadastrarCategoria" class="mb-5">
-      <h3 class="h3Style">Criar Categoria</h3>
   <!-- CREATE -->
-      <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
-        <form #cadastrar (ngSubmit)="onSubmit()">
-          <div class="my-4">
-            <div class="form-group formWidth">
-              <label for="nomeCategoria" class="form-label">Nome</label>
-              <input
-                [(ngModel)]="categoria.nomeCategoria"
-                type="text"
-                class="form-control inputStyle"
-                id="nomeCategoria"
-                name="nomeProduto"
-                placeholder="Nome da Categoria"
-                required
-              />
-            </div>
+  <section id="cadastrarCategoria" class="mb-5">
+    <h3 class="h3Style">Criar Categoria</h3>
+
+    <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
+      <form #cadastrar (ngSubmit)="submit()">
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="nomeCategoria" class="form-label">Nome</label>
+            <input
+              [(ngModel)]="categoria.nomeCategoria"
+              type="text"
+              class="form-control inputStyle"
+              id="nomeCategoria"
+              name="nomeProduto"
+              placeholder="Nome da Categoria"
+              required
+            />
           </div>
-  
-          <div class="my-4">
-            <div class="form-group formWidth">
-              <label for="descricaoProduto" class="form-label">Descrição</label>
-              <textarea
-                [(ngModel)]="categoria.descricaoCategoria"
-                style="height: 160px"
-                maxlength="255"
-                type="text"
-                class="form-control inputStyle"
-                id="descricaoCategoria"
-                name="descricao da Categoria"
-                placeholder="Descrição da Categoria"
-                required
-              ></textarea>
-            </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="descricaoProduto" class="form-label">Descrição</label>
+            <textarea
+              [(ngModel)]="categoria.descricaoCategoria"
+              style="height: 160px"
+              maxlength="255"
+              type="text"
+              class="form-control inputStyle"
+              id="descricaoCategoria"
+              name="descricao da Categoria"
+              placeholder="Descrição da Categoria"
+              required
+            ></textarea>
           </div>
-  
-          <div class="row d-flex justify-content-between align-items-center pt-2">
-            <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-              <button
-                (click)="refresh()"
-                class="btn buttonStyle"
-                type="submit"
-              >
-                Cadastrar
-              </button>
-            </div>
-            <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
-              <button class="btn pStyleDark" type="reset" (click)="clearFormCadastrar()">
-                Cancelar
-              </button>
-            </div>
+        </div>
+
+        <div class="row d-flex justify-content-between align-items-center pt-2">
+          <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
+            <button (click)="refresh()" class="btn buttonStyle" type="submit">
+              Criar
+            </button>
           </div>
-        </form>
-      </div>
-    </section>
-  
+          <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
+            <button
+              class="btn pStyleDark"
+              type="reset"
+              (click)="clearFormCadastrar()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <!-- READ -->
-  
-    <section id="consultarCategoria">
-      <h3 class="h3Style">Consultar</h3>
+
+  <section id="consultarCategoria">
+    <!-- <h3 class="h3Style">Ver todas</h3>
       <div class="table-responsive">
       <table class="table table-hover ;" style="color: #9b6c51;">
         <thead>
@@ -105,6 +106,6 @@
           </tr>
         </tbody>
       </table>
-      </div>
-    </section>
-  </div>
+      </div> -->
+  </section>
+</div>

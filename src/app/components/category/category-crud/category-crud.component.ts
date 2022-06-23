@@ -15,15 +15,23 @@ export class CategoryCrudComponent implements OnInit {
 
   @ViewChild('cadastrar') cadastrar: any;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(
+    private categoryService: CategoryService
+    ) { }
 
+  // READ
   ngOnInit(): void {
+    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
+      this.categoriaLista = resp;
+    })
   }
 
-  onSubmit() {
+  // CREATE
+  submit() {
     this.categoryService.postCategory(this.categoria).pipe(first()).subscribe({
       next:(resp: Categoria) => {
-        alert('Categoria Cadatrada com sucesso!');
+        this.categoryService.showMsgPostSuccess('Categoria cadastrada com sucesso!')
+        // alert('Categoria Cadatrada com sucesso!');
         this.categoria = resp;
       },
       error:(e: any) => {

@@ -47,6 +47,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,7 @@ import { CategoryUpdateComponent } from './components/category/category-update/c
     ProductUpdateComponent,
     CategoryUpdateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NoopAnimationsModule],
 
 providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
