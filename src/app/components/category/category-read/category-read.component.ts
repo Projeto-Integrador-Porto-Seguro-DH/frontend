@@ -9,13 +9,12 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryReadComponent implements OnInit {
   public categoriaLista: Categoria[];
-  categoria: Categoria = new Categoria();
 
   constructor(
     private categoryService: CategoryService,
   ) { }
 
-    // READ
+  // READ
   ngOnInit(): void {
       this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
         this.categoriaLista = resp;
