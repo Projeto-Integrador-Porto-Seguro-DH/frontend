@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -48,7 +51,6 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -90,8 +92,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     SigninPasswordRulesComponent,
     ProductUpdateComponent,
     CategoryUpdateComponent,
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NoopAnimationsModule, MatSnackBarModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    HttpClientModule, 
+    NoopAnimationsModule, 
+    MatSnackBarModule, 
+    MatFormFieldModule, 
+    MatInputModule],
+
 
 providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
