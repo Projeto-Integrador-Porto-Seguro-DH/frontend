@@ -4,9 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -34,23 +31,15 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
 import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
-import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
-import { ProductCrudComponent } from './components/product-crud/product-crud.component';
-import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
-import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
-
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
-import { CategorySidebarComponent } from './components/category/category-sidebar/category-sidebar.component';
 
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
-import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -80,32 +69,14 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,
-    ProfileAdmTabsComponent,
-    ProductCrudComponent,
-    AdmProfileComponent,
-    CategoryCrudComponent,
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
-    CategoryCrudComponent,
-    CategorySidebarComponent,
     SigninPasswordRulesComponent,
-    ProductUpdateComponent,
-    CategoryUpdateComponent,
-    
+    ProductComponent,
   ],
-  imports: [
-    BrowserModule, 
-    AppRoutingModule, 
-    FormsModule, 
-    HttpClientModule, 
-    NoopAnimationsModule, 
-    MatSnackBarModule, 
-    MatFormFieldModule, 
-    MatInputModule],
-
-
-providers: [
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
