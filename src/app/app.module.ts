@@ -49,6 +49,7 @@ import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { CategoryReadComponent } from './components/category/category-read/category-read.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { ProductUpdateComponent } from './components/product-update/product-upda
     SigninPasswordRulesComponent,
     ProductUpdateComponent,
     ProductComponent,
+    CategoryReadComponent,
   ],
 
   imports: [

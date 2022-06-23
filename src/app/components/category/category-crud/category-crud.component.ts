@@ -19,11 +19,7 @@ export class CategoryCrudComponent implements OnInit {
     private categoryService: CategoryService
   ) { }
 
-  // READ
-  ngOnInit(): void {
-    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
-      this.categoriaLista = resp;
-    })
+  ngOnInit(): void { 
   }
 
   // CREATE
