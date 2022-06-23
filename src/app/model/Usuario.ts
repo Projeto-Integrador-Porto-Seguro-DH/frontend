@@ -5,6 +5,7 @@ export class Usuario {
   public sobrenomeUsuario?: string;
   public emailUsuario: string;
   public senhaUsuario?: string;
+  public confirmacaoSenha?: string;
   public dataDeNascimento?: string;
   public cpfUsuario?: string;
   public telefoneUsuario?: number;

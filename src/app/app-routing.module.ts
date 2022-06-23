@@ -10,6 +10,7 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { ProductComponent } from './pages/product/product.component';
 
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
   { path: 'carrinho', component: ShoppingCartComponent },
+  { path: 'produto/:id', component: ProductComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,

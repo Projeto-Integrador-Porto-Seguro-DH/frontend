@@ -1,4 +1,4 @@
-<div class="card borderStyle mb-3">
+<div class="card borderStyle mb-3" [ngIf]="pedido">
   <a
     data-bs-toggle="collapse"
     href="#collapseExample"
@@ -59,7 +59,7 @@
                   {{ detalhe.quantidadeProduto }}x
                 </p>
               </div>
-              <div class="col-12 col-sm-4">
+              <div class="col-12 col-sm-4" [ngIf]="detalhe.produto">
                 <p class="pStyleLight text-wrap m-0">
                   {{ detalhe.produto?.nomeProduto }}
                 </p>

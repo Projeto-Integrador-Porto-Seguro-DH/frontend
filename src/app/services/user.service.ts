@@ -11,11 +11,20 @@ import { Usuario } from '../model/Usuario';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${environment.apiUrl}/usuarios`);
-  }
-
   getById(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`${environment.apiUrl}/usuarios/${id}`);
+  }
+
+  update(user: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(
+      `${environment.apiUrl}/usuarios/update`,
+      user
+    );
+  }
+
+  delete(email: string): Observable<Usuario> {
+    return this.http.delete<Usuario>(
+      `${environment.apiUrl}/usuarios/delete/${email}`
+    );
   }
 }
