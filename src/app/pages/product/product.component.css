@@ -1,6 +1,19 @@
-img {
-  max-height: 370px;
+img.imgCard {
+  max-height: 355px;
   width: auto;
+}
+
+img.modalImg {
+  max-width: 60%;
+  height: auto;
+}
+
+a.imgModal {
+  max-width: fit-content;
+  max-height: fit-content;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 p.paragraph {
@@ -28,6 +41,7 @@ p.prodID {
 
 .row.margin {
   margin: 2rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 767.98px) {
@@ -56,4 +70,10 @@ p.prodID {
 .buttonDiv {
   margin-top: 1rem;
   padding: 0 0.75rem;
+}
+
+.modal,
+.modal-content {
+  background-color: rgb(118, 118, 118, 0);
+  border: 0;
 }

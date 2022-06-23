@@ -2,7 +2,14 @@
   <div class="row justify-content-between">
     <div class="col-12 col-md-6">
       <div class="row justify-content-center align-items-center mb-3 mb-md-0">
-        <img src="{{ produto.fotoProduto }}" alt="Queijo" />
+        <a class="imgModal" data-bs-toggle="modal" data-bs-target="#imageModal">
+          <figure class="figure">
+            <img class="imgCard" src="{{ produto.fotoProduto }}" alt="Queijo" />
+            <figcaption class="figure-caption text-center">
+              Clique para ampliar
+            </figcaption>
+          </figure>
+        </a>
       </div>
     </div>
     <div class="col-12 col-md-6">
@@ -51,5 +58,27 @@
       </p>
     </div>
     <div class="col-12 col-md-6"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="imageModal"
+  tabindex="-1"
+  aria-labelledby="imageModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" data-bs-dismiss="modal">
+    <div class="modal-content" data-bs-dismiss="modal">
+      <div class="d-flex justify-content-center align-items-start pt-5">
+        <img
+          class="modalImg"
+          src="{{ produto.fotoProduto }}"
+          alt="Queijo"
+          data-bs-dismiss="modal"
+        />
+      </div>
+    </div>
   </div>
 </div>
