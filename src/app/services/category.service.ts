@@ -10,7 +10,10 @@ import { environment } from '../../environments/environment.prod';
   providedIn: 'root',
 })
 export class CategoryService {
-  constructor(private http: HttpClient, private matSnackBar: MatSnackBar) {}
+  constructor(
+    private http: HttpClient, 
+    private matSnackBar: MatSnackBar
+  ) {}
 
   // CREATE
   postCategory(categoria: Categoria): Observable<Categoria> {
@@ -41,16 +44,7 @@ export class CategoryService {
   }
 
   //Método Mostra msg cadastrado com sucesso
-  showSuccessMsgPost(msg: string) {
-    this.matSnackBar.open(msg, '', {
-      duration: 3000,
-      horizontalPosition: 'right', //talvez mudar pada center e center!
-      verticalPosition: 'top',
-    });
-  }
-
-  //Método Mostra msg atualizado com sucesso
-  showSuccessMsgPut(msg: string) {
+  showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
       duration: 3000,
       horizontalPosition: 'right', //talvez mudar pada center e center!

@@ -25,7 +25,7 @@ export class CategoryUpdateComponent implements OnInit {
   update() {
     this.categoryService.updateCategory(this.categoria).pipe(first()).subscribe({
       next:(resp: Categoria) => {
-        this.categoryService.showSuccessMsgPut('Categoria editada com sucesso!')
+        this.categoryService.showMessage('Categoria editada com sucesso!')
         this.categoria = resp;
       },
       error: (e: any) => {

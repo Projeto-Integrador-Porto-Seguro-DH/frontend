@@ -30,7 +30,7 @@ export class CategoryCrudComponent implements OnInit {
   submit() {
     this.categoryService.postCategory(this.categoria).pipe(first()).subscribe({
       next:(resp: Categoria) => {
-        this.categoryService.showSuccessMsgPost('Categoria cadastrada com sucesso!')
+        this.categoryService.showMessage('Categoria cadastrada com sucesso!')
         this.categoria = resp;
       },
       error: (e: any) => {
