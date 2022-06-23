@@ -48,6 +48,7 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ProductUpdateComponent,
     CategoryUpdateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NoopAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NoopAnimationsModule, MatSnackBarModule],
 
 providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

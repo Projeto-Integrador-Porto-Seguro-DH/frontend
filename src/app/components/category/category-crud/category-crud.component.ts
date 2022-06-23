@@ -15,9 +15,9 @@ export class CategoryCrudComponent implements OnInit {
 
   @ViewChild('cadastrar') cadastrar: any;
 
-  constructor(
+  constructor (
     private categoryService: CategoryService
-    ) { }
+  ) { }
 
   // READ
   ngOnInit(): void {
@@ -30,11 +30,10 @@ export class CategoryCrudComponent implements OnInit {
   submit() {
     this.categoryService.postCategory(this.categoria).pipe(first()).subscribe({
       next:(resp: Categoria) => {
-        this.categoryService.showMsgPostSuccess('Categoria cadastrada com sucesso!')
-        // alert('Categoria Cadatrada com sucesso!');
+        this.categoryService.showSuccessMsgPost('Categoria cadastrada com sucesso!')
         this.categoria = resp;
       },
-      error:(e: any) => {
+      error: (e: any) => {
         this.error = e;
         alert(this.error);
       }
@@ -45,14 +44,8 @@ export class CategoryCrudComponent implements OnInit {
     this.cadastrar.nativeElement.value = '';
   }
 
-  delete(){
+  refresh(): void {
+    window.location.reload();
   }
 
-  refresh(){
-  }
-
-  pegarId(id: number) {
-
-  }
-  
 }

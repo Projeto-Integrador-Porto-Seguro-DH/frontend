@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CategoryService } from '../../../services/category.service';
+import { Categoria } from '../../../model/Categoria';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-update',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-update.component.css']
 })
 export class CategoryUpdateComponent implements OnInit {
+  categoria: Categoria = new Categoria();
+  error: '';
 
-  constructor() { }
+  @ViewChild('atualizar') atualizar: any;
+
+  constructor(
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  // UPDATE - EDIT
+  update() {
+    this.categoryService.updateCategory(this.categoria).pipe(first()).subscribe({
+      next:(resp: Categoria) => {
+        this.categoryService.showSuccessMsgPut('Categoria editada com sucesso!')
+        this.categoria = resp;
+      },
+      error: (e: any) => {
+        this.error = e;
+        alert(this.error);
+      }
+    });
   }
 
 }
