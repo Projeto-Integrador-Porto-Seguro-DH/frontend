@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row justify-content-between">
+    <div class="col-12 col-md-6">
+      <div class="row justify-content-center align-items-center mb-3 mb-md-0">
+        <img src="{{ produto.fotoProduto }}" alt="Queijo" />
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="detailsSection">
+        <p class="prodID pStyleLight">cód: {{ produto.idProduto }}</p>
+        <h3 class="h2Style">{{ produto.nomeProduto }}</h3>
+        <p class="pStyleDark ps-1">
+          {{ produto.precoUnitarioProduto | currency: "BRL" }}
+        </p>
+
+        <div *ngIf="produto.produtoDisponivel; else notAvaliable">
+          <p class="pStyleDark mt-2 mb-1">Quantidade</p>
+          <app-quantity-input></app-quantity-input>
+
+          <div
+            class="buttonDiv row d-flex flex-column justify-content-between align-items-start"
+          >
+            <button class="btn buttonStyle toCart my-2">
+              Adicionar ao Carrinho
+            </button>
+            <a class="btn buttonStyle mt-2" routerLink="/carrinho"> Comprar </a>
+          </div>
+        </div>
+
+        <ng-template #notAvaliable>
+          <p class="h3Style mt-2 mb-1">Produto não disponível!</p>
+
+          <div
+            class="row d-flex flex-column buttonDiv justify-content-between align-items-start"
+          >
+            <button class="btn buttonStyle toCart my-2" disabled>
+              Adicionar ao Carrinho
+            </button>
+            <button class="btn buttonStyle mt-2" disabled>Comprar</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-around margin">
+    <div class="col-12 col-md-6 col-lg-5 px-1 px-md-2">
+      <p class="pStyleDark paragraph text-start">
+        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
+        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
+        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
+      </p>
+    </div>
+    <div class="col-12 col-md-6"></div>
+  </div>
+</div>

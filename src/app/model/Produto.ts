@@ -9,5 +9,5 @@ export class Produto {
   public produtoDisponivel?: boolean;
   public detalhePedido?: DetalhePedido[];
   public categoria?: Categoria;
-  public foto?: string;
+  public fotoProduto?: string;
 }
