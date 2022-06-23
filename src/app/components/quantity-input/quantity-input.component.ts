@@ -1,27 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-quantity-input',
   templateUrl: './quantity-input.component.html',
-  styleUrls: ['./quantity-input.component.css']
+  styleUrls: ['./quantity-input.component.css'],
 })
 export class QuantityInputComponent implements OnInit {
+  @Input() quantidadeProduto = 1;
 
-  value = 0;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  updateValue(event: any) {
+    this.quantidadeProduto = event.target.value;
+
+    if (this.quantidadeProduto > 100) {
+      this.quantidadeProduto = 100;
+    }
+    if (this.quantidadeProduto < 1) {
+      this.quantidadeProduto = 1;
+    }
   }
 
   //Método subtrair
   subtrair() {
-    this.value--;
+    if (this.quantidadeProduto > 1) {
+      this.quantidadeProduto--;
+    }
   }
 
   //Método somar
   somar() {
-    this.value++;
+    if (this.quantidadeProduto < 100) {
+      this.quantidadeProduto++;
+    }
   }
-
 }

@@ -4,20 +4,22 @@
     *ngFor="let produto of produtos"
   >
     <div class="mt-5 px-2">
-      <div class="card cardStyle">
-        <img
-          src="{{ produto.foto }}"
-          class="card-img-top img-fluid"
-          alt="..."
-        />
-        <div class="card-body ps-0">
-          <h3 class="card-title h3Style">{{ produto.nome }}</h3>
+      <a routerLink="/produto/{{ produto.idProduto }}">
+        <div class="card cardStyle">
+          <img
+            src="{{ produto.foto }}"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body ps-2">
+            <h3 class="card-title h3Style">{{ produto.nome }}</h3>
 
-          <p class="card-title pStyleDark">{{ produto.preco }}</p>
+            <p class="card-title pStyleDark">{{ produto.preco }}</p>
 
-          <p class="card-text pStyleLight">{{ produto.descricao }}</p>
+            <p class="card-text pStyleLight">{{ produto.descricao }}</p>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>

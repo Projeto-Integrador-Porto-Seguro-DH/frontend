@@ -46,7 +46,7 @@ export class OrderCardComponent implements OnInit {
       idProduto: 3,
       nomeProduto: 'Geléia',
       precoUnitarioProduto: 50,
-      foto: '../../../assets/img/products/queijo/queijo1.jpg',
+      fotoProduto: '../../../assets/img/products/queijo/queijo1.jpg',
     },
   };
 

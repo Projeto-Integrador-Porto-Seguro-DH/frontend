@@ -18,7 +18,7 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {
     this.userSubject = new BehaviorSubject<UserLogin>(
-      JSON.parse(localStorage.getItem('user'))
+      JSON.parse(localStorage.getItem('user')!)
     );
     this.user = this.userSubject.asObservable();
   }
@@ -41,7 +41,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('user');
-    this.userSubject.next(null);
+    this.userSubject.next(null!);
     this.router.navigate(['/']);
   }
 

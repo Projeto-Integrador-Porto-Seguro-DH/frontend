@@ -1,8 +1,14 @@
 <div class="quantity-wrapper flex-nowrap">
-    <button class="plusminus" (click)="subtrair()">-</button>
+  <button class="plusminus" (click)="subtrair()">-</button>
 
-    <input type="number" class="numeroInputStyle" value="0" /> 
-    <!-- [(ngModel)]="value" -->
+  <input
+    type="number"
+    class="numeroInputStyle"
+    [value]="quantidadeProduto"
+    (input)="updateValue($event)"
+    min="1"
+    max="100"
+  />
 
-    <button class="plusminus" (click)="somar()">+</button>
+  <button class="plusminus" (click)="somar()">+</button>
 </div>

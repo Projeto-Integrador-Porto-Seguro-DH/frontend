@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { AuthService } from './../../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 import { UserCadastro } from 'src/app/model/Cadastro';
 import { Usuario } from 'src/app/model/Usuario';
@@ -18,6 +18,8 @@ export class SigninComponent implements OnInit {
   confirmacaoSenha: string;
 
   error = '';
+
+  activePassword: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -41,10 +43,14 @@ export class SigninComponent implements OnInit {
           this.router.navigate(['/']);
           alert('Usuário cadastrado com sucesso!');
         },
-        error: (error) => {
-          this.error = error;
+        error: (error: Error) => {
+          this.error = error.message;
           console.log(this.error);
         },
       });
+  }
+
+  showPasswordRequirement() {
+    this.activePassword = false;
   }
 }

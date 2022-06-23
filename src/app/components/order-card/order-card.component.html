@@ -1,4 +1,4 @@
-<div class="card borderStyle mb-3">
+<div class="card borderStyle mb-3" [ngIf]="pedido">
   <a
     data-bs-toggle="collapse"
     href="#collapseExample"
@@ -59,9 +59,9 @@
                   {{ detalhe.quantidadeProduto }}x
                 </p>
               </div>
-              <div class="col-12 col-sm-4">
+              <div class="col-12 col-sm-4" [ngIf]="detalhe.produto">
                 <p class="pStyleLight text-wrap m-0">
-                  {{ detalhe.produto.nomeProduto }}
+                  {{ detalhe.produto?.nomeProduto }}
                 </p>
               </div>
               <div class="col-12 col-sm-5">
@@ -85,12 +85,12 @@
             <h6 class="h3Style ps-0">Endereço</h6>
             <p class="pStyleDark endereco">
               CEP:
-              <span class="pStyleLight">{{ pedido.usuario.cepEndereco }}</span>
+              <span class="pStyleLight">{{ pedido.usuario?.cepEndereco }}</span>
             </p>
             <p class="pStyleDark endereco">
               Logradouro:
               <span class="pStyleLight">{{
-                pedido.usuario.logradouroEndereco
+                pedido.usuario?.logradouroEndereco
               }}</span>
             </p>
             <div class="row p-0">
@@ -98,7 +98,7 @@
                 <p class="pStyleDark endereco">
                   Nº
                   <span class="pStyleLight">{{
-                    pedido.usuario.numeroEndereco
+                    pedido.usuario?.numeroEndereco
                   }}</span>
                 </p>
               </div>
@@ -106,7 +106,7 @@
                 <p class="pStyleDark endereco">
                   Complemento:
                   <span class="pStyleLight">{{
-                    pedido.usuario.complementoEndereco
+                    pedido.usuario?.complementoEndereco
                   }}</span>
                 </p>
               </div>
@@ -115,7 +115,7 @@
             <p class="pStyleDark endereco">
               Bairro:
               <span class="pStyleLight">{{
-                pedido.usuario.bairroEndereco
+                pedido.usuario?.bairroEndereco
               }}</span>
             </p>
             <div class="row p-0">
@@ -123,7 +123,7 @@
                 <p class="pStyleDark endereco">
                   Cidade:
                   <span class="pStyleLight">{{
-                    pedido.usuario.cidadeEndereco
+                    pedido.usuario?.cidadeEndereco
                   }}</span>
                 </p>
               </div>
@@ -131,7 +131,7 @@
                 <p class="pStyleDark endereco">
                   Estado:
                   <span class="pStyleLight">{{
-                    pedido.usuario.estadoEndereco
+                    pedido.usuario?.estadoEndereco
                   }}</span>
                 </p>
               </div>
@@ -166,7 +166,7 @@
                   <div class="col-12 col-sm-12 col-xl-4 m-2">
                     <div class="card-body py-1 py-sm-0 px-0">
                       <h6 class="h3Style">
-                        {{ detalhe.produto.nomeProduto }}
+                        {{ detalhe.produto?.nomeProduto }}
                       </h6>
                       <p class="card-text pStyleDark mb-1">
                         Quantidade:
