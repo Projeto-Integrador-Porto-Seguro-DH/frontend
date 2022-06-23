@@ -92,19 +92,20 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     SigninPasswordRulesComponent,
     ProductUpdateComponent,
     CategoryUpdateComponent,
+    
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    NoopAnimationsModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
+    BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    HttpClientModule, 
+    NoopAnimationsModule, 
+    MatSnackBarModule, 
+    MatFormFieldModule, 
+    MatInputModule],
 
-  providers: [
+
+providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
