@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -31,15 +34,21 @@ import { UserPersonalInfoComponent } from './components/user-personal-info/user-
 import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
+import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
+import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
+
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
+import { ProductComponent } from './pages/product/product.component';
 
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
-import { ProductComponent } from './pages/product/product.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -69,13 +78,28 @@ import { ProductComponent } from './pages/product/product.component';
     PhonePipe,
     ProfileTabsComponent,
     BackToTopComponent,
+    ProfileAdmTabsComponent,
+    ProductCrudComponent,
+    AdmProfileComponent,
+    CategoryCrudComponent,
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
     SigninPasswordRulesComponent,
+    ProductUpdateComponent,
     ProductComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
+
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

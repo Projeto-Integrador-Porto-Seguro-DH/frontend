@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { UserService } from './../../services/user.service';
 import { EstadosEnum } from '../../enums/EstadosEnum';
@@ -12,12 +11,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./user-personal-info.component.css'],
 })
 export class UserPersonalInfoComponent implements OnInit {
-<<<<<<< HEAD
-  public usuario: Usuario = new Usuario();
-  public usuarioNoBD: Usuario;
-=======
   public usuario = new Usuario();
->>>>>>> e03ebc94256719490b9ef6e39f8bf8fc12dd7d4c
   public estados = EstadosEnum;
   public confirmacaoSenha: string;
   public error = '';
@@ -30,19 +24,11 @@ export class UserPersonalInfoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-<<<<<<< HEAD
-    this.authService.user.subscribe((userAuth) => (this.usuario = userAuth));
-
-    this.userService
-      .getById(this.usuario.idUsuario!)
-      .subscribe((userBD) => (this.usuarioNoBD = userBD));
-=======
     this.authService.user.subscribe((userAuth) => {
       this.userService
         .getById(userAuth.idUsuario!)
         .subscribe((user) => (this.usuario = user));
     });
->>>>>>> e03ebc94256719490b9ef6e39f8bf8fc12dd7d4c
   }
 
   refresh(): void {

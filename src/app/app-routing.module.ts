@@ -1,7 +1,6 @@
-import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { AuthGuard } from './guards/auth.guard';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 
