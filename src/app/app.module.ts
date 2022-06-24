@@ -40,6 +40,7 @@ import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductComponent } from './pages/product/product.component';
+import { CheckoutProcessComponent } from './pages/checkout-process/checkout-process.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ProductComponent } from './pages/product/product.component';
     PurchaseHistoryComponent,
     SigninPasswordRulesComponent,
     ProductComponent,
+    CheckoutProcessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

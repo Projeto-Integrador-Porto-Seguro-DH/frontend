@@ -11,31 +11,37 @@
 
         <div class="px-0 mt-5">
             <div class="row">
-                <p>Subtotal   <!-- {{subtotal}} --></p>
-            </div> 
+                <p>Subtotal
+                    <!-- {{subtotal}} -->
+                </p>
+            </div>
         </div>
 
         <div class="px-0 mt-1 mb-5">
-            <p>Entrega   <!-- {{frete}} --></p> 
+            <p>Entrega
+                <!-- {{frete}} -->
+            </p>
 
             <div class="input-group flex-nowrap mb-3 input-groupStyle">
                 <input type="text" class="form-control inputStyle" placeholder="Cep" aria-label="Cep" aria>
                 <button class="btn buttonStyle">Calcular</button>
             </div>
         </div>
-            
+
         <div class="dropdown-divider my-0"></div>
 
         <div class="h3Style px-0 mt-5">
-            <p>Total   <!-- {{total}} --></p> 
+            <p>Total
+                <!-- {{total}} -->
+            </p>
         </div>
-                    <!-- <a >Frete</a>
+        <!-- <a >Frete</a>
                             [routerLink]="/frete" 
                             <p> calculado na finalização da compra</p> -->
         <div class="col-sm-12 col-md-12 my-5 px-0 pb-5 text-center">
-            <button type="submit" class="btn buttonStyle nowrap ">Finalizar compra</button>
+            <a class="btn buttonStyle nowrap" [routerLink]="['/checkout']">Finalizar compra</a>
         </div>
 
     </div>
- 
+
 </div>
