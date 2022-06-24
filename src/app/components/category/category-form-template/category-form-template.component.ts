@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { CategoryFormTemplateDataSource, CategoryFormTemplateItem } from './category-form-template-datasource';
+import { CategoryFormTemplateDataSource } from './category-form-template-datasource';
+import { Categoria } from '../../../model/Categoria';
 
 @Component({
   selector: 'app-category-form-template',
@@ -12,11 +13,11 @@ import { CategoryFormTemplateDataSource, CategoryFormTemplateItem } from './cate
 export class CategoryFormTemplateComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<CategoryFormTemplateItem>;
+  @ViewChild(MatTable) table!: MatTable<Categoria>;
   dataSource: CategoryFormTemplateDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'nome', 'descricao'];
 
   constructor() {
     this.dataSource = new CategoryFormTemplateDataSource();

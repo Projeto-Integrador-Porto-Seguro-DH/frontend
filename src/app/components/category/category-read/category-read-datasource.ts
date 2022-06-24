@@ -7,17 +7,11 @@ import { Categoria } from '../../../model/Categoria';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: Categoria[] = [
-  {idCategoria: 1, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 2, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 3, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 4, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 5, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 6, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 7, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 8, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 9, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 10, nomeCategoria: 'Hydrogen', descricaoCategoria: 'Cremosos'},
-
+  {idCategoria: 1, nomeCategoria: 'Queijos', descricaoCategoria: 'Cremosos'},
+  {idCategoria: 2, nomeCategoria: 'Manteigas', descricaoCategoria: 'Cremosos'},
+  {idCategoria: 3, nomeCategoria: 'Geléias', descricaoCategoria: 'Cremosos'},
+  {idCategoria: 4, nomeCategoria: 'Aperitivos', descricaoCategoria: 'Cremosos'},
+  {idCategoria: 5, nomeCategoria: 'Vinhos', descricaoCategoria: 'Cremosos'},
 ];
 
 /**
@@ -25,7 +19,7 @@ const EXAMPLE_DATA: Categoria[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class CategoryFormTemplateDataSource extends DataSource<Categoria> {
+export class CategoryReadDataSource extends DataSource<Categoria> {
   data: Categoria[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
@@ -71,6 +65,7 @@ export class CategoryFormTemplateDataSource extends DataSource<Categoria> {
     }
   }
 
+  //************  */MÉTODO DANDO ERRO
   /**
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.

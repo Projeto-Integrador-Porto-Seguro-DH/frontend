@@ -94,7 +94,7 @@ import { MatSortModule } from '@angular/material/sort';
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
-    CategoryFormTemplateComponent,
+    CategoryFormTemplateComponent,/*vou deletar depois, é só o template*/
   ],
 
   imports: [
