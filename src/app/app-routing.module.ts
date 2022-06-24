@@ -1,6 +1,8 @@
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -12,6 +14,9 @@ import { ProductComponent } from './pages/product/product.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
+import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
+import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,12 +27,22 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: UserProfileComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dados', pathMatch: 'full' },
       { path: 'dados', component: UserPersonalInfoComponent },
       { path: 'pedidos', component: OrdersComponent },
       { path: 'pedidos/historico', component: PurchaseHistoryComponent },
+    ],
+  },
+  {
+    path: 'admPerfil',
+    component: AdmProfileComponent,
+    children: [
+      { path: 'atualizar/:id', component: ProductUpdateComponent },
+      { path: '', component: ProductCrudComponent },
+      { path: 'categorias', component: CategoryCrudComponent },
+      { path: 'categorias/atualizar/:id', component: CategoryUpdateComponent },
     ],
   },
   { path: '**', redirectTo: '' },
