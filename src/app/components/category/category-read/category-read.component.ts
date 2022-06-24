@@ -18,7 +18,7 @@ export class CategoryReadComponent implements OnInit, AfterViewInit {
   dataSource: CategoryReadDataSource;
  
   //Exibição das colunas do Header da Tabela:
-  displayedColumns = ['id', 'nome', 'descricao'];
+  displayedColumns = ['id', 'nome', 'descricao'];// 
   
   public categoriaLista: Categoria[];
 
@@ -34,12 +34,10 @@ export class CategoryReadComponent implements OnInit, AfterViewInit {
 
   // READ
   ngOnInit(): void {
-      this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
-        this.categoriaLista = resp;
-      })
+    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
+    this.dataSource.data = resp;
+    this.categoriaLista = this.dataSource.data;
+    })
   }
-
-  getAllCategories(){
-
-  }
+  
 }

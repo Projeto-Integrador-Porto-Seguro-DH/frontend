@@ -5,14 +5,8 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { Categoria } from '../../../model/Categoria';
 
-// TODO: replace this with real data from your application
-const EXAMPLE_DATA: Categoria[] = [
-  {idCategoria: 1, nomeCategoria: 'Queijos', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 2, nomeCategoria: 'Manteigas', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 3, nomeCategoria: 'Geléias', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 4, nomeCategoria: 'Aperitivos', descricaoCategoria: 'Cremosos'},
-  {idCategoria: 5, nomeCategoria: 'Vinhos', descricaoCategoria: 'Cremosos'},
-];
+
+
 
 /**
  * Data source for the CategoryFormTemplate view. This class should
@@ -20,7 +14,7 @@ const EXAMPLE_DATA: Categoria[] = [
  * (including sorting, pagination, and filtering).
  */
 export class CategoryReadDataSource extends DataSource<Categoria> {
-  data: Categoria[] = EXAMPLE_DATA;
+  data: Categoria[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -65,7 +59,6 @@ export class CategoryReadDataSource extends DataSource<Categoria> {
     }
   }
 
-  //************  */MÉTODO DANDO ERRO
   /**
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
@@ -75,14 +68,15 @@ export class CategoryReadDataSource extends DataSource<Categoria> {
       return data;
     }
 
-    // return data.sort((a, b) => {
-    //   const isAsc = this.sort?.direction === 'asc';
-    //   switch (this.sort?.active) {
-    //     case 'name': return compare(a.name, b.name, isAsc);
-    //     case 'id': return compare(+a.id, +b.id, isAsc);
-    //     default: return 0;
-    //   }
-    // });
+    return data.sort((a, b) => {
+      const isAsc = this.sort?.direction === 'asc';
+      switch (this.sort?.active) {
+        case 'descricao': return compare(a.descricaoCategoria!, b.descricaoCategoria!, isAsc);
+        case 'nome': return compare(a.nomeCategoria!, b.nomeCategoria!, isAsc);
+        case 'id': return compare(+a.idCategoria, +b.idCategoria, isAsc);
+        default: return 0;
+      }
+    });
   }
 }
 

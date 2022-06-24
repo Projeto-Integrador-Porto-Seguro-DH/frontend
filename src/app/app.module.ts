@@ -50,7 +50,6 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { CategoryReadComponent } from './components/category/category-read/category-read.component';
-import { CategoryFormTemplateComponent } from './components/category/category-form-template/category-form-template.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -94,7 +93,6 @@ import { MatSortModule } from '@angular/material/sort';
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
-    CategoryFormTemplateComponent,/*vou deletar depois, é só o template*/
   ],
 
   imports: [
