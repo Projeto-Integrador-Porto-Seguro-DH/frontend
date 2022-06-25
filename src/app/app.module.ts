@@ -32,7 +32,6 @@ import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
-import { ProductCrudComponent } from './components/product-crud/product-crud.component';
 import { CategoryCrudComponent } from './components/category-crud/category-crud.component';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 
@@ -44,7 +43,12 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
+import { ProductCreateComponent } from './components/product-component/product-create/product-create.component';
+import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
+import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
+import { ProductDeleteComponent } from './components/product-component/product-delete/product-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -75,14 +79,19 @@ import { ProductUpdateComponent } from './components/product-update/product-upda
     ProfileTabsComponent,
     BackToTopComponent,
     ProfileAdmTabsComponent,
-    ProductCrudComponent,
     AdmProfileComponent,
     CategoryCrudComponent,
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
     SigninPasswordRulesComponent,
+    ProductCrudComponent,
+    ProductCreateComponent,
+    ProductReadComponent,
     ProductUpdateComponent,
+    ProductDeleteComponent,
+
+
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

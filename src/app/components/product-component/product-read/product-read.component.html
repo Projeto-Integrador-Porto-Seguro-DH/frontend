@@ -1,0 +1,55 @@
+<div class="container px-0">
+<section id="consultar">
+  <h3 class="h3Style">Consultar</h3>
+  <div class="table-responsive">
+  <table class="table table-hover ;" style="color: #9b6c51;">
+    <thead>
+      <tr>
+        <th colspan="2" class="h3Style" scope="col">Id</th>
+        <th colspan="2" class="h3Style" scope="col">Nome</th>
+        <th colspan="2" class="h3Style" scope="col">Descrição</th>
+        <th colspan="2" class="h3Style" scope="col">Preço</th>
+        <th colspan="2" class="h3Style" scope="col">Estoque</th>
+        <th colspan="1" rowspan="2" class="h3Style" scope="col">Disponível</th>
+        <th colspan="2" class="h3Style" scope="col">Gerenciar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of produtos;let i = index">
+      <tr>
+        <td colspan="2" class="pStyleDark" scope="row">{{product.idProduto}}</td>
+        <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.nomeProduto}}</td>
+        <td colspan="2" rowspan="5" class="pStyleDark" scope="row" >{{product.descricaoProduto}}</td>
+        <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.precoUnitarioProduto}}</td>
+        <td colspan="2" rowspan="2" class="pStyleDark" scope="row">{{product.estoqueProduto}}</td>
+        <td colspan="1" class="pStyleDark" scope="row">{{product.produtoDisponivel}}</td>
+        <td colspan="2" rowspan="2" class="pStyleDark" scope="row">
+          <a routerLink=". /atualizar/{{product.idProduto}}" class="mx-1" href="">
+            <img src="../../../assets/icon/edit-icon.svg" alt="ícone Atualizar">
+          </a>
+          <a (click)="pegarId(product.idProduto)" class="mx-2" href="" data-bs-toggle="modal" data-bs-target="#deletarProduto">
+            <img src="../../../assets/icon/trash-icon.svg" alt="ícone Deletar">
+          </a>
+          <div class="modal fade" id="deletarProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Deletar Produto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Tem certeza que deseja deletar este produto?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn pStyleDark " data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn buttonStyle deleteButton" (click)="delete() " data-bs-dismiss="modal">Deletar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+</div>

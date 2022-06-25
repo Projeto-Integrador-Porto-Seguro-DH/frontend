@@ -1,7 +1,6 @@
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
 import { AuthGuard } from './guards/auth.guard';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 
@@ -14,7 +13,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
-import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

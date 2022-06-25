@@ -1,14 +1,15 @@
-import { first } from 'rxjs/operators';
-import { ProductService } from './../../services/product.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Produto } from '../../model/Produto'
+import { first } from 'rxjs';
+import { Produto } from 'src/app/model/Produto';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-product-crud',
-  templateUrl: './product-crud.component.html',
-  styleUrls: ['./product-crud.component.css','../user-personal-info/user-personal-info.component.css']
+  selector: 'app-product-read',
+  templateUrl: './product-read.component.html',
+  styleUrls: ['./product-read.component.css']
 })
-export class ProductCrudComponent implements OnInit {
+export class ProductReadComponent implements OnInit {
+
   public produtos: Produto[];
   preco: number = 0;
   produto = new Produto();
@@ -17,10 +18,9 @@ export class ProductCrudComponent implements OnInit {
   index: number;
 
 
-  @ViewChild('cadastrar') cadastrar: any;
+
   @ViewChild('consultar') consultar: any;
-  @ViewChild('atualizar') atualizar: any;
-  @ViewChild('deletar') deletar: any;
+
 
   constructor(private productService: ProductService) { }
 
@@ -55,23 +55,10 @@ export class ProductCrudComponent implements OnInit {
     this.index = id;
   }
 
-
-clearFormCadastrar(): void {
-  this.cadastrar.nativeElement.value = '';
-}
-
 clearFormConsultar(): void {
   this.consultar.nativeElement.value = '';
 }
 
-clearFormAtualizar(): void {
-  this.atualizar.nativeElement.value = '';
-}
 
-clearFormDeletar(): void {
-  this.deletar.nativeElement.value = '';
-}
 
 }
-
-
