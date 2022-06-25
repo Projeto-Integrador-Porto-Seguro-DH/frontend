@@ -1,5 +1,26 @@
+section {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+}
+
 a {
   text-decoration: none;
+}
+
+.inputStyle {
+  font-size: 1rem;
+}
+
+.searchDiv {
+  display: grid;
+}
+
+.searchBar {
+  max-width: 100%;
+  height: auto;
+  justify-self: flex-end;
 }
 
 .card:hover {
@@ -19,24 +40,25 @@ a {
 
 @media (max-width: 575.98px) {
   .cardStyle {
-    width: 8rem;
+    max-width: 8rem;
+    height: auto;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .cardStyle {
-    width: 10rem;
+    max-width: 10rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .cardStyle {
-    width: 14rem;
+    max-width: 14rem;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .cardStyle {
-    width: 16rem;
+    max-width: 16rem;
   }
 }

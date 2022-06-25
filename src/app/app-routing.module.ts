@@ -1,3 +1,4 @@
+import { SearchComponent } from './pages/search/search.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'cadastrar', component: SigninFormComponent },
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
+  { path: 'pesquisa', component: SearchComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,

@@ -53,6 +53,8 @@ import { CategoryReadComponent } from './components/category/category-read/categ
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { SearchComponent } from './pages/search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -93,6 +95,8 @@ import { MatSortModule } from '@angular/material/sort';
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
+    SearchComponent,
+    SearchPipe,
   ],
 
   imports: [
