@@ -1,0 +1,64 @@
+section {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inputStyle {
+  font-size: 1rem;
+}
+
+.searchDiv {
+  display: grid;
+}
+
+.searchBar {
+  max-width: 100%;
+  height: auto;
+  justify-self: flex-end;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 0.15rem;
+}
+
+.cardStyle {
+  background-color: var(--body-bg-color);
+  border: 0;
+}
+
+.pricePosition {
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .cardStyle {
+    max-width: 8rem;
+    height: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .cardStyle {
+    max-width: 10rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cardStyle {
+    max-width: 14rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cardStyle {
+    max-width: 16rem;
+  }
+}

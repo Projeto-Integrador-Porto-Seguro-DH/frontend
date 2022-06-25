@@ -12,4 +12,8 @@ export class ShoppingCartSummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Método 
+  openDeliveryInput() {
+    
+  }
 }

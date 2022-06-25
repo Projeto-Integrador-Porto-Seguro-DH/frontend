@@ -1,22 +1,51 @@
 <section id="tabs">
-  <ul class="nav justifyContentMobile flex-md-column">
-    <li class="nav-item px-1 py-3 px-md-2 py-md-3">
-      <a
-        class="nav-link linkContent pStyleDark p-0"
-        routerLink="./"
-        fragment="cadastrar"
-      >
-        <span class="link-active py-1 px-2"> Cadastrar </span>
-      </a>
-    </li>
-    <li class="nav-item px-1 py-3 px-md-2 py-md-3">
-      <a
-        class="nav-link linkContent pStyleDark p-0"
-        routerLink="./"
-        fragment="consultar"
-      >
-        <span class="link-active py-1 px-2">Consultar</span>
-      </a>
-    </li>
-  </ul>
+    <div class="product-tab">
+        <h3 class="h3Style">Gerenciar Produtos</h3>
+
+        <ul class="nav justifyContentMobile flex-md-column">
+            <li class="nav-item px-1 py-3 px-md-2 py-md-3">
+                <a
+                class="nav-link linkContent pStyleDark p-0"
+                routerLink="./"
+                fragment="cadastrar"
+                >
+                <span class="link-active py-1 px-2"> Cadastrar </span>
+                </a>
+            </li>
+            <li class="nav-item px-1 py-3 px-md-2 py-md-3">
+                <a
+                class="nav-link linkContent pStyleDark p-0"
+                routerLink="./"
+                fragment="consultar"
+                >
+                <span class="link-active py-1 px-2">Ver todos</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-tab">
+        <h3 class="h3Style">Gerenciar Categoria</h3>
+
+        <ul class="nav justifyContentMobile flex-md-column">
+            <li class="nav-item px-1 py-3 px-md-2 py-md-3">
+                <a
+                class="nav-link linkContent pStyleDark p-0"
+                routerLink="./categorias"
+                fragment="cadastrarCategoria"
+                >
+                <span class="link-active py-1 px-2"> Cadastrar </span>
+                </a>
+            </li>
+            <li class="nav-item px-1 py-3 px-md-2 py-md-3">
+                <a
+                class="nav-link linkContent pStyleDark p-0"
+                routerLink="./categorias"
+                fragment="consultarCategoria"
+                >
+                <span class="link-active py-1 px-2">Ver todos</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </section>

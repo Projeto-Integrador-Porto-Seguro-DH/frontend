@@ -1,4 +1,5 @@
 import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
+import { SearchComponent } from './pages/search/search.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,25 +10,22 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { ProductComponent } from './pages/product/product.component';
 
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
+import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'entrar', component: LoginFormComponent },
   { path: 'cadastrar', component: SigninFormComponent },
-  {
-    path: 'admPerfil',
-    component: AdmProfileComponent,
-    children: [
-      { path: 'atualizar/:id', component: ProductUpdateComponent },
-      { path: '', component: ProductCrudComponent}
-    ],
-  },
   { path: 'carrinho', component: ShoppingCartComponent },
+  { path: 'produto/:id', component: ProductComponent },
+  { path: 'pesquisa', component: SearchComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,
@@ -37,6 +35,16 @@ const routes: Routes = [
       { path: 'dados', component: UserPersonalInfoComponent },
       { path: 'pedidos', component: OrdersComponent },
       { path: 'pedidos/historico', component: PurchaseHistoryComponent },
+    ],
+  },
+  {
+    path: 'admPerfil',
+    component: AdmProfileComponent,
+    children: [
+      { path: 'atualizar/:id', component: ProductUpdateComponent },
+      { path: '', component: ProductCrudComponent },
+      { path: 'categorias', component: CategoryCrudComponent },
+      { path: 'categorias/atualizar/:id', component: CategoryUpdateComponent },
     ],
   },
   { path: '**', redirectTo: '' },

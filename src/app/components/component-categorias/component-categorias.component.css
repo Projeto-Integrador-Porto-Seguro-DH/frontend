@@ -1,0 +1,119 @@
+#slider {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#slider .carousel-caption {
+   
+
+}
+
+#slider .carousel-caption h5 {
+    font-family: var(--title-font-primary);
+    font-size: 3em;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+#slider .btn {
+    padding: 0.3em 0.8em;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    color: #111;
+    font-size: 3em;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: rgba(88, 87, 87, 0.397);
+    opacity: 0.8;
+}
+  
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    #slider .carousel-inner {
+        height: 80vh;
+    }
+    #slider .carousel-caption {
+      bottom: 6em;
+    }
+    #slider .carousel-caption h5 {
+      font-size: 4em;
+    }
+    #slider .btn {
+      padding: 0.6em 1.6em;
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+    .carousel-indicators {
+      bottom: 10em;
+    }
+}
+
+@media(min-width: 1024px) {
+    #slider .carousel-caption {
+        bottom: 6em;
+      }
+    #slider .carousel-caption h5 {
+        font-size: 8em;
+      }
+    .carousel-indicators {
+        bottom: 20em;
+    }
+}
+
+@media(min-width: 1366px) {
+    #slider .carousel-caption {
+        bottom: 22em;
+      }
+    #slider .carousel-caption h5 {
+        font-size: 8em;
+      }
+    .carousel-indicators {
+        bottom: 6em;
+    }
+}
+
+
+@media(min-width: 1440px) {
+    #slider .carousel-caption h5 {
+        font-size: 12em;
+      }
+    #slider .carousel-caption {
+        bottom: 12em;
+    }
+    #slider .btn {
+        padding: 0.6em 1.6em;
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+    .carousel-indicators {
+        bottom: 16em;
+    }
+}
+
+@media(min-width: 2560px) {
+    #slider .carousel-caption h5 {
+        font-size: 16em;
+      }
+    #slider .carousel-caption {
+        bottom: 10em;
+    }
+    #slider .btn {
+        padding: 0.6em 1.6em;
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+    .carousel-indicators {
+        bottom: 60em;
+    }
+}

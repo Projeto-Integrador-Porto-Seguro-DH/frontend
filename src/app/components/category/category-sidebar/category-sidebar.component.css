@@ -1,0 +1,21 @@
+@media (max-width: 575.98px) {
+    .nav.justifyContentMobile {
+      justify-content: space-between;
+    }
+  
+    .nav-link {
+      padding: 0.5rem 0rem;
+    }
+  }
+  
+a.linkContent {
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+}
+  
+.borderStyle {
+    border: 1px solid var(--button-bg-color);
+    border-radius: 0.25rem;
+}
+  

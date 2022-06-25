@@ -67,7 +67,7 @@
           />
         </div>
 
-        <div *ngIf="!activePassword" class="form-group mb-0 mt-3" >
+        <div *ngIf="!activePassword" class="form-group mb-0 mt-3">
           <app-signin-password-rules></app-signin-password-rules>
         </div>
 
@@ -75,7 +75,6 @@
           <label for="senhaUsuario"></label>
           <input
             (input)="confirmarSenha($event)"
-            (focus)="showConfirmRequirement()"
             type="password"
             class="form-control inputStyle"
             id="senhaUsuario"
@@ -85,10 +84,6 @@
             aria-hidden="true"
             required
           />
-        </div>
-
-        <div *ngIf="!activeConfirm" class="form-group mb-0 mt-3" >
-          <app-signin-password-rules></app-signin-password-rules>
         </div>
 
         <div class="form-check d-flex justify-content-start mt-4">

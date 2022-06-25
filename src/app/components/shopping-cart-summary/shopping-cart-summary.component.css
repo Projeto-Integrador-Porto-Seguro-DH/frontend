@@ -8,14 +8,27 @@
 
 .inputStyle {
     padding: 1rem;
-  }
+}
 
 .inputStyle:focus {  
-    box-shadow: none;
-  }
+  box-shadow: none;
+}
 
 .input-groupStyle button.buttonStyle {
     font-size: 0.85rem;
     min-width: 110px;
     padding:0;
+}
+
+a.linkStyle {
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+a.linkStyle:hover {
+    color: var(--text-color-dark);
+}
+
+a.linkStyle:focus {
+    font-weight: 500;
 }
