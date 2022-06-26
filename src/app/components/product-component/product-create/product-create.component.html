@@ -1,7 +1,7 @@
 <div class="container px-0">
   <section id="cadastrar">
     <h3 class="h3Style">Cadastrar</h3>
-<!-- CREATE -->
+    <!-- CREATE -->
     <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
       <form #cadastrar (ngSubmit)="onSubmit()">
         <div class="my-4">
@@ -38,7 +38,9 @@
 
         <div class="my-4">
           <div class="form-group formWidth">
-            <label for="precoUnitarioProduto" class="form-label">Preço unitário</label>
+            <label for="precoUnitarioProduto" class="form-label"
+              >Preço unitário</label
+            >
             <input
               [(ngModel)]="produto.precoUnitarioProduto"
               type="number"
@@ -53,7 +55,9 @@
 
         <div class="my-4">
           <div class="form-group">
-            <label for="estoqueProduto" class="form-label">Quantidade de estoque</label>
+            <label for="estoqueProduto" class="form-label"
+              >Quantidade de estoque</label
+            >
             <input
               [(ngModel)]="produto.estoqueProduto"
               type="text"
@@ -70,49 +74,60 @@
           <div class="form-group">
             <label for="fotoProduto" class="form-label">Link da foto</label>
             <input
-             [(ngModel)]="produto.fotoProduto"
-             class="form-control inputStyle smallInput-12"
-             type="text"
-             id="fotoProduto"
-             name="fotoProduto"
-             placeholder="http://..."
-             required>
+              [(ngModel)]="produto.fotoProduto"
+              class="form-control inputStyle smallInput-12"
+              type="text"
+              id="fotoProduto"
+              name="fotoProduto"
+              placeholder="http://..."
+              required
+            />
           </div>
         </div>
 
-        <div class="my-4 ">
-          <div class="form-group ">
+        <div class="my-4">
+          <div class="form-group">
+            <label for="categoriaProduto" class="form-label">Categoria</label>
+            <select name="categoriaProduto" id="categoriaProduto">
+              <option value="" disabled>Selecione</option>
+              <option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">{{categoria.nomeCategoria}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group">
             <label for="form-radio-label ps-2">Produto disponível?</label>
-            <br>
+            <br />
             <input
               [(ngModel)]="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
-            /> Sim
-            <br>
+            />
+            Sim
+            <br />
             <input
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
-            /> Não
+            />
+            Não
           </div>
         </div>
 
         <div class="row d-flex justify-content-between align-items-center pt-2">
           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-            <button
-              (click)="refresh()"
-              class="btn buttonStyle"
-              type="submit"
-            >
-              Cadastrar
-            </button>
+            <button class="btn buttonStyle" type="submit">Cadastrar</button>
           </div>
           <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
-            <button class="btn pStyleDark" type="reset" (click)="clearFormCadastrar()">
+            <button
+              class="btn pStyleDark"
+              type="reset"
+              (click)="clearFormCadastrar()"
+            >
               Cancelar
             </button>
           </div>

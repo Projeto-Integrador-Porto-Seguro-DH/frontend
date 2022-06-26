@@ -80,6 +80,16 @@
           </div>
         </div>
 
+        <div class="my-4">
+          <div class="form-group">
+            <label for="categoriaProduto" class="form-label">Categoria</label>
+            <select name="categoriaProduto" id="categoriaProduto">
+              <option value="" disabled>Selecione</option>
+              <option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">{{categoria.nomeCategoria}}</option>
+            </select>
+          </div>
+        </div>
+
         <div class="my-4 ">
           <div class="form-group ">
             <label for="form-radio-label ps-2">Produto disponível?</label>

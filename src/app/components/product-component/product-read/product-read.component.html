@@ -29,7 +29,7 @@
     <ng-container matColumnDef="categoria">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</th>
       <td mat-cell *matCellDef="let produto">
-        {{ produto.categoria.nomeCategoria }}
+        <!-- {{ produto.categoria.nomeCategoria }} -->
       </td>
     </ng-container>
 
@@ -42,22 +42,20 @@
 
     <ng-container matColumnDef="foto">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Foto</th>
-      <td mat-cell *matCellDef="let produto">{{ produto.fotoProduto }}</td>
+      <td mat-cell *matCellDef="let produto"><a href="produto.fotoProduto" target="_blank">Link</a></td>
     </ng-container>
 
     <ng-container matColumnDef="gerenciar">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Gerenciar</th>
       <td mat-cell *matCellDef="let produto">
         <a
-          routerLink=". /atualizar/{{ produto.idProduto }}"
+          routerLink="./atualizar/{{ produto.idProduto }}"
           class="mx-1"
-          href=""
         >
           <img src="../../../assets/icon/edit-icon.svg" alt="ícone Atualizar" />
         </a>
         <a
           class="mx-2"
-          href=""
           data-bs-toggle="modal"
           data-bs-target="#deletarProduto"
         >

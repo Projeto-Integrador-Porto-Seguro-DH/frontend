@@ -24,7 +24,7 @@ export class ProductReadDataSource extends DataSource<Produto> {
           return this.getPagedData(this.getSortedData([...this.data ]));
         }));
     } else {
-      throw Error('Please set the paginator and sort on the data source before connecting.');
+      throw Error('Não foi possível realizar a conexão');
     }
   }
 

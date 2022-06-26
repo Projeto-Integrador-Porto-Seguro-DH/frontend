@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -9,9 +9,9 @@ import { ProductReadDataSource } from './product-read-datasource';
 @Component({
   selector: 'app-product-read',
   templateUrl: './product-read.component.html',
-  styleUrls: ['./product-read.component.css']
+  styleUrls: ['./product-read.component.css',]
 })
-export class ProductReadComponent implements OnInit, AfterViewInit {
+export class ProductReadComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Produto>;
@@ -19,21 +19,16 @@ export class ProductReadComponent implements OnInit, AfterViewInit {
 
   displayedColumns = ['id', 'nome', 'descricao','preco', 'estoque', 'categoria', 'disponivel', 'foto', 'gerenciar'];
 
-  public produtoLista: Produto[];
-
   constructor(private productService : ProductService) {
     this.dataSource = new ProductReadDataSource();
-  }
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
   }
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe((resp: Produto[])=>{
       this.dataSource.data = resp;
-      this.produtoLista = this.dataSource.data
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
     })
   }
 }
