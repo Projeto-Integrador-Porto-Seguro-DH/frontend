@@ -28,6 +28,8 @@ export class CategoryCrudComponent implements OnInit {
       next:(resp: Categoria) => {
         this.categoryService.showMessage('Categoria cadastrada com sucesso!')
         this.categoria = resp;
+
+        this.refresh();
       },
       error: (e: any) => {
         this.error = e;
