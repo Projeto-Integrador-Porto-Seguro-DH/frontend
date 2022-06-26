@@ -23,6 +23,10 @@ export class ProductService {
     return this.http.get<Produto[]>(`${environment.apiUrl}/produtos`);
   }
 
+  getById(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${environment.apiUrl}/produtos/${id}`);
+  }
+
   deleteProduct(id: number): Observable<Produto> {
     return this.http.delete<Produto>(
       `${environment.apiUrl}/produtos/delete/${id}`

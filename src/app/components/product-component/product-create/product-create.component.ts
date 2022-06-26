@@ -15,13 +15,10 @@ export class ProductCreateComponent implements OnInit {
   produto = new Produto();
   produtoSalvo = new Produto();
   erro = '';
-  index: number;
 
 
   @ViewChild('cadastrar') cadastrar: any;
-  @ViewChild('consultar') consultar: any;
-  @ViewChild('atualizar') atualizar: any;
-  @ViewChild('deletar') deletar: any;
+
 
   constructor(private productService: ProductService) { }
 
@@ -41,36 +38,9 @@ export class ProductCreateComponent implements OnInit {
     alert('Produto cadastrado com sucesso!')
   })}
 
-  delete(): void{
-    this.productService.deleteProduct(this.index).pipe(first()).subscribe({next:()=>{
-      alert('Produto deletado com sucesso!')
-    },
-      error:(error)=>{
-        this.erro = error;
-        console.log(this.erro)
-      }
-    })
-  }
-
-  pegarId(id: number){
-    this.index = id;
-  }
-
 
 clearFormCadastrar(): void {
   this.cadastrar.nativeElement.value = '';
-}
-
-clearFormConsultar(): void {
-  this.consultar.nativeElement.value = '';
-}
-
-clearFormAtualizar(): void {
-  this.atualizar.nativeElement.value = '';
-}
-
-clearFormDeletar(): void {
-  this.deletar.nativeElement.value = '';
 }
 
 }

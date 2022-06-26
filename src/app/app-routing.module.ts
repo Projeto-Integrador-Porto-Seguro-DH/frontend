@@ -38,11 +38,12 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admPerfil',
+    path: 'admin',
     component: AdmProfileComponent,
     children: [
-      { path: 'atualizar/:id', component: ProductUpdateComponent },
-      { path: '', component: ProductCrudComponent },
+      { path: '', redirectTo: 'produtos', pathMatch: 'full' },
+      { path: 'produtos', component: ProductCrudComponent },
+      { path: 'produtos/atualizar/:id', component: ProductUpdateComponent },
       { path: 'categorias', component: CategoryCrudComponent },
       { path: 'categorias/atualizar/:id', component: CategoryUpdateComponent },
     ],

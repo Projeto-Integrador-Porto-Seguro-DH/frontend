@@ -49,7 +49,6 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
 import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 import { ProductCreateComponent } from './components/product-component/product-create/product-create.component';
-import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
 import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product-component/product-delete/product-delete.component';
 import { CategoryReadComponent } from './components/category/category-read/category-read.component';
@@ -58,6 +57,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -96,13 +98,13 @@ import { SearchPipe } from './pipes/search.pipe';
     SigninPasswordRulesComponent,
     ProductCrudComponent,
     ProductCreateComponent,
-    ProductReadComponent,
     ProductUpdateComponent,
     ProductDeleteComponent,
     ProductComponent,
     CategoryReadComponent,
     SearchComponent,
     SearchPipe,
+    ProductReadComponent,
   ],
 
   imports: [
@@ -116,6 +118,7 @@ import { SearchPipe } from './pipes/search.pipe';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    BrowserAnimationsModule,
   ],
 
   providers: [
