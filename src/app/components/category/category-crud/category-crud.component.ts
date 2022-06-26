@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 export class CategoryCrudComponent implements OnInit {
   public categoriaLista: Categoria[];
   categoria: Categoria = new Categoria();
-  error= '';
+  error = '';
 
   @ViewChild('cadastrar') cadastrar: any;
 

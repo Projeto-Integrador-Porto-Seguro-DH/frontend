@@ -17,15 +17,16 @@ export class CategoryService {
 
   // CREATE
   postCategory(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>(
-      `${environment.apiUrl}/categorias/add`,
-      categoria
-    );
+    return this.http.post<Categoria>(`${environment.apiUrl}/categorias/add`, categoria);
   }
 
   // READ
   getAllCategories(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(`${environment.apiUrl}/categorias`);
+  }
+
+  getById(id:number): Observable<Categoria> {
+    return this.http.get<Categoria>(`${environment.apiUrl}/categorias/${id}`)
   }
 
   // UPDATE
