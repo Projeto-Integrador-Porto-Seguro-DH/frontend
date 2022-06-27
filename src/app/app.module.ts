@@ -7,12 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
-
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -38,12 +36,11 @@ import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-a
 import { ProductCrudComponent } from './components/product-crud/product-crud.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
-
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { ProductComponent } from './pages/product/product.component';
-
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -94,6 +91,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
+    CategoryUpdateComponent,
   ],
 
   imports: [

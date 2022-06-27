@@ -32,7 +32,7 @@ export class CategoryService {
   // UPDATE
   updateCategory(categoria: Categoria): Observable<Categoria> {
     return this.http.put<Categoria>(
-      `${environment.apiUrl}/categorias/atualizar`,
+      `${environment.apiUrl}/categorias/update`,
       categoria
     );
   }
@@ -40,7 +40,7 @@ export class CategoryService {
   // DELETE
   deleteCategory(id: number): Observable<Categoria> {
     return this.http.delete<Categoria>(
-      `${environment.apiUrl}/categorias/deletar/${id}`
+      `${environment.apiUrl}/categorias/delete/${id}`
     );
   }
 

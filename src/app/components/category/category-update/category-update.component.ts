@@ -45,5 +45,4 @@ export class CategoryUpdateComponent implements OnInit {
       },
     });
   }
-  
 }

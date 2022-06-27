@@ -49,6 +49,7 @@
                 />
               </a>
               <a
+                (click)="pegarId(categoria.idCategoria)"
                 class="mx-2"
                 data-bs-toggle="modal"
                 data-bs-target="#deletarCategoria"
@@ -83,7 +84,7 @@
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal Deletar Categoria -->
   <div
     class="modal fade"
     id="deletarCategoria"
@@ -110,7 +111,7 @@
             Cancelar
           </button>
           <button
-            type="submit"
+            (click)="delete()"
             class="btn buttonStyle deleteButton"
             data-bs-dismiss="modal"
           >
