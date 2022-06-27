@@ -11,6 +11,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ProductComponent } from './pages/product/product.component';
+import { CheckoutProcessComponent} from './pages/checkout-process/checkout-process.component';
 
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
   { path: 'pesquisa', component: SearchComponent },
+  { path: 'finalizar-compra', component: CheckoutProcessComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,

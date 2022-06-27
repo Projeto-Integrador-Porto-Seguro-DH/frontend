@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import {CheckoutProcessComponent} from './pages/checkout-process/checkout-process.component';
 
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { AppComponent } from './app.component';
@@ -97,6 +98,7 @@ import { SearchPipe } from './pipes/search.pipe';
     CategoryReadComponent,
     SearchComponent,
     SearchPipe,
+    CheckoutProcessComponent,
   ],
 
   imports: [

@@ -1,0 +1,49 @@
+<div class="container h-100">
+    <h2 class="h2Style">Finalizar Compra</h2>
+    <div class="process-checkout">
+        <div class="list shipping">
+            <p class="title-checkout">Opções de Entrega</p>
+            <ul>
+                <li><input type="radio" name="PAC" value="PAC">
+                    <label for="PAC">PAC</label>
+                </li>
+                <li><input type="radio" name="SEDEX" value="SEDEX">
+                    <label for="SEDEX">SEDEX</label>
+                </li>
+                <li><input type="radio" name="DIRETO" value="DIRETO">
+                    <label for="DIRETO">DIRETO</label>
+                </li>
+            </ul>
+        </div>
+        <div class="list payment">
+            <p class="title-checkout">Escolha a Forma de Pagamento</p>
+            <ul>
+                <li><input type="radio" name="PicPay" value="PicPay">
+                    <label for="PicPay">PicPay</label>
+                </li>
+                <li><input type="radio" name="Boleto" value="Boleto">
+                    <label for="Boleto">Boleto</label>
+                </li>
+                <li><input type="radio" name="PIX" value="PIX">
+                    <label for="PIX">PIX</label>
+                </li>
+            </ul>
+        </div>
+        <div class="list products">
+            <p class="title-checkout">Revise seu Pedido</p>
+            <ul *ngFor="let item of itensComprados">
+                <li>
+                    <div class="right">
+                        <span class="products-name">{{item.nome}}</span>
+                        <span class="products-qty">Quantidade:01</span>
+                        <span class="products-price">Valor:{{item.preco}}</span>
+                    </div>
+                    <img src="{{item.foto}}">
+                </li>
+            </ul>
+            <button class="finish-order btn buttonStyle nowrap">Finalizar Pedido</button>
+        </div>
+    </div>
+
+
+</div>
