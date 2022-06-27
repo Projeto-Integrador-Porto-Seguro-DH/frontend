@@ -38,6 +38,8 @@ export class CategoryUpdateComponent implements OnInit {
       next: (resp: Categoria) => {
         this.categoryService.showMessage('Categoria editada com sucesso!');
         this.categoria = resp;
+
+        this.router.navigate(['admin/categorias']);
       },
       error: (e: any) => {
         this.error = e;

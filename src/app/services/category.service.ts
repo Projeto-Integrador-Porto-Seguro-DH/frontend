@@ -47,10 +47,15 @@ export class CategoryService {
   //Método Mostra msg cadastrado com sucesso
   showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: 'right', //talvez mudar pada center e center!
       verticalPosition: 'top',
     });
+  }
+
+  //Método refresh() da página
+  refresh() {
+    window.location.reload();
   }
   
 }

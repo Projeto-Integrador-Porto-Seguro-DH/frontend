@@ -29,7 +29,7 @@ export class CategoryCrudComponent implements OnInit {
         this.categoryService.showMessage('Categoria cadastrada com sucesso!')
         this.categoria = resp;
 
-        this.refresh();
+        this.categoryService.refresh();
       },
       error: (e: any) => {
         this.error = e;
@@ -40,10 +40,6 @@ export class CategoryCrudComponent implements OnInit {
 
   clearFormCadastrar() {
     this.cadastrar.nativeElement.value = '';
-  }
-
-  refresh(): void {
-    window.location.reload();
   }
 
 }

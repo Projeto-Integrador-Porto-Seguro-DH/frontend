@@ -46,6 +46,8 @@ export class CategoryReadComponent implements OnInit {
   delete() {
     this.categoryService.deleteCategory(this.index).subscribe(() => {
       this.categoryService.showMessage(`A categoria foi deletada com sucesso.`);
+
+      this.categoryService.refresh();
     });
   }
 }
