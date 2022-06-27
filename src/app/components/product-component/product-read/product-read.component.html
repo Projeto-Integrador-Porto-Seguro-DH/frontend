@@ -1,6 +1,5 @@
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
-
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
       <td mat-cell *matCellDef="let produto">{{ produto.idProduto }}</td>
@@ -18,7 +17,9 @@
 
     <ng-container matColumnDef="preco">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço</th>
-      <td mat-cell *matCellDef="let produto">{{produto.precoUnitarioProduto}}</td>
+      <td mat-cell *matCellDef="let produto">
+        {{ produto.precoUnitarioProduto }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="estoque">
@@ -29,33 +30,32 @@
     <ng-container matColumnDef="categoria">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</th>
       <td mat-cell *matCellDef="let produto">
-        {{ produto.categoria.nomeCategoria }}
+        {{ produto["categoria"]["nomeCategoria"] }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="disponivel">
       <th mat-header-cell *matHeaderCellDef>Disponivel</th>
       <td mat-cell *matCellDef="let produto">
-        {{ produto.produtoDisponivel | booleanPipe}}
+        {{ produto.produtoDisponivel | booleanPipe }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="foto">
       <th mat-header-cell *matHeaderCellDef>Foto</th>
-      <td mat-cell *matCellDef="let produto"><a href="produto.fotoProduto" target="_blank">Link</a></td>
+      <td mat-cell *matCellDef="let produto">
+        <a href="{{ produto.fotoProduto }}" target="_blank">Link</a>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="gerenciar">
       <th mat-header-cell *matHeaderCellDef>Gerenciar</th>
       <td mat-cell *matCellDef="let produto">
-        <a
-          routerLink="./atualizar/{{ produto.idProduto }}"
-          class="mx-1"
-        >
+        <a routerLink="./atualizar/{{ produto.idProduto }}" class="mx-1">
           <img src="../../../assets/icon/edit-icon.svg" alt="ícone Atualizar" />
         </a>
         <a
-        (click)="pegarId(produto.idProduto)"
+          (click)="pegarId(produto.idProduto)"
           class="mx-2"
           data-bs-toggle="modal"
           data-bs-target="#deletarProduto"

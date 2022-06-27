@@ -88,16 +88,28 @@
         <div class="my-4">
           <div class="form-group">
             <label for="categoriaProduto" class="form-label">Categoria</label>
-            <select name="categoriaProduto" id="categoriaProduto">
-              <option value="" disabled>Selecione</option>
-              <option *ngFor="let categoria of categorias" [value]="categoria.idCategoria">{{categoria.nomeCategoria}}</option>
+            <select
+              [ngModel]="produto.categoria"
+              (ngModelChange)="setCategory($event)"
+              name="categoriaProduto"
+              id="categoriaProduto"
+            >
+              <option value="0" active disabled>Selecione</option>
+              <option
+                *ngFor="let categoria of categorias"
+                [ngValue]="categoria"
+              >
+                {{ categoria.nomeCategoria }}
+              </option>
             </select>
           </div>
         </div>
 
         <div class="my-4">
           <div class="form-group">
-            <label class="form-radio-label ps-2" for="produtoDisponivel">Produto disponível?</label>
+            <label class="form-radio-label ps-2" for="produtoDisponivel"
+              >Produto disponível?</label
+            >
             <br />
             <input
               [(ngModel)]="produto.produtoDisponivel"
@@ -108,7 +120,7 @@
               [value]="true"
             />
             Sim
-            <br/>
+            <br />
             <input
               [(ngModel)]="produto.produtoDisponivel"
               type="radio"
