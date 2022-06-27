@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DetalhePedido } from 'src/app/model/DetalhePedido';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -6,36 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
-  itensComprados: any;
+  cartList: DetalhePedido[] = [];
   
-
-  constructor() { }
+  constructor( 
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
-    this.itensComprados = [
-      { nome: 'Queijo Brie',
-        descricao: 'Inteiro 500gr',
-        preco:'R$ 200,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo4',
-      },
-      { nome: 'Queijo Parmesão',
-        descricao: 'Ralado 150gr',
-        preco:'R$ 18,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo3',
-      },
-      { nome: 'Queijo 3',
-        descricao: 'Ralado 150gr',
-        preco:'R$ 28,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo2',
-      },
-    ];
+    this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
+      this.cartList = resp;
+    })
   }
 
-  deletarItem() {
-  }
+  deletarItem(detalhePedido: DetalhePedido) {
+    this.cartService.removeCartItem(detalhePedido);
 
+    this.cartService.showMessage('Produto removido com sucesso!');
+  }
 
 }
