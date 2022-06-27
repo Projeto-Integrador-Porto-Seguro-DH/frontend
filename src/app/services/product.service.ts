@@ -22,6 +22,13 @@ export class ProductService {
     );
   }
 
+  putProduct(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(
+      `${environment.apiUrl}/produtos/update`,
+      produto
+    );
+  }
+
   getProduct(): Observable<Produto[]> {
     return this.http.get<Produto[]>(`${environment.apiUrl}/produtos`);
   }

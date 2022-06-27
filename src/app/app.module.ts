@@ -59,7 +59,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -99,12 +99,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductCrudComponent,
     ProductCreateComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent,
     ProductComponent,
     CategoryReadComponent,
     SearchComponent,
     SearchPipe,
     ProductReadComponent,
+    BooleanPipePipe,
   ],
 
   imports: [

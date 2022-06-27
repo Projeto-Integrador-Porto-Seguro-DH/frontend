@@ -90,35 +90,39 @@
           </div>
         </div>
 
-        <div class="my-4 ">
-          <div class="form-group ">
-            <label for="form-radio-label ps-2">Produto disponível?</label>
-            <br>
+        <div class="my-4">
+          <div class="form-group">
+            <label class="form-radio-label ps-2" for="produtoDisponivel">Produto disponível?</label>
+            <br />
             <input
               [(ngModel)]="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
-            /> Sim
-            <br>
+              [value]="true"
+            />
+            Sim
+            <br/>
             <input
+              [(ngModel)]="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
-            /> Não
+              [value]="false"
+            />
+            Não
           </div>
         </div>
 
         <div class="row d-flex justify-content-between align-items-center pt-2">
           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
             <button
-              (click)="refresh()"
               class="btn buttonStyle"
               type="submit"
             >
-              Cadastrar
+              Atualizar
             </button>
           </div>
           <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">

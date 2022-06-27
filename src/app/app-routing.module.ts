@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: UserProfileComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dados', pathMatch: 'full' },
       { path: 'dados', component: UserPersonalInfoComponent },

@@ -32,10 +32,10 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.productService.postProduct(this.produto).subscribe((resp: Produto)=>{
+    this.productService.putProduct(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp;
-      this.productService.showMessage('Produto atualizado com sucesso!')
-      this.refresh()
+      this.productService.showMessage('Produto atualizado com sucesso!');
+      this.refresh();
     })}
 
   refresh(){

@@ -53,6 +53,7 @@ export class ProductReadDataSource extends DataSource<Produto> {
         case 'nome': return compare(a.nomeProduto!, b.nomeProduto!, isAsc);
         case 'preco': return compare(a.precoUnitarioProduto!, b.precoUnitarioProduto!, isAsc);
         case 'estoque': return compare(a.estoqueProduto!, b.estoqueProduto!, isAsc);
+        case 'categoria': return compare(a.categoria?.nomeCategoria!, b.categoria?.nomeCategoria!, isAsc);
 
         default: return 0;
       }

@@ -97,7 +97,7 @@
 
         <div class="my-4">
           <div class="form-group">
-            <label for="form-radio-label ps-2">Produto disponível?</label>
+            <label class="form-radio-label ps-2" for="produtoDisponivel">Produto disponível?</label>
             <br />
             <input
               [(ngModel)]="produto.produtoDisponivel"
@@ -105,14 +105,17 @@
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
+              [value]="true"
             />
             Sim
-            <br />
+            <br/>
             <input
+              [(ngModel)]="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
               class="form-check-input"
+              [value]="false"
             />
             Não
           </div>
