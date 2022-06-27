@@ -1,4 +1,5 @@
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
+import { SearchComponent } from './pages/search/search.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,7 +15,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
-import { ProductCrudComponent } from './components/product-crud/product-crud.component';
+import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 
@@ -24,10 +25,11 @@ const routes: Routes = [
   { path: 'cadastrar', component: SigninFormComponent },
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
+  { path: 'pesquisa', component: SearchComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'dados', pathMatch: 'full' },
       { path: 'dados', component: UserPersonalInfoComponent },
@@ -36,11 +38,12 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admPerfil',
+    path: 'admin',
     component: AdmProfileComponent,
     children: [
-      { path: 'atualizar/:id', component: ProductUpdateComponent },
-      { path: '', component: ProductCrudComponent },
+      { path: '', redirectTo: 'produtos', pathMatch: 'full' },
+      { path: 'produtos', component: ProductCrudComponent },
+      { path: 'produtos/atualizar/:id', component: ProductUpdateComponent },
       { path: 'categorias', component: CategoryCrudComponent },
       { path: 'categorias/atualizar/:id', component: CategoryUpdateComponent },
     ],
