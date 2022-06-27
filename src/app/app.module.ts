@@ -36,7 +36,6 @@ import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
-import { ProductCrudComponent } from './components/product-crud/product-crud.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
 
@@ -49,13 +48,19 @@ import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { SigninPasswordRulesComponent } from './components/signin-password-rules/signin-password-rules.component';
-import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
+import { ProductCreateComponent } from './components/product-component/product-create/product-create.component';
+import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
+import { ProductDeleteComponent } from './components/product-component/product-delete/product-delete.component';
 import { CategoryReadComponent } from './components/category/category-read/category-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -86,19 +91,22 @@ import { SearchPipe } from './pipes/search.pipe';
     ProfileTabsComponent,
     BackToTopComponent,
     ProfileAdmTabsComponent,
-    ProductCrudComponent,
     AdmProfileComponent,
     CategoryCrudComponent,
     OrdersComponent,
     OrderCardComponent,
     PurchaseHistoryComponent,
     SigninPasswordRulesComponent,
+    ProductCrudComponent,
+    ProductCreateComponent,
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
     SearchComponent,
     SearchPipe,
     CheckoutProcessComponent,
+    ProductReadComponent,
+    BooleanPipePipe,
   ],
 
   imports: [
@@ -112,6 +120,7 @@ import { SearchPipe } from './pipes/search.pipe';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    BrowserAnimationsModule,
   ],
 
   providers: [
