@@ -1,19 +1,29 @@
+import { LocalStorageService } from './local-storage.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { DetalhePedido } from '../model/DetalhePedido';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-
   public cartItemList: DetalhePedido[] = [];
-  public productList = new BehaviorSubject<DetalhePedido[]>([]);
+  public productList: BehaviorSubject<DetalhePedido[]>;
 
   constructor(
+    private localStorage: LocalStorageService,
     private matSnackBar: MatSnackBar
-  ) { }
+  ) {
+    this.productList = new BehaviorSubject<DetalhePedido[]>(
+      this.localStorage.get('cart')
+    );
+
+    console.log('productList');
+    console.log(this.productList.value);
+    console.log('localStorage');
+    console.log(this.localStorage.get('cart'));
+  }
 
   getProducts() {
     return this.productList.asObservable();
@@ -26,33 +36,52 @@ export class CartService {
   // }
 
   //Método adicionar item por item ao nosso carrinho
+  compareCartAndStorage(): boolean {
+    if (this.localStorage.get('cart') == this.cartItemList) {
+      return true;
+    }
+    return false;
+  }
+
   addToCart(detalhePedido: DetalhePedido) {
+    if (!this.compareCartAndStorage()) {
+      this.cartItemList = this.localStorage.get('cart');
+    }
+
     this.cartItemList.push(detalhePedido);
+
+    this.localStorage.set('cart', this.cartItemList);
+
     this.productList.next(this.cartItemList);
-    this.getTotalPrice();
   }
 
   getTotalPrice() {
     let totalValue = 0;
 
-    this.cartItemList.map((item: DetalhePedido)  => {
+    this.cartItemList.map((item: DetalhePedido) => {
       totalValue += item.produto?.precoUnitarioProduto!;
     });
   }
 
   removeCartItem(detalhePedido: DetalhePedido) {
-    this.cartItemList.map((item: DetalhePedido, index : number) => {
+    if (!this.compareCartAndStorage()) {
+      this.cartItemList = this.localStorage.get('cart');
+    }
 
-      if(detalhePedido.produto?.idProduto === item.produto?.idProduto) {
-        this.cartItemList.splice(index, 1);
+    this.cartItemList.map((item: DetalhePedido) => {
+      if (detalhePedido.produto?.idProduto === item.produto?.idProduto) {
+        this.cartItemList.splice(this.cartItemList.indexOf(item), 1);
       }
     });
+
+    this.localStorage.set('cart', this.cartItemList);
 
     this.productList.next(this.cartItemList);
   }
 
   removeAllCart() {
     this.cartItemList = [];
+    this.localStorage.remove('cart');
     this.productList.next(this.cartItemList);
   }
 
@@ -64,5 +93,4 @@ export class CartService {
       verticalPosition: 'top',
     });
   }
-
 }
