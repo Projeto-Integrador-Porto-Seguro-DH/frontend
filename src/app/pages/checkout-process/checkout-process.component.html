@@ -1,7 +1,7 @@
-<div class="container-h100">
+<div class="container">
   <h2 class="h2Style">Finalizar Compra</h2>
   <p class="title-checkout">Revise seu Pedido</p>
-  <div class="row d-inline-flex" *ngFor="let item of itensComprados">
+  <div class="row d-inline-flex my-4" *ngFor="let item of itensComprados">
     <div class="col-9">
       <div class="row p-0 mx-2 border rounded">
         <div class="col-10">
@@ -15,41 +15,74 @@
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="process-checkout">
-    <div class="list shipping">
-      <p class="title-checkout">Opções de Entrega</p>
-      <div class="row d-inline-flex">
-        <div
-          class="row p-2 mx-2 border rounded"
-          *ngFor="let envio of formaDeEnvio | keyvalue"
+  <div class="row my-4">
+    <p class="title-checkout">Opções de Entrega</p>
+    <div class="col-12 col-sm-12 col-md-4 mb-3 mb-md-0">
+      <h6 class="h3Style ps-0">Endereço</h6>
+      <p class="pStyleDark endereco">
+        CEP:
+        <span class="pStyleLight">{{ usuario?.cepEndereco }}</span>
+      </p>
+      <p class="pStyleDark endereco">
+        Logradouro:
+        <span class="pStyleLight">{{ usuario?.logradouroEndereco }}</span>
+      </p>
+      <div class="row p-0">
+        <div class="col-3">
+          <p class="pStyleDark endereco">
+            Nº
+            <span class="pStyleLight">{{ usuario?.numeroEndereco }}</span>
+          </p>
+        </div>
+        <div class="col-8">
+          <p class="pStyleDark endereco">
+            Complemento:
+            <span class="pStyleLight">{{ usuario?.complementoEndereco }}</span>
+          </p>
+        </div>
+      </div>
+
+      <p class="pStyleDark endereco">
+        Bairro:
+        <span class="pStyleLight">{{ usuario?.bairroEndereco }}</span>
+      </p>
+      <div class="row p-0">
+        <div class="col-6">
+          <p class="pStyleDark endereco">
+            Cidade:
+            <span class="pStyleLight">{{ usuario?.cidadeEndereco }}</span>
+          </p>
+        </div>
+        <div class="col-6">
+          <p class="pStyleDark endereco">
+            Estado:
+            <span class="pStyleLight">{{ usuario?.estadoEndereco }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 m-0 col-md-4">
+      <p class="pStyleDark">Forma de Envio: Transportadora Própria</p>
+      <p class="pStyleDark">Frete Grátis</p>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-12 col-md-4">
+      <p class="title-checkout">Escolha a Forma de Pagamento</p>
+      <select>
+        <option value="" disabled selected>Opção de Pagamento</option>
+        <option
+          [value]="pagamento.value"
+          *ngFor="let pagamento of formaDePagamento | keyvalue"
         >
-          <div class="col-10">
-            <input type="radio" name="ENVIO" [value]="envio.value" />
-            <label for="ENVIO">{{ envio.value }}</label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="list payment">
-          <p class="title-checkout">Escolha a Forma de Pagamento</p>
-          <div class="row d-inline-flex">
-            <div
-              class="row p-2 mx-2 border rounded"
-              *ngFor="let pagamento of formaDePagamento | keyvalue"
-            >
-              <label for="PAGAMENTO">{{ pagamento.value }}</label>
-            </div>
-          </div>
-          -->
-        </div>
-        <div class="row">
-          <div class="row d-inline-flex">
-            <button class="btn buttonStyle">Finalizar Pedido</button>
-          </div>
-        </div>
-      </div>
+          {{ pagamento.value }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row my-5 justify-content-center">
+    <div class="col-12 col-md-4">
+      <button class="btn buttonStyle">Finalizar Pedido</button>
     </div>
   </div>
 </div>
