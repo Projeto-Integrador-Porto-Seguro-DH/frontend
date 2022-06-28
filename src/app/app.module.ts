@@ -7,12 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
-import {CheckoutProcessComponent} from './pages/checkout-process/checkout-process.component';
+import { CheckoutProcessComponent } from './pages/checkout-process/checkout-process.component';
 
 import { ComponentCategoriasComponent } from './components/component-categorias/component-categorias.component';
 import { AppComponent } from './app.component';
@@ -38,12 +37,11 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top.compone
 import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
 import { AdmProfileComponent } from './pages/adm-profile/adm-profile.component';
-
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
 import { ProductComponent } from './pages/product/product.component';
-
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { PhonePipe } from './pipes/phone-pipe/phone.pipe';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -61,6 +59,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
+import { CartEmptyComponent } from './components/cart-empty/cart-empty.component';
 
 @NgModule({
   declarations: [
@@ -102,11 +101,13 @@ import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
     ProductUpdateComponent,
     ProductComponent,
     CategoryReadComponent,
+    CategoryUpdateComponent,
     SearchComponent,
     SearchPipe,
     CheckoutProcessComponent,
     ProductReadComponent,
     BooleanPipePipe,
+    CartEmptyComponent,
   ],
 
   imports: [

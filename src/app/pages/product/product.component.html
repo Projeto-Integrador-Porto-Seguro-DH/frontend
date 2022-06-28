@@ -27,10 +27,12 @@
           <div
             class="buttonDiv row d-flex flex-column justify-content-between align-items-start"
           >
-            <button class="btn buttonStyle toCart my-2">
+            <button (click)="addToCart()"
+            class="btn buttonStyle toCart my-2">
               Adicionar ao Carrinho
             </button>
-            <a class="btn buttonStyle mt-2" routerLink="/carrinho"> Comprar </a>
+            <button (click)="addToCartAndGo()"
+            class="btn buttonStyle mt-2"> Comprar </button>
           </div>
         </div>
 
@@ -43,7 +45,9 @@
             <button class="btn buttonStyle toCart my-2" disabled>
               Adicionar ao Carrinho
             </button>
-            <button class="btn buttonStyle mt-2" disabled>Comprar</button>
+
+            <button 
+            class="btn buttonStyle mt-2" disabled>Comprar</button>
           </div>
         </ng-template>
       </div>
@@ -51,11 +55,7 @@
   </div>
   <div class="row justify-content-around margin">
     <div class="col-12 col-md-6 col-lg-5 px-1 px-md-2">
-      <p class="pStyleDark paragraph text-start">
-        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
-        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
-        DESCRIÇÃO DO PRODUTO * DESCRIÇÃO DO PRODUTO *
-      </p>
+      <p class="pStyleDark paragraph text-start">{{produto.descricaoProduto}}</p>
     </div>
     <div class="col-12 col-md-6"></div>
   </div>

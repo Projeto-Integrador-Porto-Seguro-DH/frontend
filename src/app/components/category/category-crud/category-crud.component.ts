@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 export class CategoryCrudComponent implements OnInit {
   public categoriaLista: Categoria[];
   categoria: Categoria = new Categoria();
-  error= '';
+  error = '';
 
   @ViewChild('cadastrar') cadastrar: any;
 
@@ -28,6 +28,8 @@ export class CategoryCrudComponent implements OnInit {
       next:(resp: Categoria) => {
         this.categoryService.showMessage('Categoria cadastrada com sucesso!')
         this.categoria = resp;
+
+        this.categoryService.refresh();
       },
       error: (e: any) => {
         this.error = e;
@@ -38,10 +40,6 @@ export class CategoryCrudComponent implements OnInit {
 
   clearFormCadastrar() {
     this.cadastrar.nativeElement.value = '';
-  }
-
-  refresh(): void {
-    window.location.reload();
   }
 
 }

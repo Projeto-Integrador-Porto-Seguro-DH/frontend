@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quantity-input',
@@ -8,9 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class QuantityInputComponent implements OnInit {
   @Input() quantidadeProduto = 1;
 
-  constructor() {}
+  constructor(private router: Router) {
+    console.log(this.router.url);
+  }
 
   ngOnInit(): void {}
+
+  getQuantity(): number {
+    return this.quantidadeProduto;
+  }
 
   updateValue(event: any) {
     this.quantidadeProduto = event.target.value;

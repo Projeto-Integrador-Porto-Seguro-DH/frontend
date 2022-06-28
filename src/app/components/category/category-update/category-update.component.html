@@ -1,1 +1,54 @@
-<p>category-update works!</p>
+<div class="container px-0">
+  <!-- UPDATE -->
+  <section id="atualizarCategoria" class="mb-5">
+    <h3 class="h3Style">Atualizar Categoria</h3>
+
+    <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
+      <form (ngSubmit)="update()">
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="nomeCategoria" class="form-label">Nome</label>
+          <input
+              [(ngModel)]="categoria.nomeCategoria"
+              type="text"
+              class="form-control inputStyle"
+              id="nomeCategoria"
+              name="nomeCategoria"
+              placeholder="Nome da Categoria"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="my-4">
+          <div class="form-group formWidth">
+            <label for="descricaoCategoria" class="form-label">Descrição</label>
+            <textarea
+              [(ngModel)]="categoria.descricaoCategoria"
+              style="height: 160px"
+              maxlength="255"
+              type="text"
+              class="form-control inputStyle"
+              id="descricaoCategoria"
+              name="descricaoCategoria"
+              placeholder="Descrição da Categoria"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-between align-items-center pt-2">
+          <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
+            <button class="btn buttonStyle" type="submit">Atualizar</button>
+          </div>
+          <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
+            <button class="btn pStyleDark" type="reset" routerLink="../../">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </section>
+</div>

@@ -8,7 +8,7 @@ import { Categoria } from 'src/app/model/Categoria';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
-  styleUrls: ['./product-create.component.css']
+  styleUrls: ['./product-create.component.css'],
 })
 export class ProductCreateComponent implements OnInit {
   produto = new Produto();
@@ -17,34 +17,35 @@ export class ProductCreateComponent implements OnInit {
 
   @ViewChild('cadastrar') cadastrar: any;
 
-
   constructor(
     private productService: ProductService,
-    private categoryService: CategoryService) { }
+    private categoryService: CategoryService
+  ) {}
 
-  refresh(): void{
+  refresh(): void {
     window.location.reload();
   }
 
   ngOnInit(): void {
-    this.categoryService.getAllCategories().subscribe((resp: Categoria[])=>{
+    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
       this.categorias = resp;
-    })
+    });
   }
 
   onSubmit(): void {
-  this.productService.postProduct(this.produto).subscribe((resp: Produto)=>{
-    this.produto = resp;
-    alert('Produto cadastrado com sucesso!')
-    this.refresh()
-  })}
+    this.productService.postProduct(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp;
+      alert('Produto cadastrado com sucesso!');
+      this.refresh();
+    });
+  }
 
+  clearFormCadastrar(): void {
+    this.cadastrar.nativeElement.value = '';
+  }
 
-clearFormCadastrar(): void {
-  this.cadastrar.nativeElement.value = '';
+  setCategory(categoriaSelecionada: Categoria) {
+    this.produto.categoria = categoriaSelecionada;
+    console.log(this.produto.categoria);
+  }
 }
-
-}
-
-
-

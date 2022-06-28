@@ -1,41 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { DetalhePedido } from './../../model/DetalhePedido';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  styleUrls: ['./cart-item.component.css'],
 })
 export class CartItemComponent implements OnInit {
-  itensComprados: any;
-  
+  cartList: DetalhePedido[] = [];
+  input: number;
 
-  constructor() { }
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.itensComprados = [
-      { nome: 'Queijo Brie',
-        descricao: 'Inteiro 500gr',
-        preco:'R$ 200,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo4',
-      },
-      { nome: 'Queijo Parmesão',
-        descricao: 'Ralado 150gr',
-        preco:'R$ 18,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo3',
-      },
-      { nome: 'Queijo 3',
-        descricao: 'Ralado 150gr',
-        preco:'R$ 28,00',
-        categoria: 'Queijos',
-        foto: '../../../assets/img/products/queijo/queijo2',
-      },
-    ];
+    this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
+      this.cartList = resp;
+    });
   }
 
-  deletarItem() {
+  deletarItem(detalhePedido: DetalhePedido) {
+    this.cartService.removeCartItem(detalhePedido);
+
+    this.cartService.showMessage('Produto removido com sucesso!');
   }
 
+  inputQuantity(event: any) {
+    this.input = event.target.value;
+  }
 
+  //Método subtrair
+  subtrair(detalhePedido: DetalhePedido) {
+    if (detalhePedido.quantidadeProduto! > 1) {
+      detalhePedido.quantidadeProduto!--;
+    }
+    this.updateQuantity(detalhePedido);
+  }
+
+  //Método somar
+  somar(detalhePedido: DetalhePedido) {
+    if (detalhePedido.quantidadeProduto! < 100) {
+      detalhePedido.quantidadeProduto!++;
+    }
+    this.updateQuantity(detalhePedido);
+  }
+
+  // Atualizar quantidade do carrinho
+  updateQuantity(detalhePedido: DetalhePedido) {
+    detalhePedido.subtotal = (detalhePedido.quantidadeProduto!) * detalhePedido.produto?.precoUnitarioProduto!;
+
+    this.cartService.updateCartQuantity(detalhePedido);
+  }
 }

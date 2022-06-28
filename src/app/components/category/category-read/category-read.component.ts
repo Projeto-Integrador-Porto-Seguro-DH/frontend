@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -9,35 +9,45 @@ import { CategoryReadDataSource } from './category-read-datasource';
 @Component({
   selector: 'app-category-read',
   templateUrl: './category-read.component.html',
-  styleUrls: ['./category-read.component.css']
+  styleUrls: ['./category-read.component.css'],
 })
-export class CategoryReadComponent implements OnInit, AfterViewInit {
+export class CategoryReadComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Categoria>;
+
   dataSource: CategoryReadDataSource;
- 
+  index: number;
+
   //Exibição das colunas do Header da Tabela:
-  displayedColumns = ['id', 'nome', 'descricao'];// 
-  
-  public categoriaLista: Categoria[];
+  displayedColumns = ['id', 'nome', 'descricao', 'gerenciar'];
 
-  constructor(private categoryService: CategoryService) { 
+  constructor(private categoryService: CategoryService) {
     this.dataSource = new CategoryReadDataSource();
-  }
-
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
   }
 
   // READ
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
-    this.dataSource.data = resp;
-    this.categoriaLista = this.dataSource.data;
-    })
+      this.dataSource.data = resp;
+
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
+    });
+  }
+
+  // PEGAR ID
+  pegarId(id: number) {
+    this.index = id;
   }
   
+  // DELETE
+  delete() {
+    this.categoryService.deleteCategory(this.index).subscribe(() => {
+      this.categoryService.showMessage(`A categoria foi deletada com sucesso.`);
+
+      this.categoryService.refresh();
+    });
+  }
 }

@@ -1,56 +1,71 @@
 <!-- Componente -->
 <div class="container px-0">
-    <div class="row d-flex justify-content-between align-items-center mb-4">
-        <div class="col-12 col-sm-5">
-
-            <div class="row" *ngFor="let item of itensComprados">
-                <!-- Cart item Img-->
-                <div class="col-4 col-sm-6 col-lg-4">
-                    <img
-                        src="{{ itensComprados.foto }}"
-                        alt=""
-                        class="img-fluid mh-25 rounded-3"
-                        width="75"
-                        height="94"
-                    />
-                </div>
-
-                <!-- Cart item Details-->
-                <div class="col-8 col-sm-6 col-lg-8 ps-0 ps-lg-2">
-                    <p class="h5 pStyleDark mb-1">
-                        {{ itensComprados.nome }}
-                    </p>
-                    <p class="pStyleLight mb-1">
-                        R$ {{ itensComprados.preco }}
-                    </p>
-                </div>
-            </div>
+  <div
+    class="row d-flex justify-content-between align-items-center mb-4"
+    *ngFor="let item of cartList"
+  >
+    <div class="col-12 col-sm-5">
+      <div class="row">
+        <!-- Cart item Img-->
+        <div class="col-4 col-sm-6 col-lg-4">
+          <img
+            src="{{ item.produto?.fotoProduto }}"
+            alt=""
+            class="img-fluid mh-25 rounded-3"
+            width="75"
+            height="94"
+          />
         </div>
 
-        <div class="col-12 col-sm-7">
-
-            <div class="row align-items-center justify-content-between mt-4 mt-sm-0">
-                <!-- Cart item quantity-input-->
-                <div class="col-5 col-sm-5 col-md-5">
-                    <app-quantity-input></app-quantity-input>
-                </div>
-
-                <div class="col-3 col-sm-3 col-md-1 ps-2 ps-md-0"> 
-                    <button class="btn " (click)="deletarItem()">
-                        <img src="../../../assets/icon/trash-icon.svg" alt="Ícone de lixeira" width="20px" height="20px">
-                    </button>
-                </div>
-
-                <!-- Cart item Subtotal -->
-                <div class="col-4 col-sm-4 col-md-6 text-end">
-                    <span>R$ 300,00<!-- <p>{{preco-total}}</p> --></span>
-                </div>
-            </div>
-
+        <!-- Cart item Details-->
+        <div class="col-8 col-sm-6 col-lg-8 ps-0 ps-lg-2">
+          <p class="h5 pStyleDark mb-1">
+            {{ item.produto?.nomeProduto }}
+          </p>
+          <p class="pStyleLight mb-1">
+            R$ {{ item.produto?.precoUnitarioProduto }}
+          </p>
         </div>
-
+      </div>
     </div>
-</div>
 
-<!-- width="75"
-height="94" -->
+    <div class="col-12 col-sm-7">
+      <div class="row align-items-center justify-content-between mt-4 mt-sm-0">
+        <!-- Cart item quantity-input-->
+        <div class="col-5 col-sm-5 col-md-5">
+          <div class="quantity-wrapper flex-nowrap">
+            <button class="plusminus" (click)="subtrair(item)">-</button>
+
+            <input
+              [(ngModel)]="item.quantidadeProduto"
+              type="number"
+              class="numeroInputStyle"
+              [value]="item.quantidadeProduto"
+              (input)="inputQuantity($event)"
+              min="1"
+              max="100"
+            />
+
+            <button class="plusminus" (click)="somar(item)">+</button>
+          </div>
+        </div>
+
+        <div class="col-3 col-sm-3 col-md-1 ps-2 ps-md-0">
+          <button class="btn" (click)="deletarItem(item)">
+            <img
+              src="../../../assets/icon/trash-icon.svg"
+              alt="Ícone de lixeira"
+              width="20px"
+              height="20px"
+            />
+          </button>
+        </div>
+
+        <!-- Cart item Subtotal -->
+        <div class="col-4 col-sm-4 col-md-6 text-end">
+          <span>R$ {{ item.subtotal }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

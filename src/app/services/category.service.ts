@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 import { Observable } from 'rxjs';
 import { Categoria } from '../model/Categoria';
 import { environment } from '../../environments/environment.prod';
@@ -17,10 +16,7 @@ export class CategoryService {
 
   // CREATE
   postCategory(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>(
-      `${environment.apiUrl}/categorias/add`,
-      categoria
-    );
+    return this.http.post<Categoria>(`${environment.apiUrl}/categorias/add`, categoria);
   }
 
   // READ
@@ -28,10 +24,14 @@ export class CategoryService {
     return this.http.get<Categoria[]>(`${environment.apiUrl}/categorias`);
   }
 
+  getById(id:number): Observable<Categoria> {
+    return this.http.get<Categoria>(`${environment.apiUrl}/categorias/${id}`)
+  }
+
   // UPDATE
   updateCategory(categoria: Categoria): Observable<Categoria> {
     return this.http.put<Categoria>(
-      `${environment.apiUrl}/categorias/atualizar`,
+      `${environment.apiUrl}/categorias/update`,
       categoria
     );
   }
@@ -39,17 +39,22 @@ export class CategoryService {
   // DELETE
   deleteCategory(id: number): Observable<Categoria> {
     return this.http.delete<Categoria>(
-      `${environment.apiUrl}/categorias/deletar/${id}`
+      `${environment.apiUrl}/categorias/delete/${id}`
     );
   }
 
-  //Método Mostra msg cadastrado com sucesso
+  //Método Mostra MSG
   showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: 'right', //talvez mudar pada center e center!
       verticalPosition: 'top',
     });
+  }
+
+  //Método refresh() da página
+  refresh() {
+    window.location.reload();
   }
   
 }
