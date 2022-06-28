@@ -55,8 +55,9 @@
                 src="../../../assets/icon/bag-icon.svg"
                 alt="Ícone de sacola"/>
      
-                <span *ngIf="isEmpty()" lass="cart-counter">{{ itemOnCart }}</span>
-
+              <div *ngIf="isEmpty()" >
+                <span class="cart-counter">{{ itemOnCart }}</span>
+              </div>
             </a>
           </div>
         </li>

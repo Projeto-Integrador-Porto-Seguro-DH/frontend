@@ -52,7 +52,7 @@
   justify-content: center;
 }
 
-.cart-counter span {
+span.cart-counter {
   color: var(--button-txt-color);
   font-size: small;
 }

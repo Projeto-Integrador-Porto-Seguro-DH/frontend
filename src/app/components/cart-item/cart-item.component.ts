@@ -48,6 +48,8 @@ export class CartItemComponent implements OnInit {
 
   // Atualizar quantidade do carrinho
   updateQuantity(detalhePedido: DetalhePedido) {
+    detalhePedido.subtotal = (detalhePedido.quantidadeProduto!) * detalhePedido.produto?.precoUnitarioProduto!;
+
     this.cartService.updateCartQuantity(detalhePedido);
   }
 }

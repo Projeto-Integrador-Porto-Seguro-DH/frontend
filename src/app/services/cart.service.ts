@@ -29,8 +29,8 @@ export class CartService {
     if (!this.compareCartAndStorage()) {
       this.cartItemList = this.localStorage.get('cart');
       this.productList.next(this.cartItemList);
-      return this.productList.asObservable();
     }
+    
     return this.productList.asObservable();
   }
 
@@ -59,16 +59,6 @@ export class CartService {
     this.localStorage.set('cart', this.cartItemList);
 
     this.productList.next(this.cartItemList);
-  }
-
-  getTotalItems() {
-    let itens = 0;
-
-    this.cartItemList.forEach((item: DetalhePedido) => {
-      itens += item.quantidadeProduto!;
-    });
-
-    return itens;
   }
 
   updateCartQuantity(detalhePedido: DetalhePedido) {

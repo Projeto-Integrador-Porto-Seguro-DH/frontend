@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from './../../services/auth.service';
 import { CartService } from './../../services/cart.service';
-import { DetalhePedido } from 'src/app/model/DetalhePedido';
+import { DetalhePedido } from '../../model/DetalhePedido';
 
 @Component({
   selector: 'app-menu',
@@ -18,12 +18,20 @@ export class MenuComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private cartService: CartService
-    ) {
+  ) {
     this.authService.user.subscribe((userAuth) => (this.user = userAuth));
   }
 
   ngOnInit(): void {
-    this.itemOnCart = this.cartService.getTotalItems(); 
+    this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
+      let itens = 0;
+
+      resp.forEach((item: DetalhePedido) => {
+        itens += item.quantidadeProduto!;
+      });
+
+      this.itemOnCart = itens;
+    });
   }
 
   logout(): void {
@@ -42,11 +50,11 @@ export class MenuComponent implements OnInit {
     return false;
   }
 
-  isEmpty (): boolean {
+  isEmpty(): boolean {
     if (this.itemOnCart > 0) {
       return true;
     }
-    
+
     return false;
   }
 }

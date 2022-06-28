@@ -1,3 +1,4 @@
+import { JsonpClientBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,6 +16,10 @@ export class LocalStorageService {
   }
 
   get(key: string) {
+    if(JSON.parse(this.storage.getItem(key)!) == null) {
+      this.set(key, '');
+    }
+
     return JSON.parse(this.storage.getItem(key)!);
   }
 
