@@ -43,7 +43,7 @@ export class CategoryService {
     );
   }
 
-  //Método Mostra msg cadastrado com sucesso
+  //Método Mostra MSG
   showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
       duration: 5000,

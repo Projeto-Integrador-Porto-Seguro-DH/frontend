@@ -12,9 +12,8 @@ import { DetalhePedido } from 'src/app/model/DetalhePedido';
 })
 export class MenuComponent implements OnInit {
   user: Usuario;
-  cartItems: number = 0;
 
-  itemOnCart: boolean = false;
+  itemOnCart: number = 0;
 
   constructor(
     private authService: AuthService,
@@ -24,9 +23,7 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
-      this.cartItems = resp.length;
-    })
+    this.itemOnCart = this.cartService.getTotalItems(); 
   }
 
   logout(): void {
@@ -45,7 +42,11 @@ export class MenuComponent implements OnInit {
     return false;
   }
 
-  showCartFullIcon () {
-    this.itemOnCart = true;
+  isEmpty (): boolean {
+    if (this.itemOnCart > 0) {
+      return true;
+    }
+    
+    return false;
   }
 }

@@ -55,6 +55,16 @@ export class CartService {
     this.productList.next(this.cartItemList);
   }
 
+  getTotalItems() {
+    let itens = 0;
+
+    this.cartItemList.forEach((item: DetalhePedido) => {
+      itens += item.quantidadeProduto!;
+    });
+
+    return itens;
+  }
+
   getTotalPrice() {
     let totalValue = 0;
 

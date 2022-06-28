@@ -57,6 +57,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ProductReadComponent } from './components/product-component/product-read/product-read.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
+import { CartEmptyComponent } from './components/cart-empty/cart-empty.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
     SearchPipe,
     ProductReadComponent,
     BooleanPipePipe,
+    CartEmptyComponent,
   ],
 
   imports: [
