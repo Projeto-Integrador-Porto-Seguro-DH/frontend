@@ -1,7 +1,7 @@
+import { DetalhePedido } from './../model/DetalhePedido';
 import { LocalStorageService } from './local-storage.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DetalhePedido } from '../model/DetalhePedido';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
@@ -26,6 +26,11 @@ export class CartService {
   }
 
   getProducts() {
+    if (!this.compareCartAndStorage()) {
+      this.cartItemList = this.localStorage.get('cart');
+      this.productList.next(this.cartItemList);
+      return this.productList.asObservable();
+    }
     return this.productList.asObservable();
   }
 
@@ -35,7 +40,7 @@ export class CartService {
   //   this.productList.next(produto);
   // }
 
-  //Método adicionar item por item ao nosso carrinho
+  //Compara se o que está armazenado é diferente do carrinho[]
   compareCartAndStorage(): boolean {
     if (this.localStorage.get('cart') == this.cartItemList) {
       return true;
@@ -43,6 +48,7 @@ export class CartService {
     return false;
   }
 
+  //Método adicionar item por item ao nosso carrinho
   addToCart(detalhePedido: DetalhePedido) {
     if (!this.compareCartAndStorage()) {
       this.cartItemList = this.localStorage.get('cart');
@@ -63,6 +69,18 @@ export class CartService {
     });
 
     return itens;
+  }
+
+  updateCartQuantity(detalhePedido: DetalhePedido) {
+    this.cartItemList.forEach((item: DetalhePedido) => {
+      if (item == detalhePedido) {
+        item.quantidadeProduto = detalhePedido.quantidadeProduto;
+
+        this.localStorage.set('cart', this.cartItemList);
+
+        this.productList.next(this.cartItemList);
+      }
+    });
   }
 
   getTotalPrice() {
@@ -95,11 +113,11 @@ export class CartService {
     this.productList.next(this.cartItemList);
   }
 
-  //Método Mostra msg cadastrado com sucesso
+  //Método Mostra MSG
   showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
       duration: 5000,
-      horizontalPosition: 'right', //talvez mudar pada center e center!
+      horizontalPosition: 'right',
       verticalPosition: 'top',
     });
   }
