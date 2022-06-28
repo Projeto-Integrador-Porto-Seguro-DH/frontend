@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
   { path: 'pesquisa', component: SearchComponent },
-  { path: 'categoria/:categoria', component: CategoryComponent },
+  { path: 'categorias/:categoria', component: CategoryComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,

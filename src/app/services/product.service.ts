@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductService {
   public search = new BehaviorSubject<string>('');
+  public searchByCategory = new BehaviorSubject<string>('');
 
   constructor(
     private http: HttpClient,
@@ -42,6 +43,8 @@ export class ProductService {
       `${environment.apiUrl}/produtos/delete/${id}`
     );
   }
+
+
 
   showMessage(msg: string) {
     this.matSnackBar.open(msg, '', {
