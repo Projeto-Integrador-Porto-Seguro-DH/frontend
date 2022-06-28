@@ -33,7 +33,21 @@
       <div class="row align-items-center justify-content-between mt-4 mt-sm-0">
         <!-- Cart item quantity-input-->
         <div class="col-5 col-sm-5 col-md-5">
-          <app-quantity-input></app-quantity-input>
+          <div class="quantity-wrapper flex-nowrap">
+            <button class="plusminus" (click)="subtrair(item)">-</button>
+
+            <input
+              [(ngModel)]="item.quantidadeProduto"
+              type="number"
+              class="numeroInputStyle"
+              [value]="item.quantidadeProduto"
+              (input)="inputQuantity($event)"
+              min="1"
+              max="100"
+            />
+
+            <button class="plusminus" (click)="somar(item)">+</button>
+          </div>
         </div>
 
         <div class="col-3 col-sm-3 col-md-1 ps-2 ps-md-0">

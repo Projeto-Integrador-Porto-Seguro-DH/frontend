@@ -1,7 +1,7 @@
+import { DetalhePedido } from './../model/DetalhePedido';
 import { LocalStorageService } from './local-storage.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DetalhePedido } from '../model/DetalhePedido';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
@@ -26,6 +26,11 @@ export class CartService {
   }
 
   getProducts() {
+    if (!this.compareCartAndStorage()) {
+      this.cartItemList = this.localStorage.get('cart');
+      this.productList.next(this.cartItemList);
+      return this.productList.asObservable();
+    }
     return this.productList.asObservable();
   }
 
@@ -53,6 +58,18 @@ export class CartService {
     this.localStorage.set('cart', this.cartItemList);
 
     this.productList.next(this.cartItemList);
+  }
+
+  updateCartQuantity(detalhePedido: DetalhePedido) {
+    this.cartItemList.forEach((item: DetalhePedido) => {
+      if (item == detalhePedido) {
+        item.quantidadeProduto = detalhePedido.quantidadeProduto;
+
+        this.localStorage.set('cart', this.cartItemList);
+
+        this.productList.next(this.cartItemList);
+      }
+    });
   }
 
   getTotalPrice() {
