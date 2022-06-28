@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from './../../services/auth.service';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from './../../services/cart.service';
 import { DetalhePedido } from 'src/app/model/DetalhePedido';
 
 @Component({
@@ -13,6 +13,8 @@ import { DetalhePedido } from 'src/app/model/DetalhePedido';
 export class MenuComponent implements OnInit {
   user: Usuario;
   cartItems: number = 0;
+
+  itemOnCart: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -41,5 +43,9 @@ export class MenuComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  showCartFullIcon () {
+    this.itemOnCart = true;
   }
 }

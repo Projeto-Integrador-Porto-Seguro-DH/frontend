@@ -33,3 +33,26 @@
 .dropdown-menu a:active {
   background-color: var(--button-bg-color);
 }
+
+.bag-icon {
+  position: relative;
+}
+
+.bag-icon .cart-counter {
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 100%;
+  bottom: -8px;
+  left: 12px;  
+  background-color: var(--button-bg-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-counter span {
+  color: var(--button-txt-color);
+  font-size: small;
+}

@@ -49,12 +49,17 @@
           <!-- </a> -->
         </li>
         <li class="nav-item">
-          <a [routerLink]="['/carrinho']" style="cursor: pointer">
-            <img
-              src="../../../assets/icon/bag-icon.svg"
-              alt="Ícone de sacola"
-            />
-          </a>
+          <div class="bag-icon">
+            <a [routerLink]="['/carrinho']" style="cursor: pointer">
+              <img
+                src="../../../assets/icon/bag-icon.svg"
+                alt="Ícone de sacola"/>
+     
+              <div *ngIf="itemOnCart" >
+                <span class="cart-counter">10</span>
+              </div>
+            </a>
+          </div>
         </li>
 
         <li class="nav-item">
