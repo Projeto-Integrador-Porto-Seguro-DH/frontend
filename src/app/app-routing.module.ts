@@ -18,6 +18,7 @@ import { PurchaseHistoryComponent } from './components/purchase-history/purchase
 import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
   { path: 'pesquisa', component: SearchComponent },
+  { path: 'categoria/:categoria', component: CategoryComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,

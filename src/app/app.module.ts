@@ -29,7 +29,6 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 import { ShoppingCartDetailsComponent } from './components/shopping-cart-details/shopping-cart-details.component';
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
-import { CreatComponent } from './components/creat/creat.component';
 import { ProfileTabsComponent } from './components/profile-tabs/profile-tabs.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { ProfileAdmTabsComponent } from './components/profile-adm-tabs/profile-adm-tabs.component';
@@ -47,7 +46,6 @@ import { SigninPasswordRulesComponent } from './components/signin-password-rules
 import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 import { ProductCreateComponent } from './components/product-component/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product-component/product-delete/product-delete.component';
 import { CategoryReadComponent } from './components/category/category-read/category-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -58,6 +56,7 @@ import { ProductReadComponent } from './components/product-component/product-rea
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
 import { CartEmptyComponent } from './components/cart-empty/cart-empty.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +80,6 @@ import { CartEmptyComponent } from './components/cart-empty/cart-empty.component
     ShoppingCartComponent,
     UserPersonalInfoComponent,
     ComponentCategoriasComponent,
-    CreatComponent,
     ShoppingCartSummaryComponent,
     ShoppingCartDetailsComponent,
     PhonePipe,
@@ -105,6 +103,7 @@ import { CartEmptyComponent } from './components/cart-empty/cart-empty.component
     ProductReadComponent,
     BooleanPipePipe,
     CartEmptyComponent,
+    CategoryComponent,
   ],
 
   imports: [
