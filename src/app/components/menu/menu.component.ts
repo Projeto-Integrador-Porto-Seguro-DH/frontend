@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from 'src/app/model/Usuario';
@@ -15,9 +17,13 @@ export class MenuComponent implements OnInit {
 
   itemOnCart: number = 0;
 
+  category = '';
+
   constructor(
     private authService: AuthService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductService
   ) {
     this.authService.user.subscribe((userAuth) => (this.user = userAuth));
   }
@@ -56,5 +62,13 @@ export class MenuComponent implements OnInit {
     }
 
     return false;
+  }
+
+  selectCategory(category: string) {
+    this.category = category;
+
+    this.productService.searchByCategory.next(this.category);
+
+    this.router.navigate([`categorias/${this.category}`]);
   }
 }

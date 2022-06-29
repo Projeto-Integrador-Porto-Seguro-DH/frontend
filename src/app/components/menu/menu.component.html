@@ -30,13 +30,25 @@
     >
       <ul class="navbar-nav gap-4">
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active">Queijos</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Queijos')"
+            >Queijos</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active">Geléias</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Geléias')"
+            >Geléias</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active">Vinhos</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Vinhos')"
+            >Vinhos</a
+          >
         </li>
       </ul>
       <!-- Ícones -->
@@ -53,9 +65,10 @@
             <a [routerLink]="['/carrinho']" style="cursor: pointer">
               <img
                 src="../../../assets/icon/bag-icon.svg"
-                alt="Ícone de sacola"/>
-     
-              <div *ngIf="isEmpty()" >
+                alt="Ícone de sacola"
+              />
+
+              <div *ngIf="isEmpty()">
                 <span class="cart-counter">{{ itemOnCart }}</span>
               </div>
             </a>
