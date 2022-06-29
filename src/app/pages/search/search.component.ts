@@ -21,43 +21,9 @@ export class SearchComponent implements OnInit {
       this.searchTerm = searchedTerm;
     });
 
-    this.listaDeProdutos = [
-      {
-        idProduto: 1,
-        nomeProduto: 'Queijo 1',
-        descricaoProduto: 'Queijo muito bom!',
-        precoUnitarioProduto: 300,
-        fotoProduto: '../../../assets/img/products/queijo/queijo1.jpg',
-      },
-      {
-        idProduto: 5,
-        nomeProduto: 'Queijo 2',
-        descricaoProduto: 'Queijo muito bom 2!',
-        precoUnitarioProduto: 300,
-        fotoProduto: '../../../assets/img/products/queijo/queijo1.jpg',
-      },
-      {
-        idProduto: 2,
-        nomeProduto: 'Vinho 2',
-        descricaoProduto: 'Este queijo também é muito bom!',
-        precoUnitarioProduto: 400,
-        fotoProduto: '../../../assets/img/products/queijo/queijo2.jpg',
-      },
-      {
-        idProduto: 3,
-        nomeProduto: 'Geléia 3',
-        descricaoProduto: 'Mais um queijo muito bom!',
-        precoUnitarioProduto: 500,
-        fotoProduto: '../../../assets/img/products/queijo/queijo3.jpg',
-      },
-      {
-        idProduto: 4,
-        nomeProduto: 'Macarrão 4',
-        descricaoProduto: 'Este queijo é excelente!',
-        precoUnitarioProduto: 600,
-        fotoProduto: '../../../assets/img/products/queijo/queijo4.jpg',
-      },
-    ];
+    this.productService.getProduct().subscribe((resp: Produto[]) => {
+      this.listaDeProdutos = resp;
+    });
   }
 
   search(event: any): void {

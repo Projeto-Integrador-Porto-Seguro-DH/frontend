@@ -1,0 +1,42 @@
+<div class="container-xl">
+  <div class="row d-flex justify-content-between mt-5 px-0">
+    <div *ngIf="!searchEmpty(); else noSearchTerm">
+      <h2 class="h2Style">{{ searchByCategory }}</h2>
+    </div>
+    <ng-template #noSearchTerm>
+      <h2 class="h2Style">Todos os produtos</h2>
+    </ng-template>
+    <div class="col-12">
+      <div class="row">
+        <div
+          class="col-6 col-sm-3"
+          *ngFor="
+            let produto of listaDeProdutos
+              | search: searchByCategory:'categoria':true
+          "
+        >
+          <div class="mt-5 px-2">
+            <a routerLink="/produto/{{ produto.idProduto }}">
+              <div class="card cardStyle">
+                <img
+                  src="{{ produto.fotoProduto }}"
+                  class="card-img-top img-fluid"
+                  alt="..."
+                />
+                <div class="card-body ps-2">
+                  <h3 class="card-title h3Style">
+                    {{ produto.nomeProduto }}
+                  </h3>
+
+                  <p class="card-title pStyleDark">
+                    {{ produto.precoUnitarioProduto | currency: "BRL" }}
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

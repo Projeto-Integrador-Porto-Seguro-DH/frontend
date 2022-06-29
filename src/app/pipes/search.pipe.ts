@@ -8,20 +8,34 @@ export class SearchPipe implements PipeTransform {
   transform(
     value: Produto[],
     filterString: string,
-    propertyName: string
+    propertyName: string,
+    secondProperty?: boolean
   ): Produto[] {
     const result: Produto[] = [];
     if (!value || filterString === '' || propertyName === '') {
       return value;
     }
-    value.forEach((a: any) => {
-      if (
-        a[propertyName]
-          .trim()
-          .toLowerCase()
-          .includes(filterString.toLocaleLowerCase())
-      ) {
-        result.push(a);
+    value.forEach((produto: any) => {
+      if (!secondProperty) {
+        if (
+          produto[propertyName]
+            .trim()
+            .toLowerCase()
+            .includes(filterString.toLocaleLowerCase())
+        ) {
+          result.push(produto);
+        }
+      }
+
+      if (secondProperty) {
+        if (
+          produto[propertyName].nomeCategoria
+            .trim()
+            .toLowerCase()
+            .includes(filterString.toLocaleLowerCase())
+        ) {
+          result.push(produto);
+        }
       }
     });
 

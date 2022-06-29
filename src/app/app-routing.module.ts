@@ -11,7 +11,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { SigninFormComponent } from './pages/signin-form/signin-form.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ProductComponent } from './pages/product/product.component';
-import { CheckoutProcessComponent} from './pages/checkout-process/checkout-process.component';
+import { CheckoutProcessComponent } from './pages/checkout-process/checkout-process.component';
 
 import { UserPersonalInfoComponent } from './components/user-personal-info/user-personal-info.component';
 import { OrdersComponent } from './components/orders/orders.component';
@@ -19,6 +19,7 @@ import { PurchaseHistoryComponent } from './components/purchase-history/purchase
 import { ProductCrudComponent } from './components/product-component/product-crud/product-crud.component';
 import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
 import { CategoryCrudComponent } from './components/category/category-crud/category-crud.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'produto/:id', component: ProductComponent },
   { path: 'pesquisa', component: SearchComponent },
   { path: 'finalizar-compra', component: CheckoutProcessComponent },
+  { path: 'categorias', component: CategoryComponent },
+  { path: 'categorias/:categoria', component: CategoryComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,
