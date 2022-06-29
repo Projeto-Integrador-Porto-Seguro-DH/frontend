@@ -18,5 +18,5 @@ export class Usuario {
   public cidadeEndereco?: string;
   public estadoEndereco?: string; // Verificar tipo
   public formasDePagamento?: string; // Verificar tipo
-  public pedido?: Pedido[];
+  public pedidoUsuario?: Pedido[];
 }

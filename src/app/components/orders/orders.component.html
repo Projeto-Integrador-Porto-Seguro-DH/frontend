@@ -15,5 +15,8 @@
     </li>
   </ul>
 
-  <app-order-card></app-order-card>
+  <app-order-card
+    *ngFor="let pedido of pedidosDoUsuario"
+    [pedidoOrderCard]="pedido"
+  ></app-order-card>
 </div>
