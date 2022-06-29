@@ -30,7 +30,7 @@ export class CartService {
       this.cartItemList = this.localStorage.get('cart');
       this.productList.next(this.cartItemList);
     }
-    
+
     return this.productList.asObservable();
   }
 
@@ -65,19 +65,12 @@ export class CartService {
     this.cartItemList.forEach((item: DetalhePedido) => {
       if (item == detalhePedido) {
         item.quantidadeProduto = detalhePedido.quantidadeProduto;
+        item.subtotal = detalhePedido.subtotal;
 
         this.localStorage.set('cart', this.cartItemList);
 
         this.productList.next(this.cartItemList);
       }
-    });
-  }
-
-  getTotalPrice() {
-    let totalValue = 0;
-
-    this.cartItemList.map((item: DetalhePedido) => {
-      totalValue += item.produto?.precoUnitarioProduto!;
     });
   }
 

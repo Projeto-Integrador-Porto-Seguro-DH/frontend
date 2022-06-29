@@ -8,25 +8,25 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./shopping-cart-summary.component.css'],
 })
 export class ShoppingCartSummaryComponent implements OnInit {
-
   subtotal = 0;
 
   linkIsClicked = false;
 
   freeShipping = false;
 
-  constructor(
-    private cartService: CartService) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
-      let totalValue = 0;
+      let totalValue: number = 0;
 
-      resp.map((item: DetalhePedido) => {
-        totalValue += item.produto?.precoUnitarioProduto!;
+      resp.forEach((item: DetalhePedido) => {
+        totalValue += +item.subtotal!;
       });
+
       this.subtotal = totalValue;
 
+      console.log(this.subtotal);
     });
   }
 
