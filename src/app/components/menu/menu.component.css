@@ -56,3 +56,31 @@ span.cart-counter {
   color: var(--button-txt-color);
   font-size: small;
 }
+@media (min-width: 320px) and (max-width: 767px) {
+  .ul-icons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+  }
+
+  .ul-icons li {
+    margin-bottom: 10px;
+  }
+
+  .li-icons {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .ul-icons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .li-icons {
+    margin-right: 20px;
+  }
+}
