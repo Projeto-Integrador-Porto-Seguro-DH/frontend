@@ -1,3 +1,7 @@
+import { UserService } from './../../services/user.service';
+import { AuthService } from './../../services/auth.service';
+import { DetalhePedido } from './../../model/DetalhePedido';
+import { CartService } from 'src/app/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { FormaDeEnvio } from 'src/app/enums/FormaDeEnvio';
 import { FormaDePagamento } from 'src/app/enums/PagamentoEnum';
@@ -9,46 +13,40 @@ import { Usuario } from 'src/app/model/Usuario';
   styleUrls: ['./checkout-process.component.css'],
 })
 export class CheckoutProcessComponent implements OnInit {
-  itensComprados: any[];
+  itensComprados: DetalhePedido[];
+  usuario = new Usuario();
+
   formaDeEnvio = FormaDeEnvio;
   formaDePagamento = FormaDePagamento;
-  usuario = new Usuario();
-  constructor() {}
+  pagamentoEscolhido: FormaDePagamento;
+
+  constructor(
+    private cartService: CartService,
+    private auth: AuthService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.itensComprados = [
-      {
-        nome: 'Queijo Brie',
-        descricao: 'Inteiro 500gr',
-        preco: 'R$ 200,00',
-        categoria: 'Queijos',
-        foto: '../../assets/img/products/queijo/queijo4.jpg',
-      },
-      {
-        nome: 'Queijo Parmesão',
-        descricao: 'Ralado 150gr',
-        preco: 'R$ 18,00',
-        categoria: 'Queijos',
-        foto: '../../assets/img/products/queijo/queijo4.jpg',
-      },
-      {
-        nome: 'Queijo 3',
-        descricao: 'Ralado 150gr',
-        preco: 'R$ 28,00',
-        categoria: 'Queijos',
-        foto: '../../assets/img/products/queijo/queijo4.jpg',
-      },
-    ];
-    this.usuario = {
-      cepEndereco: 0o7124300,
-      logradouroEndereco: 'Av Teste',
-      numeroEndereco: 34,
-      complementoEndereco: 'Prox ao queijo',
-      bairroEndereco: 'Vila Vintem',
-      cidadeEndereco: 'Teste',
-      estadoEndereco: 'SP',
-      idUsuario: 1,
-      emailUsuario: 'teste@gmail.com',
-    };
+    this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
+      this.itensComprados = resp;
+    });
+
+    this.auth.user.subscribe((user: Usuario) => {
+      this.userService.getById(user.idUsuario!).subscribe((userBD: Usuario) => {
+        this.usuario = userBD;
+      });
+    });
+  }
+
+  checkPayment(event: any) {
+    this.pagamentoEscolhido = event.target.value;
+  }
+
+  isCreditCard(): boolean {
+    if (this.pagamentoEscolhido == FormaDePagamento.CARTAO) {
+      return true;
+    }
+
+    return false;
   }
 }

@@ -1,16 +1,10 @@
 img.imgmaxsize {
-  margin-right: 10px;
   max-height: 8rem;
-  justify-self: end;
 }
 
 .title-checkout {
-  text-align: center;
-  font-weight: bold 400;
-  font-size: 18px;
-  display: block;
-  margin: 15px auto;
-  color: var(--text-color-light);
+  text-align: start;
+  margin: 1rem 1rem;
 }
 
 .grid {
@@ -18,15 +12,38 @@ img.imgmaxsize {
 }
 
 .buttonStyle {
-  background-color: var(--button-bg-color);
-  color: var(--button-txt-color);
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 1rem 2rem;
-  min-width: 140px;
+  justify-self: center;
 }
 
 p.endereco {
   /* padding: 0 0.5rem; */
   margin: 0;
+}
+p {
+  margin-bottom: 0.25rem;
+}
+
+section {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+@media (max-width: 575.98px) {
+  section {
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+  }
+}
+
+.inputStyle {
+  width: fit-content;
+}
+
+.inputStyle.smallInput-6 {
+  width: 6rem;
 }
