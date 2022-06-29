@@ -14,11 +14,15 @@ export class ShoppingCartSummaryComponent implements OnInit {
 
   freeShipping = false;
 
+  cartSize = 0;
+
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
       let totalValue: number = 0;
+
+      this.cartSize = resp.length;
 
       resp.forEach((item: DetalhePedido) => {
         totalValue += +item.subtotal!;

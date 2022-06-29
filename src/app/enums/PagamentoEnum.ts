@@ -1,4 +1,4 @@
-export enum FormaDePagamento {
+export enum FormasDePagamentoEnum {
   CARTAO = 'Cartão de Crédito',
   PICPAY = 'PicPay',
   PAGSEGURO = 'PagSeguro',

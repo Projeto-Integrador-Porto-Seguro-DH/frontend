@@ -47,3 +47,7 @@ section {
 .inputStyle.smallInput-6 {
   width: 6rem;
 }
+
+select {
+  cursor: pointer;
+}
