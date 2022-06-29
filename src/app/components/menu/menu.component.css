@@ -1,3 +1,10 @@
+@media (max-width: 575px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 .link-active {
   position: relative;
   text-decoration: none;
@@ -30,12 +37,36 @@
   transform: scaleX(1);
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .link-active:hover:before {
+    display: none;
+  }
+}
+
 .dropdown-menu a:active {
   background-color: var(--button-bg-color);
 }
 
 .bag-icon {
   position: relative;
+}
+
+.m-8 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.li-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-space {
+  margin-right: 18px;
+}
+
+.ul-icons {
+  margin-top: 120px;
 }
 
 .bag-icon .cart-counter {
@@ -56,31 +87,12 @@ span.cart-counter {
   color: var(--button-txt-color);
   font-size: small;
 }
-@media (min-width: 320px) and (max-width: 767px) {
-  .ul-icons {
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
-  }
-
-  .ul-icons li {
-    margin-bottom: 10px;
-  }
-
-  .li-icons {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
 
 @media (min-width: 768px) {
   .ul-icons {
     display: flex;
     flex-direction: row;
-  }
-
-  .li-icons {
-    margin-right: 20px;
+    align-items: center;
+    margin-top: 0;
   }
 }
