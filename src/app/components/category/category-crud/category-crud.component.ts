@@ -6,7 +6,7 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-category-crud',
   templateUrl: './category-crud.component.html',
-  styleUrls: ['./category-crud.component.css']
+  styleUrls: ['./category-crud.component.css'],
 })
 export class CategoryCrudComponent implements OnInit {
   public categoriaLista: Categoria[];
@@ -15,31 +15,28 @@ export class CategoryCrudComponent implements OnInit {
 
   @ViewChild('cadastrar') cadastrar: any;
 
-  constructor (
-    private categoryService: CategoryService
-  ) { }
+  constructor(private categoryService: CategoryService) {}
 
-  ngOnInit(): void { 
-  }
+  ngOnInit(): void {}
 
   // CREATE
   submit() {
-    this.categoryService.postCategory(this.categoria).pipe(first()).subscribe({
-      next:(resp: Categoria) => {
-        this.categoryService.showMessage('Categoria cadastrada com sucesso!')
-        this.categoria = resp;
-
-        this.categoryService.refresh();
-      },
-      error: (e: any) => {
-        this.error = e;
-        alert(this.error);
-      }
-    });
+    this.categoryService
+      .postCategory(this.categoria)
+      .pipe(first())
+      .subscribe({
+        next: (resp: Categoria) => {
+          this.categoryService.showMessage('Categoria cadastrada com sucesso!');
+          this.categoria = resp;
+        },
+        error: (e: any) => {
+          this.error = e;
+          alert(this.error);
+        },
+      });
   }
 
   clearFormCadastrar() {
     this.cadastrar.nativeElement.value = '';
   }
-
 }

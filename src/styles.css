@@ -29,7 +29,13 @@ html {
 body {
   background-color: var(--body-bg-color);
   font-family: var(--text-font-primary);
+  margin: 0;
+}
+
+html,
+body {
   height: 100vh;
+  min-height: 100vh;
 }
 
 html,
@@ -41,6 +47,12 @@ footer {
   margin-top: 5.6rem;
   position: sticky;
   top: 0;
+  background-color: var(--footer-bg-color);
+}
+
+#wrapper {
+  height: 100%;
+  min-height: 100%;
 }
 
 ul {
@@ -49,7 +61,7 @@ ul {
 
 a {
   text-decoration: none;
-  cursor: pointer
+  cursor: pointer;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -126,6 +138,3 @@ input[type="number"] {
   -webkit-box-shadow: 0 0 0 30px white inset;
   -webkit-text-fill-color: var(--text-color-dark) !important;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
