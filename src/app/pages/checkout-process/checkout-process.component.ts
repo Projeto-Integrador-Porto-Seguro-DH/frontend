@@ -57,7 +57,7 @@ export class CheckoutProcessComponent implements OnInit {
   }
 
   choosePayment(event: any) {
-    this.pagamentoEscolhido = event.target.value;
+    this.pagamentoEscolhido = event.currentTarget.value;
     console.log(this.pagamentoEscolhido);
   }
 

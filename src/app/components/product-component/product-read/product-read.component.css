@@ -10,7 +10,7 @@ tableHeader {
 td.descricaoProduto {
   text-overflow: clip;
   overflow: hidden;
-  white-space: pre-wrap;
+  white-space: nowrap;
   max-width: 20ch;
   padding-right: 0.75rem;
 }
