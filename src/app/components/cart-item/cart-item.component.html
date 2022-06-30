@@ -23,7 +23,7 @@
             {{ item.produto?.nomeProduto }}
           </p>
           <p class="pStyleLight mb-1">
-            R$ {{ item.produto?.precoUnitarioProduto }}
+            {{ item.produto?.precoUnitarioProduto | currency: 'BRL'}}
           </p>
         </div>
       </div>
@@ -63,7 +63,7 @@
 
         <!-- Cart item Subtotal -->
         <div class="col-4 col-sm-4 col-md-6 text-end">
-          <span>R$ {{ item.subtotal }}</span>
+          <span>{{ item.subtotal | currency: 'BRL'}}</span>
         </div>
       </div>
     </div>
