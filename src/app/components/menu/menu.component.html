@@ -4,56 +4,87 @@
     <!-- Logotipo -->
     <h1 class="navbar-brand">
       <a [routerLink]="['/']">
-        <img src="../../../assets/icon/logoDaFazenda.svg" class="logo-style" alt="Logo daFazenda" />
+        <img
+          src="../../../assets/icon/logoDaFazenda.svg"
+          class="logo-style"
+          alt="Logo daFazenda"
+        />
       </a>
     </h1>
     <!-- Menu hamburguer no mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <img src="../../../assets/icon/menu-icon.svg" alt="" />
     </button>
     <!-- Itens do menu -->
-    <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse justify-content-end gap-4"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav gap-1">
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active" (click)="selectCategory('Queijos')">Queijos</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Queijos')"
+            >Queijos</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active" (click)="selectCategory('Geléias')">Geléias</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Geléias')"
+            >Geléias</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link title-custom pStyleDark link-active" (click)="selectCategory('Vinhos')">Vinhos</a>
+          <a
+            class="nav-link title-custom pStyleDark link-active"
+            (click)="selectCategory('Vinhos')"
+            >Vinhos</a
+          >
         </li>
       </ul>
       <!-- Ícones -->
       <ul class="navbar-nav ul-icons">
         <li class="nav-item li-icons" style="cursor: pointer">
-
           <div class="icon-space m-8">
             <app-modal-search></app-modal-search>
           </div>
 
           <a>
-            <p class="d-md-none d-lg-block
-          d-lg-none d-xl-block
-          d-xl-none pStyleDark m-8">
+            <p
+              class="d-md-none d-lg-block d-lg-none d-xl-block d-xl-none pStyleDark m-8"
+            >
               Pesquisar
             </p>
           </a>
-
-
         </li>
         <li class="nav-item">
           <div class="bag-icon">
-            <a [routerLink]="['/carrinho']" class="li-icons" style="cursor: pointer">
-              <img src="../../../assets/icon/bag-icon.svg" alt="Ícone de sacola" class="icon-space" />
+            <a
+              [routerLink]="['/carrinho']"
+              class="li-icons"
+              style="cursor: pointer"
+            >
+              <img
+                src="../../../assets/icon/bag-icon.svg"
+                alt="Ícone de sacola"
+                class="icon-space"
+              />
 
               <div *ngIf="isEmpty()">
                 <span class="cart-counter">{{ itemOnCart }}</span>
               </div>
-              <p class="d-md-none d-lg-block
-              d-lg-none d-xl-block
-              d-xl-none pStyleDark m-8">
+              <p
+                class="d-md-none d-lg-block d-lg-none d-xl-block d-xl-none pStyleDark m-8"
+              >
                 Carrinho
               </p>
             </a>
@@ -62,28 +93,49 @@
 
         <li class="nav-item">
           <div class="dropdown">
-            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-              class="li-icons">
-              <img src="../../../assets/icon/profile-icon.svg" alt="Ícone de pessoa" class="icon-space" />
-              <p class="d-md-none d-lg-block
-              d-lg-none d-xl-block
-              d-xl-none pStyleDark my-2">
+            <a
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              class="li-icons"
+            >
+              <img
+                src="../../../assets/icon/profile-icon.svg"
+                alt="Ícone de pessoa"
+                class="icon-space"
+              />
+              <p
+                class="d-md-none d-lg-block d-lg-none d-xl-block d-xl-none pStyleDark my-2"
+              >
                 Conta
               </p>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end py-1" aria-labelledby="dropdownMenuButton1">
+            <ul
+              class="dropdown-menu dropdown-menu-end py-1"
+              aria-labelledby="dropdownMenuButton1"
+            >
               <div *ngIf="!isAuthenticated()">
                 <li>
-                  <a class="dropdown-item pStyleDark" routerLink="/entrar">Entrar / Cadastrar</a>
+                  <a class="dropdown-item pStyleDark" routerLink="/entrar"
+                    >Entrar / Cadastrar</a
+                  >
                 </li>
               </div>
 
               <li>
-                <a class="dropdown-item pStyleDark" routerLink="/perfil">Meu Perfil</a>
+                <a class="dropdown-item pStyleDark" routerLink="/perfil"
+                  >Meu Perfil</a
+                >
               </li>
 
               <li>
-                <a class="dropdown-item pStyleDark" [routerLink]="['perfil', 'pedidos']">Meus Pedidos</a>
+                <a
+                  class="dropdown-item pStyleDark"
+                  [routerLink]="['/perfil', 'pedidos']"
+                  >Meus Pedidos</a
+                >
               </li>
 
               <div *ngIf="isAdmin()">
@@ -94,10 +146,9 @@
                   <h6 class="dropdown-header pStyleLight">Painel do Admin</h6>
                 </li>
                 <li>
-                  <a class="dropdown-item pStyleDark" routerLink="/admin">Gerenciar Produtos</a>
-                </li>
-                <li>
-                  <a class="dropdown-item pStyleDark" href="#">Gerenciar Categorias</a>
+                  <a class="dropdown-item pStyleDark" routerLink="/admin"
+                    >Gerenciar</a
+                  >
                 </li>
               </div>
               <div *ngIf="isAuthenticated()">
@@ -105,7 +156,9 @@
                   <hr class="dropdown-divider my-1" />
                 </li>
                 <li>
-                  <a class="dropdown-item pStyleDark" (click)="logout()">Sair</a>
+                  <a class="dropdown-item pStyleDark" (click)="logout()"
+                    >Sair</a
+                  >
                 </li>
               </div>
             </ul>

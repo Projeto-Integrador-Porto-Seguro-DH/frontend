@@ -1,3 +1,4 @@
+import { AdminGuard } from './guards/admin.guard';
 import { ProductUpdateComponent } from './components/product-component/product-update/product-update.component';
 import { SearchComponent } from './pages/search/search.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -49,6 +50,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdmProfileComponent,
+    canActivate: [AuthGuard, AdminGuard],
     children: [
       { path: '', redirectTo: 'produtos', pathMatch: 'full' },
       { path: 'produtos', component: ProductCrudComponent },

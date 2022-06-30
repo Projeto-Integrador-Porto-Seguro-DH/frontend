@@ -26,7 +26,7 @@ export class OrdersComponent implements OnInit {
           this.pedidosDoUsuario = resp;
         },
         error: (e: any) => {
-          alert(e);
+          console.log(e);
         },
       });
     });

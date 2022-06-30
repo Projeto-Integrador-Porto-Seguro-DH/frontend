@@ -107,7 +107,7 @@ export class CheckoutProcessComponent implements OnInit {
         this.cartService.removeAllCart();
       },
       error: (e: any) => {
-        alert(e);
+        console.log(e);
 
         this.loading = false;
       },

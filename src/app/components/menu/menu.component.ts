@@ -24,11 +24,13 @@ export class MenuComponent implements OnInit {
     private cartService: CartService,
     private router: Router,
     private productService: ProductService
-  ) {
-    this.authService.user.subscribe((userAuth) => (this.user = userAuth));
-  }
+  ) {}
 
   ngOnInit(): void {
+    this.authService.user.subscribe(
+      (userAuth: Usuario) => (this.user = userAuth)
+    );
+
     this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
       let itens = 0;
 
@@ -45,15 +47,11 @@ export class MenuComponent implements OnInit {
   }
 
   isAuthenticated(): boolean {
-    // return this.user ? true : false;
-    return true;
+    return this.user ? true : false;
   }
 
   isAdmin(): boolean {
-    if (this.isAuthenticated()) {
-      return true;
-    }
-    return false;
+    return this.user.admin!;
   }
 
   isEmpty(): boolean {
