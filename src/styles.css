@@ -64,6 +64,11 @@ a {
   cursor: pointer;
 }
 
+a:hover,
+a:visited {
+  color: var(--text-color-dark);
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
