@@ -5,7 +5,8 @@ img.imgCard {
 }
 
 img.modalImg {
-  max-width: 60%;
+  max-width: 70vw;
+  width: 70vw;
   height: auto;
 }
 

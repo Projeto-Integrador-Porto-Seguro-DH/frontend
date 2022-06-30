@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/model/Produto';
 import { ProductService } from './../../services/product.service';
@@ -12,7 +12,7 @@ export class CategoryComponent implements OnInit {
   public listaDeProdutos: Produto[] = [];
   searchByCategory = '';
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe((resp: Produto[]) => {
@@ -32,5 +32,11 @@ export class CategoryComponent implements OnInit {
     }
 
     return false;
+  }
+
+  goToCategories() {
+    this.productService.searchByCategory.next('');
+
+    this.router.navigate(['categorias']);
   }
 }

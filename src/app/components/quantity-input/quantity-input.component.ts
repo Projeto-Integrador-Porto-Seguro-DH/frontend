@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Produto } from 'src/app/model/Produto';
 
 @Component({
   selector: 'app-quantity-input',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class QuantityInputComponent implements OnInit {
   @Input() quantidadeProduto = 1;
+
+  @Input() produto: Produto;
 
   constructor(private router: Router) {
     console.log(this.router.url);

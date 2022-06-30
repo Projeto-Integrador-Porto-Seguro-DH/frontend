@@ -23,7 +23,7 @@
             {{ item.produto?.nomeProduto }}
           </p>
           <p class="pStyleLight mb-1">
-            {{ item.produto?.precoUnitarioProduto | currency: 'BRL'}}
+            {{ item.produto?.precoUnitarioProduto | currency: "BRL" }}
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@
               [value]="item.quantidadeProduto"
               (input)="inputQuantity($event)"
               min="1"
-              max="100"
+              [max]="item.produto?.estoqueProduto!"
             />
 
             <button class="plusminus" (click)="somar(item)">+</button>
@@ -63,7 +63,7 @@
 
         <!-- Cart item Subtotal -->
         <div class="col-4 col-sm-4 col-md-6 text-end">
-          <span>{{ item.subtotal | currency: 'BRL'}}</span>
+          <span>{{ item.subtotal | currency: "BRL" }}</span>
         </div>
       </div>
     </div>
