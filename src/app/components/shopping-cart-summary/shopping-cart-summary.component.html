@@ -18,15 +18,17 @@
     </div>
 
     <div class="px-0 mt-1 mb-5">
-      <p>Entrega</p>
+      <div class="row d-flex justify-content-between align-items-start">
+        <p class="inlineStyle">Entrega</p>
 
-      <div *ngIf="!linkIsClicked">
-        <a (click)="openDeliveryInput()" class="linkStyle">Selecionar</a>
+        <div *ngIf="!linkIsClicked">
+          <a (click)="openDeliveryInput()" class="linkStyle">Selecionar</a>
+        </div>
       </div>
 
       <!-- Frete Grátis -->
       <div class="frete-gratis" *ngIf="freeShipping">
-        <p class="pStyleDark">Frete grátis!</p>
+        <p class="fontLarger">Frete grátis!</p>
       </div>
 
       <div *ngIf="linkIsClicked">
@@ -49,7 +51,7 @@
 
     <div class="dropdown-divider my-0"></div>
 
-    <div class="h3Style px-0 mt-5">
+    <div class="h3Style fontLarger px-0 mt-5">
       <p>
         Total <span>{{ subtotal | currency: "BRL" }}</span>
       </p>

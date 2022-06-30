@@ -32,3 +32,8 @@ a.linkStyle:hover {
 a.linkStyle:focus {
     font-weight: 500;
 }
+
+.fontLarger {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
