@@ -7,7 +7,7 @@
         </div>
 
         <div class="form-group">
-          <label for="nomeUsuario"></label>
+          <label for="nomeUsuario" class="pStyleDark mt-4">Nome</label>
           <input
             [(ngModel)]="userRegister.nomeUsuario"
             type="text"
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group mb-0">
-          <label for="sobrenomeUsuario"></label>
+          <label for="sobrenomeUsuario" class="pStyleDark mt-3">Sobrenome</label>
           <input
             [(ngModel)]="userRegister.sobrenomeUsuario"
             type="text"
@@ -37,7 +37,7 @@
         </div>
 
         <div class="form-group mb-0">
-          <label for="emailUsuario"></label>
+          <label for="emailUsuario" class="pStyleDark mt-3">Email</label>
           <input
             [(ngModel)]="userRegister.emailUsuario"
             type="email"
@@ -52,7 +52,7 @@
         </div>
 
         <div class="form-group">
-          <label for="senhaUsuario"></label>
+          <label for="senhaUsuario" class="pStyleDark mt-3">Senha</label>
           <input
             [(ngModel)]="userRegister.senhaUsuario"
             (focus)="showPasswordRequirement()"
@@ -72,7 +72,7 @@
         </div>
 
         <div class="form-group mb-0 mt-0">
-          <label for="senhaUsuario"></label>
+          <label for="senhaUsuario" class="pStyleDark mt-3">Senha</label>
           <input
             (input)="confirmarSenha($event)"
             type="password"
