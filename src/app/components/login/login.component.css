@@ -1,6 +1,7 @@
 a.linkStyle {
   font-size: 0.85rem;
   color: var(--text-color-light);
+  text-decoration:underline;
 }
 
 a.linkStyle:hover {

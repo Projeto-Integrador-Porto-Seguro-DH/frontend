@@ -38,6 +38,11 @@ body {
   min-height: 100vh;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 footer {
   margin-top: 5.6rem;
   position: sticky;
