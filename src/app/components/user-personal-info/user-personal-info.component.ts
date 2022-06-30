@@ -27,7 +27,11 @@ export class UserPersonalInfoComponent implements OnInit {
     this.authService.user.subscribe((userAuth) => {
       this.userService
         .getById(userAuth.idUsuario!)
-        .subscribe((user) => (this.usuario = user));
+        .subscribe((user: Usuario) => {
+          this.usuario = user;
+
+          console.log(this.usuario);
+        });
     });
   }
 

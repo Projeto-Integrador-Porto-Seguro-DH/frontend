@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -21,14 +22,21 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private userService: UserService,
     private cartService: CartService,
     private router: Router,
     private productService: ProductService
-  ) {
-    this.authService.user.subscribe((userAuth) => (this.user = userAuth));
-  }
+  ) {}
 
   ngOnInit(): void {
+    this.authService.user.subscribe((userAuth) => {
+      this.userService
+        .getById(userAuth.idUsuario!)
+        .subscribe((user: Usuario) => {
+          this.user = user;
+        });
+    });
+
     this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
       let itens = 0;
 
@@ -45,12 +53,11 @@ export class MenuComponent implements OnInit {
   }
 
   isAuthenticated(): boolean {
-    // return this.user ? true : false;
-    return true;
+    return this.user ? true : false;
   }
 
-  isAdmin(): boolean {
-    if (this.isAuthenticated()) {
+  isAdmin() {
+    if (this.user.admin) {
       return true;
     }
     return false;
