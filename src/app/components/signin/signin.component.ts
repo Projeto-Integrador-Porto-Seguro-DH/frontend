@@ -32,6 +32,7 @@ export class SigninComponent implements OnInit {
   onSubmit(): void {
     if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
       alert('As senhas digitadas estão diferentes!');
+      return;
     }
 
     this.authService
@@ -40,7 +41,7 @@ export class SigninComponent implements OnInit {
       .subscribe({
         next: (resp: Usuario) => {
           this.user = resp;
-          this.router.navigate(['/']);
+          this.router.navigate(['/entrar']);
           alert('Usuário cadastrado com sucesso!');
         },
         error: (error: Error) => {

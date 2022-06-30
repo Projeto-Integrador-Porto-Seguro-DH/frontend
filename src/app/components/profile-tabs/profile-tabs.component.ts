@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/Usuario';
@@ -10,11 +11,18 @@ import { Usuario } from 'src/app/model/Usuario';
 export class ProfileTabsComponent implements OnInit {
   admin: boolean;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.authService.user.subscribe((usuario: Usuario) => {
-      this.admin = usuario.admin!;
+    this.authService.user.subscribe((userAuth) => {
+      this.userService
+        .getById(userAuth.idUsuario!)
+        .subscribe((user: Usuario) => {
+          this.admin = user.admin!;
+        });
     });
   }
 

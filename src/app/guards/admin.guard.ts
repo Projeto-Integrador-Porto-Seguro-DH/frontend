@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -16,7 +17,11 @@ import { AuthService } from '../services/auth.service';
 export class AdminGuard implements CanActivate {
   usuario: Usuario;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -27,7 +32,9 @@ export class AdminGuard implements CanActivate {
     | boolean
     | UrlTree {
     this.authService.user.subscribe((user: Usuario) => {
-      this.usuario = user;
+      this.userService.getById(user.idUsuario!).subscribe((resp: Usuario) => {
+        this.usuario = resp;
+      });
     });
 
     if (this.usuario.admin) {
