@@ -117,3 +117,17 @@
         bottom: 60em;
     }
 }
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item .bg {
+    width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0; 
+   left: 0;
+   background-image: url(../../../assets/img/carousel/banner-mask.svg);
+   opacity: 0.5;
+}
