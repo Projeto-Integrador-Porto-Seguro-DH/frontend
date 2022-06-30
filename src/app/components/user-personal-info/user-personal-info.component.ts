@@ -70,18 +70,15 @@ export class UserPersonalInfoComponent implements OnInit {
   }
 
   delete() {
-    this.userService
-      .delete(this.usuario.emailUsuario)
-      .pipe(first())
-      .subscribe({
-        next: () => {
-          alert('Conta apagada com sucesso!');
-          this.authService.logout();
-        },
-        error: (error) => {
-          this.error = error;
-          console.log(this.error);
-        },
-      });
+    this.userService.delete(this.usuario.emailUsuario).subscribe({
+      next: () => {
+        alert('Conta apagada com sucesso!');
+        this.authService.logout();
+      },
+      error: (error) => {
+        this.error = error;
+        console.log(this.error);
+      },
+    });
   }
 }

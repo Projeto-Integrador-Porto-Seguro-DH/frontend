@@ -63,7 +63,7 @@ export class MenuComponent implements OnInit {
     return false;
   }
 
-  isEmpty(): boolean {
+  isNotEmpty(): boolean {
     if (this.itemOnCart > 0) {
       return true;
     }

@@ -1,5 +1,5 @@
 import { first } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/model/Produto';
@@ -15,7 +15,8 @@ export class ProductUpdateComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) {}
 
   produto = new Produto();
@@ -38,7 +39,7 @@ export class ProductUpdateComponent implements OnInit {
     this.productService.putProduct(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
       this.productService.showMessage('Produto atualizado com sucesso!');
-      this.refresh();
+      this.router.navigate(['/admin']);
     });
   }
 

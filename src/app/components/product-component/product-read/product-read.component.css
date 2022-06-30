@@ -6,3 +6,11 @@
 tableHeader {
   background-color: #ccb1a1;
 }
+
+td.descricaoProduto {
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 20ch;
+  padding-right: 0.75rem;
+}
