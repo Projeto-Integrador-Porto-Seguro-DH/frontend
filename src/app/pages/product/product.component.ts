@@ -12,7 +12,7 @@ import { DetalhePedido } from 'src/app/model/DetalhePedido';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-@ViewChild(QuantityInputComponent) quantityInput: QuantityInputComponent;
+  @ViewChild(QuantityInputComponent) quantityInput: QuantityInputComponent;
 
   produto = new Produto();
   detalhePedido = new DetalhePedido();
@@ -29,28 +29,28 @@ export class ProductComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')!;
 
     this.productService.getById(id).subscribe({
-      next:(resp: Produto) => {
+      next: (resp: Produto) => {
         this.produto = resp;
       },
       error: (e: any) => {
         this.error = e;
         console.log(`erro: ${this.error}`);
-      } 
+      },
     });
   }
 
   addToCart() {
     this.detalhePedido.produto = this.produto;
     this.detalhePedido.quantidadeProduto = this.quantityInput.quantidadeProduto;
-    this.detalhePedido.subtotal = (this.detalhePedido.quantidadeProduto) * this.produto.precoUnitarioProduto!;
-    
+    this.detalhePedido.subtotal =
+      this.detalhePedido.quantidadeProduto * this.produto.precoUnitarioProduto!;
+
     this.cartService.addToCart(this.detalhePedido);
   }
 
-  addToCartAndGo(){
+  addToCartAndGo() {
     this.addToCart();
 
-    this.router.navigate(['/carrinho'])
+    this.router.navigate(['/carrinho']);
   }
-
 }

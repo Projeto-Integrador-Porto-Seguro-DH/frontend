@@ -2,7 +2,12 @@
   <h3 class="h3Style">Ver todos os Produtos</h3>
 
   <div class="mat-elevation-z8">
-    <table mat-table class="full-width-table my-4" matSort aria-label="Elements">
+    <table
+      mat-table
+      class="full-width-table my-4"
+      matSort
+      aria-label="Elements"
+    >
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
         <td mat-cell *matCellDef="let produto">{{ produto.idProduto }}</td>
@@ -15,7 +20,7 @@
 
       <ng-container matColumnDef="descricao">
         <th mat-header-cell *matHeaderCellDef>Descrição</th>
-        <td mat-cell *matCellDef="let produto">
+        <td mat-cell *matCellDef="let produto" class="descricaoProduto">
           {{ produto.descricaoProduto }}
         </td>
       </ng-container>

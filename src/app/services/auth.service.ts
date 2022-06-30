@@ -42,7 +42,12 @@ export class AuthService {
   logout() {
     localStorage.removeItem('user');
     this.userSubject.next(null!);
-    this.router.navigate(['/']);
+
+    this.user.subscribe((resp) => {
+      if (resp == null) {
+        window.location.reload();
+      }
+    });
   }
 
   register(userCadastro: UserCadastro): Observable<Usuario> {

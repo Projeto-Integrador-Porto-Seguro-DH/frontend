@@ -58,6 +58,7 @@ export class CheckoutProcessComponent implements OnInit {
 
   choosePayment(event: any) {
     this.pagamentoEscolhido = event.target.value;
+    console.log(this.pagamentoEscolhido);
   }
 
   isCreditCard(): boolean {

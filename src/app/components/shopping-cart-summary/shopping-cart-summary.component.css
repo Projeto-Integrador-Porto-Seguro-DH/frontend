@@ -1,34 +1,38 @@
 .bgColor {
-    background-color: var(--footer-bg-color);
+  background-color: var(--footer-bg-color);
 }
 
 .input-groupStyle {
-    height: 42px;
+  height: 42px;
 }
 
 .inputStyle {
-    padding: 1rem;
+  padding: 1rem;
 }
 
-.inputStyle:focus {  
+.inputStyle:focus {
   box-shadow: none;
 }
 
 .input-groupStyle button.buttonStyle {
-    font-size: 0.85rem;
-    min-width: 110px;
-    padding:0;
+  font-size: 0.85rem;
+  min-width: 110px;
+  padding: 0;
+}
+
+a {
+  color: var(--button-txt-color);
 }
 
 a.linkStyle {
-    font-size: 0.85rem;
-    color: var(--text-color-light);
+  font-size: 0.85rem;
+  color: var(--text-color-light);
 }
 
 a.linkStyle:hover {
-    color: var(--text-color-dark);
+  color: var(--text-color-dark);
 }
 
 a.linkStyle:focus {
-    font-weight: 500;
+  font-weight: 500;
 }
