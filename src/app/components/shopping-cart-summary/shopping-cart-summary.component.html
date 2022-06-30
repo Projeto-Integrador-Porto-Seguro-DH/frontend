@@ -56,7 +56,11 @@
     </div>
 
     <div class="col-sm-12 col-md-12 my-5 px-0 pb-5 text-center">
-      <a class="btn buttonStyle nowrap" routerLink="/finalizar-compra">
+      <a
+        class="btn buttonStyle nowrap"
+        routerLink="/finalizar-compra"
+        *ngIf="cartSize > 0"
+      >
         Finalizar compra
       </a>
     </div>
