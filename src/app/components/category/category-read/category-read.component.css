@@ -1,8 +1,17 @@
-tableStyle {
-
-
+#consultarCategorias {
+  margin-top: 4.5rem;
 }
 
-tableHeader {
+.h3Style {
+  font-size: 1.2rem;
+}
+
+.full-width-table {
+    width: 100%;
+    height: auto;
+  }
+  
+  tableHeader {
     background-color: #ccb1a1;
-}
+  }
+  

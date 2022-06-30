@@ -1,7 +1,8 @@
 <div class="container px-0">
+  <!-- CREATE -->
   <section id="cadastrar">
-    <h3 class="h3Style">Cadastrar</h3>
-    <!-- CREATE -->
+    <h3 class="h3Style">Criar Produto</h3>
+
     <div class="col-xs-12 col-sm-11 col-lg-9 col-xl-8">
       <form #cadastrar (ngSubmit)="onSubmit()">
         <div class="my-4">
@@ -87,12 +88,14 @@
 
         <div class="my-4">
           <div class="form-group">
-            <label for="categoriaProduto" class="form-label">Categoria</label>
+            <label for="categoriaProduto" class="form-label">Categoria </label>
+            
             <select
               [ngModel]="produto.categoria"
               (ngModelChange)="setCategory($event)"
               name="categoriaProduto"
               id="categoriaProduto"
+            
             >
               <option value="0" active disabled>Selecione</option>
               <option
@@ -135,7 +138,7 @@
 
         <div class="row d-flex justify-content-between align-items-center pt-2">
           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-            <button class="btn buttonStyle" type="submit">Cadastrar</button>
+            <button class="btn buttonStyle" type="submit">Criar</button>
           </div>
           <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
             <button
