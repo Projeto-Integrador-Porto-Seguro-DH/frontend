@@ -43,7 +43,6 @@ export class AuthService {
     localStorage.removeItem('user');
     this.userSubject.next(null!);
     this.router.navigate(['/']);
-    window.location.reload();
   }
 
   register(userCadastro: UserCadastro): Observable<Usuario> {

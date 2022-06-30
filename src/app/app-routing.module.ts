@@ -29,13 +29,13 @@ const routes: Routes = [
   { path: 'carrinho', component: ShoppingCartComponent },
   { path: 'produto/:id', component: ProductComponent },
   { path: 'pesquisa', component: SearchComponent },
+  { path: 'categorias', component: CategoryComponent },
+  { path: 'categorias/:categoria', component: CategoryComponent },
   {
     path: 'finalizar-compra',
     component: CheckoutProcessComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'categorias', component: CategoryComponent },
-  { path: 'categorias/:categoria', component: CategoryComponent },
   {
     path: 'perfil',
     component: UserProfileComponent,
