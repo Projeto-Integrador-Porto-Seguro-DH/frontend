@@ -22,7 +22,9 @@
         </div>
 
         <div class="form-group mb-0">
-          <label for="sobrenomeUsuario" class="pStyleDark mt-3">Sobrenome</label>
+          <label for="sobrenomeUsuario" class="pStyleDark mt-3"
+            >Sobrenome</label
+          >
           <input
             [(ngModel)]="userRegister.sobrenomeUsuario"
             type="text"
@@ -91,7 +93,7 @@
             [(ngModel)]="userRegister.compartilharDadosUsuario"
             class="form-check-input me-2 checkboxStyle"
             type="checkbox"
-            value=""
+            [value]="userRegister.compartilharDadosUsuario"
             id="subscribeCheckbox"
             checked
           />
@@ -101,9 +103,19 @@
         </div>
 
         <div
-          class="container my-5 px-0 d-flex justify-content-between align-items-end"
+          class="container my-5 px-0 d-flex justify-content-between align-items-center"
         >
-          <button class="btn buttonStyle align-items-end" type="submit">
+          <button
+            class="btn buttonStyle align-items-end"
+            type="submit"
+            [disabled]="loading"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm me-1"
+              role="status"
+              aria-hidden="true"
+            ></span>
             Criar conta
           </button>
 

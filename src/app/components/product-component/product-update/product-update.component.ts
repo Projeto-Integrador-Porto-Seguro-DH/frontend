@@ -1,4 +1,3 @@
-import { first } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,6 +11,8 @@ import { Categoria } from 'src/app/model/Categoria';
   styleUrls: ['./product-update.component.css'],
 })
 export class ProductUpdateComponent implements OnInit {
+  loading = false;
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -36,10 +37,18 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.productService.putProduct(this.produto).subscribe((resp: Produto) => {
-      this.produto = resp;
-      this.productService.showMessage('Produto atualizado com sucesso!');
-      this.router.navigate(['/admin']);
+    this.loading = true;
+
+    this.productService.putProduct(this.produto).subscribe({
+      next: (resp: Produto) => {
+        this.produto = resp;
+        this.productService.showMessage('Produto atualizado com sucesso!');
+        this.router.navigate(['/admin']);
+      },
+      error: (e: any) => {
+        this.loading = false;
+        console.log(e);
+      },
     });
   }
 

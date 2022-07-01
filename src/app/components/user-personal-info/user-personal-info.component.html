@@ -57,6 +57,7 @@
               id="cpfUsuario"
               name="cpfUsuario"
               placeholder="CPF"
+              maxlength="11"
               required
             />
           </div>
@@ -88,6 +89,7 @@
               id="telefoneUsuario"
               name="telefoneUsuario"
               placeholder="Telefone"
+              maxlength="11"
               required
             />
           </div>
@@ -118,7 +120,14 @@
               type="submit"
               form="dadosPessoais"
               (click)="updateOnSubmit()"
+              [disabled]="loading"
             >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1"
+                role="status"
+                aria-hidden="true"
+              ></span>
               Atualizar cadastro
             </button>
           </div>
@@ -188,7 +197,14 @@
               type="submit"
               form="senha"
               (click)="updateOnSubmit()"
+              [disabled]="loading"
             >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1"
+                role="status"
+                aria-hidden="true"
+              ></span>
               Atualizar Senha
             </button>
           </div>
@@ -337,7 +353,14 @@
               type="submit"
               form="endereco"
               (click)="updateOnSubmit()"
+              [disabled]="loading"
             >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1"
+                role="status"
+                aria-hidden="true"
+              ></span>
               Atualizar Endereço
             </button>
           </div>

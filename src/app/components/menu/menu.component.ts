@@ -30,6 +30,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.user.subscribe((userAuth) => {
+      if (userAuth == null) {
+        return;
+      }
+
       this.userService
         .getById(userAuth.idUsuario!)
         .subscribe((user: Usuario) => {
@@ -57,10 +61,11 @@ export class MenuComponent implements OnInit {
   }
 
   isAdmin() {
-    if (this.user.admin) {
-      return true;
+    if (this.user != null) {
+      return this.user.admin;
     }
-    return false;
+
+    return console.log('Usuário não logado');
   }
 
   isNotEmpty(): boolean {

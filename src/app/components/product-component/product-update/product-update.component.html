@@ -93,8 +93,9 @@
               (ngModelChange)="updateCategory($event)"
               name="categoriaProduto"
               id="categoriaProduto"
+              class="form-control inputStyle"
             >
-              <option value="0">Selecione</option>
+              <option value="0" disabled>Selecione</option>
               <option
                 *ngFor="let categoria of categorias"
                 [ngValue]="categoria"
@@ -136,7 +137,15 @@
 
         <div class="row d-flex justify-content-between align-items-center pt-2">
           <div class="col-xs-12 col-sm-7 mb-4 mb-sm-0">
-            <button class="btn buttonStyle" type="submit">Atualizar</button>
+            <button class="btn buttonStyle" type="submit" [disabled]="loading">
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-1"
+                role="status"
+                aria-hidden="true"
+              ></span
+              >Atualizar
+            </button>
           </div>
           <div class="col-xs-12 col-sm-5 mb-2 mb-sm-0">
             <a class="btn pStyleDark" type="reset" routerLink="../../../">

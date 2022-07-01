@@ -50,7 +50,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdmProfileComponent,
-    canActivate: [AuthGuard, AdminGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: '', redirectTo: 'produtos', pathMatch: 'full' },
       { path: 'produtos', component: ProductCrudComponent },

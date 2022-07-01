@@ -20,30 +20,29 @@
     <div class="px-0 mt-1 mb-5">
       <p>Entrega</p>
 
-      <div *ngIf="!linkIsClicked">
-        <a (click)="openDeliveryInput()" class="linkStyle">Selecionar</a>
-      </div>
-
       <!-- Frete Grátis -->
       <div class="frete-gratis" *ngIf="freeShipping">
         <p class="pStyleDark">Frete grátis!</p>
       </div>
 
-      <div *ngIf="linkIsClicked">
-        <div class="input-group flex-nowrap mb-3 input-groupStyle">
-          <input
-            maxlength="8"
-            type="text"
-            class="form-control inputStyle"
-            placeholder="Cep"
-            aria-label="Cep"
-            aria
-          />
+      <div class="input-group flex-nowrap mb-3 input-groupStyle">
+        <input
+          maxlength="8"
+          type="text"
+          class="form-control inputStyle"
+          placeholder="Cep"
+          aria-label="Cep"
+          (keyup)="cepInput($event)"
+          [value]="cepInputValue"
+        />
 
-          <button (click)="showFreeShipping()" class="btn buttonStyle">
-            Calcular
-          </button>
-        </div>
+        <button
+          (click)="showFreeShipping()"
+          class="btn buttonStyle"
+          [disabled]="!shippingCalculated()"
+        >
+          Calcular
+        </button>
       </div>
     </div>
 
@@ -56,13 +55,17 @@
     </div>
 
     <div class="col-sm-12 col-md-12 my-5 px-0 pb-5 text-center">
-      <a
+      <p class="pStyleDark" *ngIf="!freeShipping && cartSize > 0">
+        Por favor, calcule o frete.
+      </p>
+      <button
         class="btn buttonStyle nowrap"
         routerLink="/finalizar-compra"
         *ngIf="cartSize > 0"
+        [disabled]="!freeShipping"
       >
         Finalizar compra
-      </a>
+      </button>
     </div>
   </div>
 </div>

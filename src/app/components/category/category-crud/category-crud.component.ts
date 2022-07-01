@@ -13,6 +13,8 @@ export class CategoryCrudComponent implements OnInit {
   categoria: Categoria = new Categoria();
   error = '';
 
+  loading = false;
+
   @ViewChild('cadastrar') cadastrar: any;
 
   constructor(private categoryService: CategoryService) {}
@@ -21,6 +23,8 @@ export class CategoryCrudComponent implements OnInit {
 
   // CREATE
   submit() {
+    this.loading = true;
+
     this.categoryService
       .postCategory(this.categoria)
       .pipe(first())
@@ -28,8 +32,10 @@ export class CategoryCrudComponent implements OnInit {
         next: (resp: Categoria) => {
           this.categoryService.showMessage('Categoria cadastrada com sucesso!');
           this.categoria = resp;
+          this.loading = false;
         },
         error: (e: any) => {
+          this.loading = false;
           this.error = e;
           alert(this.error);
         },

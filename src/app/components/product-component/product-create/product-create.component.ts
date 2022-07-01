@@ -15,6 +15,8 @@ export class ProductCreateComponent implements OnInit {
   erro = '';
   categorias: Categoria[];
 
+  loading = false;
+
   @ViewChild('cadastrar') cadastrar: any;
 
   constructor(
@@ -33,6 +35,8 @@ export class ProductCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.loading = true;
+
     this.productService.postProduct(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
       alert('Produto cadastrado com sucesso!');

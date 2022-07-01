@@ -1,0 +1,7 @@
+select.inputStyle {
+  width: fit-content;
+}
+
+select {
+  cursor: pointer;
+}
