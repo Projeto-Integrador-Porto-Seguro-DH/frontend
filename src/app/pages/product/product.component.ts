@@ -40,12 +40,37 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    this.detalhePedido.produto = this.produto;
-    this.detalhePedido.quantidadeProduto = this.quantityInput.quantidadeProduto;
-    this.detalhePedido.subtotal =
-      this.detalhePedido.quantidadeProduto * this.produto.precoUnitarioProduto!;
+    let detalhe = new DetalhePedido();
 
-    this.cartService.addToCart(this.detalhePedido);
+    this.cartService.cartItemList.forEach((item: DetalhePedido) => {
+      if (item.produto?.idProduto == this.produto.idProduto) {
+        detalhe = item;
+      }
+    });
+
+    if (detalhe.produto) {
+      console.log('Atualizando');
+      detalhe.quantidadeProduto! += this.quantityInput.quantidadeProduto;
+
+      detalhe.subtotal = +(
+        detalhe.quantidadeProduto! * detalhe.produto.precoUnitarioProduto!
+      );
+
+      this.cartService.updateCartQuantity(detalhe);
+    } else {
+      console.log('Adicionando novo');
+      this.detalhePedido.produto = this.produto;
+
+      this.detalhePedido.quantidadeProduto =
+        this.quantityInput.quantidadeProduto;
+
+      this.detalhePedido.subtotal = +(
+        this.detalhePedido.quantidadeProduto *
+        this.produto.precoUnitarioProduto!
+      );
+
+      this.cartService.addToCart(this.detalhePedido);
+    }
   }
 
   addToCartAndGo() {
