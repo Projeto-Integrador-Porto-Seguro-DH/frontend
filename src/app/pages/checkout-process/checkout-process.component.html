@@ -203,17 +203,31 @@
     </div>
   </div>
   <ng-template #finishedOrder>
-    <h2 class="title-checkout h2Style">
-      Pedido número #{{ pedido.idPedido }} realizado!
-    </h2>
-    <h3 class="title-checkout h2Style">Obrigado por comprar conosco! :)</h3>
+    <div class="row justify-content-between align-items-start">
+      <div class="col-4">
+        <h2 class="title-checkout h2Style">
+          Pedido número #{{ pedido.idPedido }} realizado!
+        </h2>
+      </div>
+      <div class="col-5">
+        <a [routerLink]="['/perfil', 'pedidos']"
+          ><p class="title-checkout h3Style">
+            Ir para Meus Pedidos
+            <img src="../../../assets/icon/arrow-icon.svg" /></p
+        ></a>
+      </div>
+    </div>
+    <h3 class="title-checkout h3Style">Obrigado por comprar conosco! :)</h3>
 
-    <div class="d-flex align-items-center">
-      <a [routerLink]="['/perfil', 'pedidos']"
-        ><p class="title-checkout h3Style mt-5">
-          Ir para Meus Pedidos
-          <img src="../../../assets/icon/arrow-icon.svg" /></p
-      ></a>
+    <div *ngIf="isPix()">
+      <h3 class="title-checkout h3Style">
+        Aqui está o QR para pagamento via Pix
+      </h3>
+      <img
+        src="../../../assets/img/qrcode.png"
+        alt="QR Code do Pix"
+        class="img-thumb"
+      />
     </div>
   </ng-template>
 </div>

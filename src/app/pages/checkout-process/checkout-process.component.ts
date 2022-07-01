@@ -69,6 +69,13 @@ export class CheckoutProcessComponent implements OnInit {
     return false;
   }
 
+  isPix(): boolean {
+    if (this.pagamentoEscolhido == FormasDePagamentoEnum.PIX) {
+      return true;
+    }
+    return false;
+  }
+
   paymentChosen(): boolean {
     if (
       this.pagamentoEscolhido != null ||
