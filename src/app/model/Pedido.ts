@@ -8,7 +8,7 @@ export class Pedido {
   statusPedido?: StatusPedido;
   formaDePagamento?: FormasDePagamentoEnum;
   codigoEnvio?: string;
-  dataEnvio?: string;
+  dataEnvio?: Date;
   valorEnvio?: number;
   valorTotalPedido?: number;
   usuario?: Usuario;

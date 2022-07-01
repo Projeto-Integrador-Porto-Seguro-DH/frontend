@@ -13,9 +13,16 @@ export class OrderCardComponent implements OnInit {
   usuarioOrderCard: Usuario;
 
   @Input()
-  pedidoOrderCard: Pedido;
+  pedidoOrderCard: Pedido = new Pedido();
+
+  dataDoPedido = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataDoPedido = `${this.pedidoOrderCard.dataPedido?.replace(
+      '@',
+      'T'
+    )}Z`;
+  }
 }

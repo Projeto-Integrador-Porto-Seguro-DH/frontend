@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {
+  HashLocationStrategy,
+  LocationStrategy,
+  registerLocaleData,
+} from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
@@ -59,6 +64,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
 import { CartEmptyComponent } from './components/cart-empty/cart-empty.component';
 import { CategoryComponent } from './pages/category/category.component';
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -127,6 +134,7 @@ import { CategoryComponent } from './pages/category/category.component';
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: LOCALE_ID, useValue: 'pt' },
   ],
   bootstrap: [AppComponent],
 })
