@@ -1,10 +1,9 @@
+import { UserCadastro } from './../../model/Cadastro';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
 
 import { AuthService } from 'src/app/services/auth.service';
 
-import { UserCadastro } from 'src/app/model/Cadastro';
 import { Usuario } from 'src/app/model/Usuario';
 
 @Component({
@@ -13,11 +12,15 @@ import { Usuario } from 'src/app/model/Usuario';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
+  private REGEX_SENHA = '^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$';
+
   user = new Usuario();
   userRegister = new UserCadastro();
   confirmacaoSenha: string;
 
   error = '';
+
+  loading = false;
 
   activePassword: boolean = true;
 
@@ -30,25 +33,31 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (!this.userRegister.senhaUsuario.match(this.REGEX_SENHA)) {
+      alert('Sua senha não preenche os requerimentos necessários!');
+      return;
+    }
+
     if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
       alert('As senhas digitadas estão diferentes!');
       return;
     }
 
-    this.authService
-      .register(this.userRegister)
-      .pipe(first())
-      .subscribe({
-        next: (resp: Usuario) => {
-          this.user = resp;
-          this.router.navigate(['/entrar']);
-          alert('Usuário cadastrado com sucesso!');
-        },
-        error: (error: Error) => {
-          this.error = error.message;
-          console.log(this.error);
-        },
-      });
+    this.loading = true;
+
+    this.authService.register(this.userRegister).subscribe({
+      next: (resp: Usuario) => {
+        this.user = resp;
+
+        this.router.navigate(['/entrar']);
+        alert('Usuário cadastrado com sucesso!');
+      },
+      error: (error: Error) => {
+        this.error = error.message;
+        console.log(this.error);
+        this.loading = false;
+      },
+    });
   }
 
   showPasswordRequirement() {

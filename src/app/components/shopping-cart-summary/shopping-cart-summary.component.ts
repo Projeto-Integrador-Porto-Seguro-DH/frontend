@@ -10,11 +10,11 @@ import { CartService } from 'src/app/services/cart.service';
 export class ShoppingCartSummaryComponent implements OnInit {
   subtotal = 0;
 
-  linkIsClicked = false;
-
   freeShipping = false;
 
   cartSize = 0;
+
+  cepInputValue = '';
 
   constructor(private cartService: CartService) {}
 
@@ -34,12 +34,18 @@ export class ShoppingCartSummaryComponent implements OnInit {
     });
   }
 
-  openDeliveryInput() {
-    this.linkIsClicked = !this.linkIsClicked;
-    //invertendo valor do linkISClicked
-  }
-
   showFreeShipping() {
     this.freeShipping = !this.freeShipping;
+  }
+
+  cepInput(event: any) {
+    this.cepInputValue = event.target.value;
+  }
+
+  shippingCalculated(): boolean {
+    if (this.cepInputValue != '' && this.cepInputValue.length == 8) {
+      return true;
+    }
+    return false;
   }
 }

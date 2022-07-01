@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CategoryUpdateComponent implements OnInit {
   categoria = new Categoria();
   error = '';
+  loading = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -34,6 +35,8 @@ export class CategoryUpdateComponent implements OnInit {
 
   // UPDATE - EDIT
   update() {
+    this.loading = true;
+
     this.categoryService.updateCategory(this.categoria).subscribe({
       next: (resp: Categoria) => {
         this.categoryService.showMessage('Categoria editada com sucesso!');
@@ -42,6 +45,7 @@ export class CategoryUpdateComponent implements OnInit {
         this.router.navigate(['admin/categorias']);
       },
       error: (e: any) => {
+        this.loading = false;
         this.error = e;
         alert(this.error);
       },

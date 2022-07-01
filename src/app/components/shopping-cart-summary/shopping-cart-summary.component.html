@@ -21,17 +21,11 @@
       <div class="row d-flex justify-content-between align-items-start">
         <p class="inlineStyle">Entrega</p>
 
-        <div *ngIf="!linkIsClicked">
-          <a (click)="openDeliveryInput()" class="linkStyle">Selecionar</a>
+        <!-- Frete Grátis -->
+        <div class="frete-gratis" *ngIf="freeShipping">
+          <p class="fontLarger">Frete grátis!</p>
         </div>
-      </div>
 
-      <!-- Frete Grátis -->
-      <div class="frete-gratis" *ngIf="freeShipping">
-        <p class="fontLarger">Frete grátis!</p>
-      </div>
-
-      <div *ngIf="linkIsClicked">
         <div class="input-group flex-nowrap mb-3 input-groupStyle">
           <input
             maxlength="8"
@@ -39,32 +33,41 @@
             class="form-control inputStyle"
             placeholder="Cep"
             aria-label="Cep"
-            aria
+            (keyup)="cepInput($event)"
+            [value]="cepInputValue"
           />
 
-          <button (click)="showFreeShipping()" class="btn buttonStyle">
+          <button
+            (click)="showFreeShipping()"
+            class="btn buttonStyle"
+            [disabled]="!shippingCalculated()"
+          >
             Calcular
           </button>
         </div>
       </div>
-    </div>
 
-    <div class="dropdown-divider my-0"></div>
+      <div class="dropdown-divider my-0"></div>
 
-    <div class="h3Style fontLarger px-0 mt-5">
-      <p>
-        Total <span>{{ subtotal | currency: "BRL" }}</span>
-      </p>
-    </div>
+      <div class="h3Style fontLarger px-0 mt-5">
+        <p>
+          Total <span>{{ subtotal | currency: "BRL" }}</span>
+        </p>
+      </div>
 
-    <div class="col-sm-12 col-md-12 my-5 px-0 pb-5 text-center">
-      <a
-        class="btn buttonStyle nowrap"
-        routerLink="/finalizar-compra"
-        *ngIf="cartSize > 0"
-      >
-        Finalizar compra
-      </a>
+      <div class="col-sm-12 col-md-12 my-5 px-0 pb-5 text-center">
+        <p class="pStyleDark" *ngIf="!freeShipping && cartSize > 0">
+          Por favor, calcule o frete.
+        </p>
+        <button
+          class="btn buttonStyle nowrap"
+          routerLink="/finalizar-compra"
+          *ngIf="cartSize > 0"
+          [disabled]="!freeShipping"
+        >
+          Finalizar compra
+        </button>
+      </div>
     </div>
   </div>
 </div>

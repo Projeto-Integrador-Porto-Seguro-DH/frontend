@@ -14,7 +14,9 @@ export class UserPersonalInfoComponent implements OnInit {
   public usuario = new Usuario();
   public estados = EstadosEnum;
   public confirmacaoSenha: string;
+
   public error = '';
+  public loading = false;
 
   @ViewChild('passwordForm') passForm: any;
 
@@ -48,8 +50,11 @@ export class UserPersonalInfoComponent implements OnInit {
   }
 
   updateOnSubmit() {
+    this.loading = true;
+
     if (this.usuario.senhaUsuario != this.confirmacaoSenha) {
       alert('As senhas digitadas estão diferentes!');
+      this.loading = false;
       return;
     }
 
@@ -64,6 +69,7 @@ export class UserPersonalInfoComponent implements OnInit {
         },
         error: (error) => {
           this.error = error;
+          this.loading = false;
           console.log(this.error);
         },
       });
