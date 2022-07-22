@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 import { Usuario } from 'src/app/model/Usuario';
+import { NotificationsService } from 'src/app/services/notifications.service';
 
 @Component({
   selector: 'app-signin',
@@ -24,7 +25,11 @@ export class SigninComponent implements OnInit {
 
   activePassword: boolean = true;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private notificationsService: NotificationsService
+    ) {}
 
   ngOnInit(): void {}
 
@@ -34,12 +39,14 @@ export class SigninComponent implements OnInit {
 
   onSubmit(): void {
     if (!this.userRegister.senhaUsuario.match(this.REGEX_SENHA)) {
-      alert('Sua senha não preenche os requerimentos necessários!');
+      this.notificationsService.showMessage("Sua senha não preenche os requerimentos necessários!")
+      // alert('Sua senha não preenche os requerimentos necessários!');
       return;
     }
 
     if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
-      alert('As senhas digitadas estão diferentes!');
+      this.notificationsService.showMessage("As senhas digitadas estão diferentes!")
+      // alert('As senhas digitadas estão diferentes!');
       return;
     }
 
@@ -50,7 +57,8 @@ export class SigninComponent implements OnInit {
         this.user = resp;
 
         this.router.navigate(['/entrar']);
-        alert('Usuário cadastrado com sucesso!');
+        this.notificationsService.showMessage("Usuário cadastrado com sucesso!")
+        // alert('Usuário cadastrado com sucesso!');
       },
       error: (error: Error) => {
         this.error = error.message;

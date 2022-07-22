@@ -95,13 +95,5 @@ export class CartService {
     this.localStorage.remove('cart');
     this.productList.next(this.cartItemList);
   }
-
-  //Método Mostra MSG
-  showMessage(msg: string) {
-    this.matSnackBar.open(msg, '', {
-      duration: 5000,
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
-  }
+  
 }
