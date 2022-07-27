@@ -9,7 +9,7 @@
           <div class="form-group formWidth">
             <label for="nomeProduto" class="form-label">Nome</label>
             <input
-              [(ngModel)]="produto.nomeProduto"
+              formControlName="produto.nomeProduto"
               type="text"
               class="form-control inputStyle"
               id="nomeProduto"
@@ -24,7 +24,7 @@
           <div class="form-group formWidth">
             <label for="descricaoProduto" class="form-label">Descrição</label>
             <textarea
-              [(ngModel)]="produto.descricaoProduto"
+              formControlName="produto.descricaoProduto"
               style="height: 160px"
               maxlength="255"
               type="text"
@@ -43,7 +43,7 @@
               >Preço unitário</label
             >
             <input
-              [(ngModel)]="produto.precoUnitarioProduto"
+              formControlName="produto.precoUnitarioProduto"
               type="number"
               class="form-control inputStyle smallInput-12"
               id="precoUnitarioProduto"
@@ -60,7 +60,7 @@
               >Quantidade de estoque</label
             >
             <input
-              [(ngModel)]="produto.estoqueProduto"
+              formControlName="produto.estoqueProduto"
               type="text"
               class="form-control inputStyle smallInput-12"
               id="estoqueProduto"
@@ -75,7 +75,7 @@
           <div class="form-group">
             <label for="fotoProduto" class="form-label">Link da foto</label>
             <input
-              [(ngModel)]="produto.fotoProduto"
+              formControlName="produto.fotoProduto"
               class="form-control inputStyle smallInput-12"
               type="text"
               id="fotoProduto"
@@ -91,7 +91,7 @@
             <label for="categoriaProduto" class="form-label">Categoria </label>
 
             <select
-              [ngModel]="produto.categoria"
+              formControlName="produto.categoria"
               (ngModelChange)="setCategory($event)"
               name="categoriaProduto"
               id="categoriaProduto"
@@ -100,7 +100,7 @@
               <option value="0" active disabled>Selecione</option>
               <option
                 *ngFor="let categoria of categorias"
-                [ngValue]="categoria"
+                formControlName="categoria"
               >
                 {{ categoria.nomeCategoria }}
               </option>
@@ -115,7 +115,7 @@
             >
             <br />
             <input
-              [(ngModel)]="produto.produtoDisponivel"
+              formControlName="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
@@ -125,7 +125,7 @@
             Sim
             <br />
             <input
-              [(ngModel)]="produto.produtoDisponivel"
+              formControlName="produto.produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
