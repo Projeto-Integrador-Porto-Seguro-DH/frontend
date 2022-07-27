@@ -120,6 +120,7 @@ registerLocaleData(ptBr);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatSnackBarModule,
@@ -129,6 +130,7 @@ registerLocaleData(ptBr);
     MatPaginatorModule,
     MatSortModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
 
   providers: [
