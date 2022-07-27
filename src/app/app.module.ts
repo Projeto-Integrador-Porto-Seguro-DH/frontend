@@ -64,7 +64,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BooleanPipePipe } from './pipes/boolean-pipe.pipe';
 import { CartEmptyComponent } from './components/cart-empty/cart-empty.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(ptBr);
 
@@ -123,7 +122,6 @@ registerLocaleData(ptBr);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
