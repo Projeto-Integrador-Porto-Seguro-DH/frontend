@@ -132,7 +132,6 @@ export class CheckoutProcessComponent implements OnInit {
       !this.usuario.logradouroEndereco ||
       !this.usuario.numeroEndereco ||
       !this.usuario.bairroEndereco ||
-      !this.usuario.complementoEndereco ||
       !this.usuario.cidadeEndereco ||
       !this.usuario.estadoEndereco ||
       !this.usuario.cpfUsuario
