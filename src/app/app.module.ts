@@ -120,6 +120,7 @@ registerLocaleData(ptBr);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
     MatFormFieldModule,
