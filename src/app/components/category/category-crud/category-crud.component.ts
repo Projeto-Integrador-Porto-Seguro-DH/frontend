@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Categoria } from '../../../model/Categoria';
 import { CategoryService } from '../../../services/category.service';
 import { first } from 'rxjs/operators';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-category-crud',
@@ -15,16 +16,37 @@ export class CategoryCrudComponent implements OnInit {
 
   loading = false;
 
+  categoryForm!: FormGroup;
+
   @ViewChild('cadastrar') cadastrar: any;
 
   constructor(private categoryService: CategoryService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.categoryForm = new FormGroup({
+      idCategoria: new FormControl('', [Validators.required]),
+      nomeCategoria: new FormControl('', [Validators.required]),
+      descricaoCategoria: new FormControl(''),
+    });
+  }
+
+  // FORMA VALIDATION
+  get nomeCategoria() {
+    return this.categoryForm.get('nomeCategoria')!;
+  }
+
+  get descricaoCategoria() {
+    return this.categoryForm.get('descricaoCategoria')!;
+  }
 
   // CREATE
   submit() {
     this.loading = true;
 
+    if (this.categoryForm.invalid) {
+      return;
+    }
+    
     this.categoryService
       .postCategory(this.categoria)
       .pipe(first())
