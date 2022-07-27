@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 import { Usuario } from 'src/app/model/Usuario';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -24,21 +25,57 @@ export class SigninComponent implements OnInit {
 
   activePassword: boolean = true;
 
+  userForm!: FormGroup;
+
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userForm = new FormGroup({
+      id: new FormControl(''),
+      nomeUsuario: new FormControl('', [Validators.required]),
+      sobrenomeUsuario: new FormControl('', [Validators.required]),
+      emailUsuario: new FormControl('', [Validators.required]),
+      senhaUsuario: new FormControl('', [Validators.required]),
+      confirmarFormSenha: new FormControl('', [Validators.required]),
+    })
+  }
+
+  get nomeUsuario() {
+    return this.userForm.get('nomeUsuario')!;
+  }
+
+  get sobrenomeUsuario() {
+    return this.userForm.get('sobrenomeUsuario')!;
+  }
+
+  get emailUsuario() {
+    return this.userForm.get('emailUsuario')!;
+  }
+
+  get senhaUsuario() {
+    return this.userForm.get('senhaUsuario')!;
+  }
+
+  get confirmarFormSenha() {
+    return this.userForm.get('confirmarFormSenha')!;
+  }
 
   confirmarSenha(event: any): void {
     this.confirmacaoSenha = event.target.value;
   }
 
   onSubmit(): void {
-    if (!this.userRegister.senhaUsuario.match(this.REGEX_SENHA)) {
+    if (this.userForm.invalid) {
+      console.log('Enviou Formulario')
+      return;
+    }
+
+    if (!this.userForm.get('senhaUsuario')?.value.match(this.REGEX_SENHA)) {
       alert('Sua senha não preenche os requerimentos necessários!');
       return;
     }
 
-    if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
+    if (this.userForm.get('senhaUsuario')?.value!= this.confirmacaoSenha) {
       alert('As senhas digitadas estão diferentes!');
       return;
     }

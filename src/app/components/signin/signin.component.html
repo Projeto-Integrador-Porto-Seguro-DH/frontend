@@ -1,7 +1,7 @@
 <div class="container-xl">
   <div class="row px-0 d-flex justify-content-center align-items-center">
     <div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 col-xl-4">
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="userForm" #formDir="ngForm">
         <div class="mt-5">
           <h2 class="h2Style">Criar conta</h2>
         </div>
@@ -9,7 +9,7 @@
         <div class="form-group">
           <label for="nomeUsuario" class="pStyleDark mt-4">Nome</label>
           <input
-            [(ngModel)]="userRegister.nomeUsuario"
+            formControlName="nomeUsuario"
             type="text"
             class="form-control inputStyle"
             id="nomeUsuario"
@@ -17,8 +17,13 @@
             placeholder="Nome"
             aria-placeholder="Nome"
             aria-hidden="true"
-            required
           />
+          <div *ngIf="nomeUsuario.invalid && formDir.submitted" class="???">
+            <p
+              *ngIf="nomeUsuario.errors?.['required']">
+              O Nome precisa ser preenchido
+            </p>
+          </div>
         </div>
 
         <div class="form-group mb-0">
@@ -26,7 +31,7 @@
             >Sobrenome</label
           >
           <input
-            [(ngModel)]="userRegister.sobrenomeUsuario"
+            formControlName="sobrenomeUsuario"
             type="text"
             class="form-control inputStyle"
             id="sobrenomeUsuario"
@@ -34,14 +39,19 @@
             placeholder="Sobrenome"
             aria-placeholder="Sobrenome"
             aria-hidden="true"
-            required
           />
+          <div *ngIf="sobrenomeUsuario.invalid && formDir.submitted" class="???">
+            <p
+              *ngIf="sobrenomeUsuario.errors?.['required']">
+              O Nome precisa ser preenchido
+            </p>
+          </div>
         </div>
 
         <div class="form-group mb-0">
           <label for="emailUsuario" class="pStyleDark mt-3">Email</label>
           <input
-            [(ngModel)]="userRegister.emailUsuario"
+            formControlName="emailUsuario"
             type="email"
             class="form-control inputStyle"
             id="emailUsuario"
@@ -49,14 +59,19 @@
             placeholder="Email"
             aria-placeholder="Email"
             aria-hidden="true"
-            required
           />
+          <div *ngIf="emailUsuario.invalid && formDir.submitted" class="???">
+            <p
+              *ngIf="emailUsuario.errors?.['required']">
+              O email precisa ser preenchido
+            </p>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="senhaUsuario" class="pStyleDark mt-3">Senha</label>
           <input
-            [(ngModel)]="userRegister.senhaUsuario"
+            formControlName="senhaUsuario"
             (focus)="showPasswordRequirement()"
             type="password"
             class="form-control inputStyle"
@@ -65,7 +80,6 @@
             placeholder="Senha"
             aria-placeholder="Senha"
             aria-hidden="true"
-            required
           />
         </div>
 
@@ -74,8 +88,9 @@
         </div>
 
         <div class="form-group mb-0 mt-0">
-          <label for="senhaUsuario" class="pStyleDark mt-3">Senha</label>
+          <label for="confirmarSenha" class="pStyleDark mt-3">Senha</label>
           <input
+            formControlName="confirmarFormSenha"
             (input)="confirmarSenha($event)"
             type="password"
             class="form-control inputStyle"
@@ -84,13 +99,11 @@
             placeholder="Confirmação da senha"
             aria-placeholder="Confirmação da senha"
             aria-hidden="true"
-            required
           />
         </div>
 
         <div class="form-check d-flex justify-content-start mt-4">
           <input
-            [(ngModel)]="userRegister.compartilharDadosUsuario"
             class="form-check-input me-2 checkboxStyle"
             type="checkbox"
             [value]="userRegister.compartilharDadosUsuario"
@@ -106,6 +119,7 @@
           class="container my-5 px-0 d-flex justify-content-between align-items-center"
         >
           <button
+            (click)="onSubmit()"
             class="btn buttonStyle align-items-end"
             type="submit"
             [disabled]="loading"
