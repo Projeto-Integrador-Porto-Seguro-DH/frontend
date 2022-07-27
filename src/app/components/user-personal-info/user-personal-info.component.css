@@ -18,6 +18,13 @@ hr {
   }
 }
 
+.requiredInfo {
+  color: red;
+  margin: 0.25rem;
+  overflow: visible;
+  white-space: nowrap;
+}
+
 .inputStyle.smallInput-auto {
   width: auto;
 }

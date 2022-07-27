@@ -4,6 +4,7 @@ import { first } from 'rxjs';
 import { Produto } from 'src/app/model/Produto';
 import { ProductService } from 'src/app/services/product.service';
 import { Categoria } from 'src/app/model/Categoria';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-create',
