@@ -24,7 +24,6 @@ export class CategoryCrudComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryForm = new FormGroup({
-      idCategoria: new FormControl('', [Validators.required]),
       nomeCategoria: new FormControl('', [Validators.required]),
       descricaoCategoria: new FormControl(''),
     });
@@ -41,12 +40,16 @@ export class CategoryCrudComponent implements OnInit {
 
   // CREATE
   submit() {
+    console.log(this.categoryForm.value);
+
     this.loading = true;
 
     if (this.categoryForm.invalid) {
       return;
     }
     
+    this.transformData();
+
     this.categoryService
       .postCategory(this.categoria)
       .pipe(first())
@@ -67,4 +70,10 @@ export class CategoryCrudComponent implements OnInit {
   clearFormCadastrar() {
     this.cadastrar.nativeElement.value = '';
   }
+
+  transformData() {
+    this.categoria.nomeCategoria = this.categoryForm.get('nomeCategoria')?.value;
+    this.categoria.descricaoCategoria = this.categoryForm.get('descricaoCategoria')?.value;
+  }
+
 }
