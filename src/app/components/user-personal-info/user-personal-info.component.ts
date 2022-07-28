@@ -1,3 +1,4 @@
+import { AlertService } from './../../services/alert.service';
 import { AuthService } from './../../services/auth.service';
 import { UserService } from './../../services/user.service';
 import { EstadosEnum } from '../../enums/EstadosEnum';
@@ -26,7 +27,8 @@ export class UserPersonalInfoComponent implements OnInit {
   constructor(
     private userService: UserService,
     private authService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -79,7 +81,9 @@ export class UserPersonalInfoComponent implements OnInit {
     this.loading = true;
 
     if (this.usuario.senhaUsuario != this.confirmacaoSenha) {
-      alert('As senhas digitadas estão diferentes!');
+      this.alertService.alertInfo(
+        'As senhas digitas estão diferentes. Tente novamente!'
+      );
       this.loading = false;
       return;
     }
@@ -89,13 +93,14 @@ export class UserPersonalInfoComponent implements OnInit {
     this.userService.update(this.usuario).subscribe({
       next: (resp: Usuario) => {
         this.usuario = resp;
-        alert('Cadastro atualizado com sucesso!');
+        this.alertService.alertSuccess('Cadastro atualizado com sucesso!');
         this.refresh();
       },
       error: (error) => {
         this.error = error;
         this.loading = false;
-        alert(this.error);
+        console.log(this.error);
+        this.alertService.alertError(this.error);
       },
     });
   }
@@ -103,7 +108,7 @@ export class UserPersonalInfoComponent implements OnInit {
   delete() {
     this.userService.delete(this.usuario.emailUsuario).subscribe({
       next: () => {
-        alert('Conta apagada com sucesso!');
+        this.alertService.alertSuccess('Conta deletada com sucesso');
         this.authService.logout();
       },
       error: (error) => {

@@ -1,9 +1,8 @@
+import { AlertService } from './../../services/alert.service';
 import { UserCadastro } from './../../model/Cadastro';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
 import { AuthService } from 'src/app/services/auth.service';
-
 import { Usuario } from 'src/app/model/Usuario';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -27,7 +26,11 @@ export class SigninComponent implements OnInit {
 
   userForm!: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -37,7 +40,7 @@ export class SigninComponent implements OnInit {
       emailUsuario: new FormControl('', [Validators.required]),
       senhaUsuario: new FormControl('', [Validators.required]),
       confirmarFormSenha: new FormControl('', [Validators.required]),
-    })
+    });
   }
 
   get nomeUsuario() {
@@ -66,32 +69,34 @@ export class SigninComponent implements OnInit {
 
   onSubmit(): void {
     if (this.userForm.invalid) {
-      console.log('Enviou Formulario')
+      console.log('Enviou Formulario');
       return;
     }
 
-    if (!this.userForm.get('senhaUsuario')?.value.match(this.REGEX_SENHA)) {
-      alert('Sua senha não preenche os requerimentos necessários!');
+    if (!this.userRegister.senhaUsuario.match(this.REGEX_SENHA)) {
+      this.alertService.alertInfo(
+        'Sua senha deve conter os requisitos obrigatórios!'
+      );
       return;
     }
 
-    if (this.userForm.get('senhaUsuario')?.value!= this.confirmacaoSenha) {
-      alert('As senhas digitadas estão diferentes!');
+    if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
+      this.alertService.alertError(
+        'As senhas digitas estão diferentes. Tente novamente!'
+      );
       return;
     }
-
-    this.loading = true;
 
     this.authService.register(this.userRegister).subscribe({
       next: (resp: Usuario) => {
         this.user = resp;
-
+        this.alertService.alertSuccess('Cadastro realizado com sucesso!');
         this.router.navigate(['/entrar']);
-        alert('Usuário cadastrado com sucesso!');
       },
-      error: (error: Error) => {
-        this.error = error.message;
+      error: (error) => {
+        this.error = error;
         console.log(this.error);
+        this.alertService.alertError(this.error);
         this.loading = false;
       },
     });

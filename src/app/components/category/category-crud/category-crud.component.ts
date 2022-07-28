@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Categoria } from '../../../model/Categoria';
 import { CategoryService } from '../../../services/category.service';
@@ -20,7 +21,10 @@ export class CategoryCrudComponent implements OnInit {
 
   @ViewChild('cadastrar') cadastrar: any;
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private alertService: AlertService
+    ) {}
 
   ngOnInit(): void {
     this.categoryForm = new FormGroup({
@@ -55,7 +59,7 @@ export class CategoryCrudComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: (resp: Categoria) => {
-          this.categoryService.showMessage('Categoria cadastrada com sucesso!');
+          this.alertService.alertSuccess('Categoria cadastrada com sucesso!');
           this.categoria = resp;
           this.loading = false;
         },

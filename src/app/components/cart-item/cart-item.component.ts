@@ -1,3 +1,4 @@
+import { AlertService } from 'src/app/services/alert.service';
 import { DetalhePedido } from './../../model/DetalhePedido';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +13,10 @@ export class CartItemComponent implements OnInit {
   cartList: DetalhePedido[] = [];
   input: number;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private alertService: AlertService
+    ) {}
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((resp: DetalhePedido[]) => {
@@ -23,7 +27,7 @@ export class CartItemComponent implements OnInit {
   deletarItem(detalhePedido: DetalhePedido) {
     this.cartService.removeCartItem(detalhePedido);
 
-    this.cartService.showMessage('Produto removido com sucesso!');
+    this.alertService.alertSuccess('Produto removido com sucesso!');
   }
 
   inputQuantity(event: any) {
