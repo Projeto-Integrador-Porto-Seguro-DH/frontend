@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { Produto } from 'src/app/model/Produto';
+import { AlertService } from 'src/app/services/alert.service';
 import { ProductService } from 'src/app/services/product.service';
 import { ProductReadDataSource } from './product-read-datasource';
 
@@ -32,7 +33,10 @@ export class ProductReadComponent implements OnInit {
   erro = '';
   index: number;
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private alertService: AlertService
+    ) {
     this.dataSource = new ProductReadDataSource();
   }
 
@@ -58,7 +62,7 @@ export class ProductReadComponent implements OnInit {
       .deleteProduct(this.index)
       .subscribe({
         next: () => {
-          this.productService.showMessage('Produto deletado com sucesso!');
+          this.alertService.alertSuccess('Produto deletado com sucesso!');
           this.refresh()
         },
         error: (error) => {

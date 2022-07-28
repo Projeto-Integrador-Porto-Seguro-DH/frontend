@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -22,7 +23,10 @@ export class CategoryReadComponent implements OnInit {
   //Exibição das colunas do Header da Tabela:
   displayedColumns = ['id', 'nome', 'descricao', 'gerenciar'];
 
-  constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    private alertService: AlertService
+    ) {
     this.dataSource = new CategoryReadDataSource();
   }
 
@@ -45,7 +49,7 @@ export class CategoryReadComponent implements OnInit {
   // DELETE
   delete() {
     this.categoryService.deleteCategory(this.index).subscribe(() => {
-      this.categoryService.showMessage(`A categoria foi deletada com sucesso.`);
+      this.alertService.alertSuccess(`A categoria foi deletada com sucesso!`);
 
       this.categoryService.refresh();
     });

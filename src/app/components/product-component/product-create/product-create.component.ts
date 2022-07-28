@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { CategoryService } from './../../../services/category.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { first } from 'rxjs';
@@ -21,7 +22,8 @@ export class ProductCreateComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private alertService: AlertService
   ) {}
 
   refresh(): void {
@@ -39,7 +41,7 @@ export class ProductCreateComponent implements OnInit {
 
     this.productService.postProduct(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
-      alert('Produto cadastrado com sucesso!');
+      this.alertService.alertSuccess('Produto cadastrado com sucesso!');
       this.refresh();
     });
   }

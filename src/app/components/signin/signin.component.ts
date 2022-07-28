@@ -1,10 +1,11 @@
+import { AlertService } from './../../services/alert.service';
 import { UserCadastro } from './../../model/Cadastro';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
 import { AuthService } from 'src/app/services/auth.service';
-
 import { Usuario } from 'src/app/model/Usuario';
+
+
 
 @Component({
   selector: 'app-signin',
@@ -24,9 +25,14 @@ export class SigninComponent implements OnInit {
 
   activePassword: boolean = true;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private alertService: AlertService
+    // private notificationsService: NotificationsService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   confirmarSenha(event: any): void {
     this.confirmacaoSenha = event.target.value;
@@ -34,12 +40,12 @@ export class SigninComponent implements OnInit {
 
   onSubmit(): void {
     if (!this.userRegister.senhaUsuario.match(this.REGEX_SENHA)) {
-      alert('Sua senha não preenche os requerimentos necessários!');
+      this.alertService.alertInfo('Sua senha deve conter os requisitos obrigatórios!');
       return;
     }
 
     if (this.userRegister.senhaUsuario != this.confirmacaoSenha) {
-      alert('As senhas digitadas estão diferentes!');
+      this.alertService.alertError('As senhas digitas estão diferentes. Tente novamente!');
       return;
     }
 
@@ -48,9 +54,9 @@ export class SigninComponent implements OnInit {
     this.authService.register(this.userRegister).subscribe({
       next: (resp: Usuario) => {
         this.user = resp;
-
+        this.alertService.alertSuccess('Cadastro realizado com sucesso!');
         this.router.navigate(['/entrar']);
-        alert('Usuário cadastrado com sucesso!');
+       
       },
       error: (error: Error) => {
         this.error = error.message;
