@@ -1,4 +1,4 @@
-import { NotificationsService } from './../../services/notifications.service';
+import { AlertService } from 'src/app/services/alert.service';
 import { DetalhePedido } from './../../model/DetalhePedido';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ export class CartItemComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private notificationsService: NotificationsService
+    private alertService: AlertService
     ) {}
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class CartItemComponent implements OnInit {
   deletarItem(detalhePedido: DetalhePedido) {
     this.cartService.removeCartItem(detalhePedido);
 
-    this.notificationsService.showMessage('Produto removido com sucesso!');
+    this.alertService.alertSuccess('Produto removido com sucesso!');
   }
 
   inputQuantity(event: any) {

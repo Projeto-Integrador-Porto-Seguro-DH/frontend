@@ -1,3 +1,4 @@
+import { AlertService } from './../../services/alert.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertService: AlertService
   ) {
     if (this.authService.userValue) {
       this.router.navigate(['/']);
@@ -42,10 +44,12 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           this.router.navigate([this.returnUrl]);
+          this.alertService.alertSuccess('Usuário logado com sucesso!');
         },
         error: (error) => {
           this.error = error;
-          console.log(this.error);
+          // console.log(this.error);
+          this.alertService.alertError('Usuário não logado!')
           this.loading = false;
         },
       });
