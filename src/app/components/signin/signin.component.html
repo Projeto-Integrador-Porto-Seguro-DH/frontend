@@ -18,7 +18,7 @@
             aria-placeholder="Nome"
             aria-hidden="true"
           />
-          <div *ngIf="nomeUsuario.invalid && formDir.submitted" class="???">
+          <div *ngIf="nomeUsuario.invalid && formDir.submitted" class="validationErrorStyle">
             <p
               *ngIf="nomeUsuario.errors?.['required']">
               O Nome precisa ser preenchido
@@ -40,10 +40,10 @@
             aria-placeholder="Sobrenome"
             aria-hidden="true"
           />
-          <div *ngIf="sobrenomeUsuario.invalid && formDir.submitted" class="???">
+          <div *ngIf="sobrenomeUsuario.invalid && formDir.submitted" class="validationErrorStyle">
             <p
               *ngIf="sobrenomeUsuario.errors?.['required']">
-              O Nome precisa ser preenchido
+              O Sobrenome precisa ser preenchido
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@
             aria-placeholder="Email"
             aria-hidden="true"
           />
-          <div *ngIf="emailUsuario.invalid && formDir.submitted" class="???">
+          <div *ngIf="emailUsuario.invalid && formDir.submitted" class="validationErrorStyle">
             <p
               *ngIf="emailUsuario.errors?.['required']">
               O email precisa ser preenchido
@@ -81,6 +81,12 @@
             aria-placeholder="Senha"
             aria-hidden="true"
           />
+          <div *ngIf="senhaUsuario.invalid && formDir.submitted" class="validationErrorStyle">
+            <p
+              *ngIf="senhaUsuario.errors?.['required']">
+              A senha precisa ser preenchida
+            </p>
+          </div>
         </div>
 
         <div *ngIf="!activePassword" class="form-group mb-0 mt-3">
@@ -88,18 +94,24 @@
         </div>
 
         <div class="form-group mb-0 mt-0">
-          <label for="confirmarSenha" class="pStyleDark mt-3">Senha</label>
+          <label for="confirmarFormSenha" class="pStyleDark mt-3">Confirmar Senha</label>
           <input
             formControlName="confirmarFormSenha"
             (input)="confirmarSenha($event)"
             type="password"
             class="form-control inputStyle"
-            id="senhaUsuario"
-            name="senhaUsuario"
-            placeholder="Confirmação da senha"
+            id="confirmarFormSenha"
+            name="confirmarFormSenha"
+            placeholder="Confirmar senha"
             aria-placeholder="Confirmação da senha"
             aria-hidden="true"
           />
+          <div *ngIf="confirmarFormSenha.invalid && formDir.submitted" class="validationErrorStyle">
+            <p
+              *ngIf="confirmarFormSenha.errors?.['required']">
+              A senha de confirmação precisa ser preenchida
+            </p>
+          </div>
         </div>
 
         <div class="form-check d-flex justify-content-start mt-4">

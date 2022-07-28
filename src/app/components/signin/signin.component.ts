@@ -34,7 +34,6 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
-      id: new FormControl(''),
       nomeUsuario: new FormControl('', [Validators.required]),
       sobrenomeUsuario: new FormControl('', [Validators.required]),
       emailUsuario: new FormControl('', [Validators.required]),
@@ -87,6 +86,12 @@ export class SigninComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
+
+    console.log('Antes' + this.userRegister);
+    this.transformData();
+    console.log('Depois' + this.userRegister);
+
     this.authService.register(this.userRegister).subscribe({
       next: (resp: Usuario) => {
         this.user = resp;
@@ -104,5 +109,13 @@ export class SigninComponent implements OnInit {
 
   showPasswordRequirement() {
     this.activePassword = false;
+  }
+
+  transformData() {
+    this.userRegister.nomeUsuario = this.userForm.get('nomeUsuario')?.value;
+    this.userRegister.sobrenomeUsuario =
+      this.userForm.get('sobrenomeUsuario')?.value;
+    this.userRegister.emailUsuario = this.userForm.get('emailUsuario')?.value;
+    this.userRegister.senhaUsuario = this.userForm.get('senhaUsuario')?.value;
   }
 }
