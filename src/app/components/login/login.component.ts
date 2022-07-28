@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit {
         },
         error: (error) => {
           this.error = error;
-          // console.log(this.error);
-          this.alertService.alertError('Usuário não logado!')
+          console.log(this.error);
+          this.alertService.alertError(this.error);
           this.loading = false;
         },
       });
