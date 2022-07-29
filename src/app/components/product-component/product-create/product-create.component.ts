@@ -5,7 +5,12 @@ import { first } from 'rxjs';
 import { Produto } from 'src/app/model/Produto';
 import { ProductService } from 'src/app/services/product.service';
 import { Categoria } from 'src/app/model/Categoria';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  Validators,
+  FormControl,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-product-create',
@@ -19,12 +24,15 @@ export class ProductCreateComponent implements OnInit {
 
   loading = false;
 
+  productForm!: FormGroup;
+
   @ViewChild('cadastrar') cadastrar: any;
 
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private formBuilder: FormBuilder
   ) {}
 
   refresh(): void {
@@ -32,9 +40,39 @@ export class ProductCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
-      this.categorias = resp;
+    this.productForm = new FormGroup({
+      idProduto: new FormControl(''),
+      nomeProduto: new FormControl('', [Validators.required]),
+      descricaoProduto: new FormControl('', [Validators.required]),
+      precoUnitarioProduto: new FormControl('', [Validators.required]),
+      estoqueProduto: new FormControl('', [Validators.required]),
+      fotoProduto: new FormControl('', [Validators.required]),
+      categoria: new FormControl('', [Validators.required]),
     });
+  }
+
+  get nomeProduto() {
+    return this.productForm.get('nomeProduto')!;
+  }
+
+  get descricaoProduto() {
+    return this.productForm.get('descricaoProduto')!;
+  }
+
+  get precoUnitarioProduto() {
+    return this.productForm.get('precoUnitarioProduto')!;
+  }
+
+  get estoqueProduto() {
+    return this.productForm.get('estoqueProduto')!;
+  }
+
+  get fotoProduto() {
+    return this.productForm.get('fotoProduto')!;
+  }
+
+  get categoria() {
+    return this.productForm.get('categoria')!;
   }
 
   onSubmit(): void {
