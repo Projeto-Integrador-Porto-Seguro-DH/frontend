@@ -24,7 +24,7 @@ export class CategoryCrudComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private alertService: AlertService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.categoryForm = new FormGroup({
@@ -49,9 +49,10 @@ export class CategoryCrudComponent implements OnInit {
     this.loading = true;
 
     if (this.categoryForm.invalid) {
+      this.loading = false;
       return;
     }
-    
+
     this.transformData();
 
     this.categoryService
@@ -76,8 +77,9 @@ export class CategoryCrudComponent implements OnInit {
   }
 
   transformData() {
-    this.categoria.nomeCategoria = this.categoryForm.get('nomeCategoria')?.value;
-    this.categoria.descricaoCategoria = this.categoryForm.get('descricaoCategoria')?.value;
+    this.categoria.nomeCategoria =
+      this.categoryForm.get('nomeCategoria')?.value;
+    this.categoria.descricaoCategoria =
+      this.categoryForm.get('descricaoCategoria')?.value;
   }
-
 }

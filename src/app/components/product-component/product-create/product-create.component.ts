@@ -11,6 +11,7 @@ import {
   FormControl,
   FormBuilder,
 } from '@angular/forms';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-product-create',
@@ -40,14 +41,18 @@ export class ProductCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getAllCategories().subscribe((resp: Categoria[]) => {
+      this.categorias = resp;
+    });
+
     this.productForm = new FormGroup({
-      idProduto: new FormControl(''),
       nomeProduto: new FormControl('', [Validators.required]),
       descricaoProduto: new FormControl('', [Validators.required]),
       precoUnitarioProduto: new FormControl('', [Validators.required]),
       estoqueProduto: new FormControl('', [Validators.required]),
       fotoProduto: new FormControl('', [Validators.required]),
-      categoria: new FormControl('', [Validators.required]),
+      categoria: new FormControl({}),
+      produtoDisponivel: new FormControl(true),
     });
   }
 
@@ -78,6 +83,13 @@ export class ProductCreateComponent implements OnInit {
   onSubmit(): void {
     this.loading = true;
 
+    if (this.productForm.invalid) {
+      this.loading = false;
+      return;
+    }
+
+    this.transformData();
+
     this.productService.postProduct(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
       this.alertService.alertSuccess('Produto cadastrado com sucesso!');
@@ -92,5 +104,36 @@ export class ProductCreateComponent implements OnInit {
   setCategory(categoriaSelecionada: Categoria) {
     this.produto.categoria = categoriaSelecionada;
     console.log(this.produto.categoria);
+  }
+
+  findCategory() {
+    let categ = this.categorias.find((item) =>
+      item.nomeCategoria?.includes(this.productForm.get('categoria')?.value)
+    );
+
+    // let categ = new Categoria();
+
+    // this.categorias.forEach(item => {
+    //   if(item.nomeCategoria == )
+    // })
+
+    console.log('Id ' + categ?.idCategoria);
+    console.log('Nome ' + categ?.nomeCategoria);
+
+    return categ;
+  }
+
+  transformData() {
+    this.produto.nomeProduto = this.productForm.get('nomeProduto')?.value;
+    this.produto.descricaoProduto =
+      this.productForm.get('descricaoProduto')?.value;
+    this.produto.precoUnitarioProduto = this.productForm.get(
+      'precoUnitarioProduto'
+    )?.value;
+    this.produto.estoqueProduto = this.productForm.get('estoqueProduto')?.value;
+    this.produto.fotoProduto = this.productForm.get('fotoProduto')?.value;
+    this.produto.categoria = this.findCategory();
+    this.produto.produtoDisponivel =
+      this.productForm.get('produtoDisponivel')?.value;
   }
 }

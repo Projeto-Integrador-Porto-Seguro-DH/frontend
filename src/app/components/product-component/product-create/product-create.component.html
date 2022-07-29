@@ -126,17 +126,13 @@
             <label for="categoriaProduto" class="form-label">Categoria </label>
 
             <select
-              formControlName="produto.categoria"
-              (ngModelChange)="setCategory($event)"
+              formControlName="categoria"
               name="categoriaProduto"
               id="categoriaProduto"
               class="form-control inputStyle"
             >
               <option value="0" active disabled>Selecione</option>
-              <option
-                *ngFor="let categoria of categorias"
-                formControlName="categoria"
-              >
+              <option *ngFor="let categoria of categorias">
                 {{ categoria.nomeCategoria }}
               </option>
             </select>
@@ -156,7 +152,7 @@
             >
             <br />
             <input
-              formControlName="produto.produtoDisponivel"
+              formControlName="produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
@@ -166,7 +162,7 @@
             Sim
             <br />
             <input
-              formControlName="produto.produtoDisponivel"
+              formControlName="produtoDisponivel"
               type="radio"
               name="produtoDisponivel"
               id="produtoDisponivel"
