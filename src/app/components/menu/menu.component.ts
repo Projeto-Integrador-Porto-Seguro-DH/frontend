@@ -16,7 +16,6 @@ import { DetalhePedido } from '../../model/DetalhePedido';
 export class MenuComponent implements OnInit {
   user: Usuario;
 
-
   itemOnCart: number = 0;
 
   category = '';
@@ -62,12 +61,12 @@ export class MenuComponent implements OnInit {
   }
 
   isAdmin() {
-    if (this.user!=null) {
+    if (this.user != null) {
       return this.user.admin;
     }
-    return console.log;
-  }
 
+    return false;
+  }
 
   isNotEmpty(): boolean {
     if (this.itemOnCart > 0) {
