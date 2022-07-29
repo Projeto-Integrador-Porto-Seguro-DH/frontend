@@ -67,6 +67,8 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.transformData();
+
     if (this.userForm.invalid) {
       console.log('Enviou Formulario');
       return;
@@ -89,7 +91,6 @@ export class SigninComponent implements OnInit {
     this.loading = true;
 
     console.log('Antes' + this.userRegister);
-    this.transformData();
     console.log('Depois' + this.userRegister);
 
     this.authService.register(this.userRegister).subscribe({
