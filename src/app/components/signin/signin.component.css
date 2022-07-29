@@ -1,11 +1,11 @@
 a.linkStyle {
   font-size: 0.85rem;
-  color: var(--text-color-light);  
+  color: var(--text-color-light);
   text-decoration:underline;
 }
 
 a.linkStyle:hover {
-color: var(--text-color-dark); 
+color: var(--text-color-dark);
 }
 
 a.linkStyle:focus {

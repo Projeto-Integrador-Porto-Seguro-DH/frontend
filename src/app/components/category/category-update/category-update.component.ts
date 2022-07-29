@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../services/category.service';
 import { Categoria } from '../../../model/Categoria';
@@ -16,7 +17,8 @@ export class CategoryUpdateComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class CategoryUpdateComponent implements OnInit {
 
     this.categoryService.updateCategory(this.categoria).subscribe({
       next: (resp: Categoria) => {
-        this.categoryService.showMessage('Categoria editada com sucesso!');
+        this.alertService.alertSuccess('Categoria atualizada com sucesso!');
         this.categoria = resp;
 
         this.router.navigate(['admin/categorias']);

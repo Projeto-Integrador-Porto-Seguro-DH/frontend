@@ -1,3 +1,4 @@
+import { NotificationsService } from 'src/app/services/notifications.service';
 import { first } from 'rxjs/operators';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto } from 'src/app/model/Produto';
@@ -18,7 +19,9 @@ export class ProductDeleteComponent implements OnInit {
 
   @ViewChild('deletar') deletar: any;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService
+    ) {}
 
   refresh(): void {
     window.location.reload();
@@ -33,7 +36,6 @@ export class ProductDeleteComponent implements OnInit {
   onSubmit(): void {
     this.productService.postProduct(this.produto).subscribe((resp: Produto) => {
       this.produtoSalvo = resp;
-      alert('Produto cadastrado com sucesso!');
     });
   }
 
